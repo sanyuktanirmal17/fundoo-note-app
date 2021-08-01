@@ -29,13 +29,13 @@ const EmpSchema = mongoose.Schema({
 },{
     timestamps: true
 })
-// EmpSchema.pre("save", async function(next){
-//     if(this.isModified("password")){
-//         this.password = await bcrypt.hash(this.password, 8)
-//         this.confirmPassword = await bcrypt.hash(this.confirmPassword, 8)
-//     }
-//     next();
-// })
+EmpSchema.pre("save", async function(next){
+    if(this.isModified("password")){
+        this.password = await bcrypt.hash(this.password, 8)
+        this.confirmPassword = await bcrypt.hash(this.confirmPassword, 8)
+    }
+    next();
+})
 const Register = mongoose.model('Register', EmpSchema)
 class Model {
     /**
