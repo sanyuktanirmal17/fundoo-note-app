@@ -52,12 +52,12 @@ class Controller{
             email: req.body.email,
             password : req.body.password
         }
-        service.loginDetails(loginData, (error) => {
+        service.loginDetails(loginData, (error, token) => {
             if(error){
-                return res.status(400).send({success: false, message: error})
+                return res.status(400).send({success: false, message: error, token: null})
             }
             else{
-                return res.status(200).send({success: true, message: "Successfully Logged In"})
+                return res.status(200).send({success: true, message: "Successfully Logged In", token: token})
             }
         })
     }
