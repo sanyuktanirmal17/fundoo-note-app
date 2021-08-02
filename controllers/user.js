@@ -37,7 +37,7 @@ class Controller{
             }
             else{
                 return res.status(200)
-                .send({success: true, message: "user has been successfully registered", data: empdata.data = data})
+                .send({success: true, message: "user has been successfully registered", data: userdata.data = data})
             }
         })
      }

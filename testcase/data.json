@@ -1,0 +1,44 @@
+{
+
+    "login": {
+        "email": "positive@gmail.com",
+        "password": "pos@123"
+    },
+    
+    "loginNegative": {
+        "email": "negative@gmail.com",
+        "password": "neg@123"
+    },
+
+    "register": {
+        "firstName": "Tone",
+        "lastName": "Cases",
+        "email": "testregis@gmail.com",
+        "password": "Token@1234",
+        "confirmPassword": "Token@1234"
+    },
+    
+    "registerNegative": {
+        "firstName": "Tone",
+        "lastName": "Cases",
+        "email": "testregis@gmail.com",
+        "password": "Token@1234",
+        "confirmPassword": "Token@1234"
+    },
+
+    "registerWithoutFirstName" : {
+        "firstName": "",
+        "lastName": "Shah",
+        "email": "sanyu3@gmail.com",
+        "password": "sanyu@123",
+        "confirmPassword": "sanyu@123"
+    },
+
+    "registerWithoutLastName" : {
+        "firstName": "sanyukta",
+        "lastName": "",
+        "email": "sanyukta1@gmail.com",
+        "password": "sanyu@123",
+        "confirmPassword": "sanyu@123"
+    }
+}
