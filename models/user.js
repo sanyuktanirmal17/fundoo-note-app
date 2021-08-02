@@ -1,7 +1,12 @@
 /**
- * @description   : Taking the request from the client and gives the response 
- * @author        : sanyukta
-*/
+ * /**
+ * @module       Model
+ * @file         user.js
+ * @description Taking the request from the client and gives the response
+ * @author       Sanyukta
+ * @since        29/7/2021  
+-----------------------------------------------------------------------------------------------*/
+ 
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const EmpSchema = mongoose.Schema({

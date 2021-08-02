@@ -1,7 +1,7 @@
 /**
  * @description   :  Route the APIs
  * @author        : sanyukta
-*/
+********************************************************************/
 
 
 const controller = require('../controllers/user')

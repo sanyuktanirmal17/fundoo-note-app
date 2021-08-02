@@ -2,6 +2,9 @@ const express = require("express");
  const dbconnection = require('./config/database.config');
 require('dotenv');
 dbconnection();
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger/swagger.json');
+var cors = require('cors');
 
 // Create express app
 const app = express();
@@ -11,13 +14,16 @@ app.use(express.urlencoded({extended: true}));
 
 // parse requests of content-type - application/json
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
 
 const port = process.env.PORT;
 
 var options = {
     explorer: true
   };
+
+// swagger ui
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
 
 // define a simple route    
 app.get('/',(req,res) => {

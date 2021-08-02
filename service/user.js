@@ -1,5 +1,13 @@
+/**
+ * @module       Service
+ * @file         service.js
+ * @description  Service class holds the callback method for controller 
+ * @author       Sanyukta 
+ * @since        29/7/2021  
+***********************************************************************************************/
+
 const model = require('../models/user')
-// const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs')
 const Helper = require('../middleware/helper')
 
 class Service {
@@ -27,7 +35,7 @@ class Service {
                 return callback("Incorrect Password", error)
             }else{
                 const token = helper.createToken({loginData})
-                return callback(null, token)
+                return (token) ? callback(null, token) : callback(error, null)
             }
            return callback("Incorrect Password", error)    
         })
