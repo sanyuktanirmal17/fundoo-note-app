@@ -2,8 +2,8 @@
     "swagger": "2.0",
     "info": {
       "version": "1.0.0",
-      "title": "Employee Payroll App",
-      "description": "Employee Payroll Application API",
+      "title": "Fundoo Note App",
+      "description": "Fundoo Note App API",
       "license": {
         "name": "MIT",
         "url": "https://opensource.org/licenses/MIT"
