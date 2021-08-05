@@ -1,0 +1,41 @@
+{
+
+"data":{
+    "login":{
+        "email": "rak@gmail.com",
+        "password": "Rak@123456789"
+      },
+    
+      "loginWithImproperepassword": {
+        "email": "pjaditkar@gmail.com",
+        "password": "Prathamj@12345"
+    },
+
+    "loginWithImpropereEmail": {
+        "email": "pj@gmail.com",
+        "password": "Prathamj@12345678"
+    },
+
+    "register": {
+        "firstName": "Prathamesh",
+        "lastName": "Jaditkar",
+        "email": "pjaditkar2@gmail.com",
+        "password": "Prathamj@12345678",
+        "confirmPassword": "Prathamj@12345678"
+      },
+
+    "WithoutFirstName" : {
+        "lastName": "Kamble",
+        "email": "satish@gmail.com",
+        "password": "Satish@12345678",
+        "confirmPassword": "Satish@12345678"
+      },
+
+    "DataWithoutLastName" : {
+    "firstName": "Shweta ",
+    "email": "shweta1@gmail.com",
+    "password": "Shweta@12334",
+    "confirmPassword": "Shweta@12334"
+  }
+ }
+}
