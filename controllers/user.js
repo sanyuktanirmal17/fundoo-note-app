@@ -16,7 +16,7 @@ class Controller{
         // Validate request
         const validation = validateSchema.validate(req.body)
         if(validation.error){
-            res.status(400).send({message: validation.error.details[0].message})
+            res.status(422).send({message: validation.error.details[0].message})
         }
 
         // Create an employee
@@ -32,7 +32,7 @@ class Controller{
         
         service.createDetails(user, (error,data) => {
             if(error){
-                return res.status(400)
+                return res.status(500)
                 .send({success:false, message: "Email already exists", data: null})
             }
             else{
@@ -54,7 +54,7 @@ class Controller{
         }
         service.loginDetails(loginData, (error, token) => {
             if(error){
-                return res.status(400).send({success: false, message: error, token: null})
+                return res.status(400).send({success: false, message: "unsuccessful"})
             }
             else{
                 return res.status(200).send({success: true, message: "Successfully Logged In", token: token})

@@ -9,7 +9,7 @@
  
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-const EmpSchema = mongoose.Schema({
+const userSchema = mongoose.Schema({
     firstName: {
         type: String,
         required : true      
@@ -34,27 +34,27 @@ const EmpSchema = mongoose.Schema({
 },{
     timestamps: true
 })
-EmpSchema.pre("save", async function(next){
+userSchema.pre("save", async function(next){
     if(this.isModified("password")){
         this.password = await bcrypt.hash(this.password, 8)
         this.confirmPassword = await bcrypt.hash(this.confirmPassword, 8)
     }
     next();
 })
-const Register = mongoose.model('Register', EmpSchema)
+const user = mongoose.model('user', userSchema)
 class Model {
     /**
      * @description register user in the database
      * @param user
      * @param callback 
      */
-    createDetails = (user, callback) => {
-        const empSchema = new Register({
-            firstName: user.firstName,
-            lastName: user.lastName,
-            email: user.email,
-            password: user.password,
-            confirmPassword: user.confirmPassword
+    createDetails =(userdetails, callback) => {
+        const empSchema = new user({
+            firstName: userdetails.firstName,
+            lastName: userdetails.lastName,
+            email: userdetails.email,
+            password: userdetails.password,
+            confirmPassword: userdetails.confirmPassword
         });
         empSchema.save(callback)
     };
@@ -65,7 +65,7 @@ class Model {
      * @param callback for service
      */
     loginDetails = (loginData, callBack) => {
-        Register.findOne({'email': loginData.email},(error, data) => {
+        user.findOne({email: loginData.email},(error, data) => {
             if(error){
                 return callBack(error, null);
             }else if(!data){
