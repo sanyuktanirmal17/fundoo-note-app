@@ -8,7 +8,7 @@
 
 const model = require('../models/user')
 const bcrypt = require('bcryptjs')
-const Helper = require('../middleware/helper')
+const helper = require('../middleware/helper')
 
 class Service {
     /**
@@ -31,13 +31,14 @@ class Service {
         model.loginDetails(loginData, (error, data) => {
             if(error){
                 return callback(error, null)
-            }if(Helper.bcryptAuthentication(loginData.password, data.password)){
-                return callback("Incorrect Password", error)
-            }else{
-                const token = helper.createToken({loginData})
-                return (token) ? callback(null, token) : callback(error, null)
             }
-           return callback("Incorrect Password", error)    
+            if(helper.bcryptAuthentication(loginData.password, data.password)){
+                const token = helper.createToken({loginData})
+                return (token) ? callback(null, token) : callback(error, null)  
+            }else{
+                return callback("Incorrect Password", error)
+            }
+               
         })
     }
 }
