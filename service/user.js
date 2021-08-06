@@ -9,7 +9,7 @@
 const model = require('../models/user')
 const bcrypt = require('bcryptjs')
 const helper = require('../middleware/helper')
-
+const logger = require('../logger/logger')
 class Service {
     /**
      * @description Create and save user then send response to controller
@@ -18,8 +18,15 @@ class Service {
      */
     createDetails = (user, callback) => {
         model.createDetails(user, (error, data) => {
-            return error ? callback(error, null) : callback(null, data)
-        })
+            // return error ? callback(error, null) : callback(null, data)
+            if(error){
+                logger.error("Error while registering the new user", error);
+                callback(error, null); 
+            }else {
+                logger.info("User registered successfully!", data);
+                callback(null, data);
+            }
+        });
     }
 
     /**
@@ -30,12 +37,15 @@ class Service {
      loginDetails = (loginData, callback) => {
         model.loginDetails(loginData, (error, data) => {
             if(error){
+                logger.error("Error while registering the new user", err);
                 return callback(error, null)
             }
             if(helper.bcryptAuthentication(loginData.password, data.password)){
+                logger.info("Token is generated", helper.createToken(data));
                 const token = helper.createToken({loginData})
-                return (token) ? callback(null, token) : callback(error, null)  
+                 return (token) ? callback(null, token) : callback(error, null)  
             }else{
+                logger.info("Please enter a valid password");
                 return callback("Incorrect Password", error)
             }
                

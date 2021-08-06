@@ -1,15 +1,20 @@
 {
     "env": {
         "browser": true,
+        "commonjs": true,
         "es2021": true
     },
-    "extends": "eslint:recommended",
+    "extends": [
+        "standard"
+    ],
     "parserOptions": {
         "ecmaVersion": 12
     },
     "rules": {
-        "semi": ["error", "always"],
-        "quotes": ["error", "double"]
+         "semi": ["error", "always"],
+        "linebreak-style": 0,
+    "no-console": 0,
+    "no-regex-spaces": 0,
+    "no-unexpected-multiline": 0
     }
-
- }
+}

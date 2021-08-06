@@ -9,6 +9,7 @@
  
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const logger = require("../logger/logger");
 const userSchema = mongoose.Schema({
     firstName: {
         type: String,
@@ -34,7 +35,7 @@ const userSchema = mongoose.Schema({
 },{
     timestamps: true
 })
-userSchema.pre("save", async function(next){
+userSchema.pre('save', async function(next){
     if(this.isModified("password")){
         this.password = await bcrypt.hash(this.password, 8)
         this.confirmPassword = await bcrypt.hash(this.confirmPassword, 8)
@@ -65,15 +66,22 @@ class Model {
      * @param callback for service
      */
     loginDetails = (loginData, callBack) => {
-        user.findOne({email: loginData.email},(error, data) => {
-            if(error){
-                return callBack(error, null);
+     user.findOne({email: loginData.email},(error, data) => {
+            if(error){ 
+                logger.error("Error while login", error);
+                 callBack(error, null);
             }else if(!data){
-                return callBack("Invalid Credentials", null);
+                logger.info("Email is matched", data);
+                 callBack("Invalid Credentials", null);
             }
-            return callBack(null, data);
+            // logger.info("Details login", data);
+            //  callBack(null, data);
         })
     }
+
+
+
+
 }
 
 module.exports = new Model();

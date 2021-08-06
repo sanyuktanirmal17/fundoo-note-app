@@ -5,7 +5,7 @@
 
 const service = require('../service/user');
 const validateSchema = require('../middleware/user');
-
+const logger = require("../logger/logger");
 class Controller{
     /**
      * @description Create and save user and sending response to service
@@ -35,6 +35,7 @@ class Controller{
                 return res.status(500)
                 .send({success:false, message: "Email already exists", data: null})
             }
+            
             else{
                 return res.status(200)
                 .send({success: true, message: "user has been successfully registered", data: userdata.data = data})
@@ -54,9 +55,11 @@ class Controller{
         }
         service.loginDetails(loginData, (error, token) => {
             if(error){
+                logger.error("Error while authenticating the user", error);
                 return res.status(400).send({success: false, message: "unsuccessful"})
             }
             else{
+                logger.error("authenticating the user", error);
                 return res.status(200).send({success: true, message: "Successfully Logged In", token: token})
             }
         })

@@ -2,9 +2,9 @@
 
 "data":{
     "login":{
-        "email": "rak@gmail.com",
-        "password": "Rak@123456789"
-      },
+      "email": "rajrane@gmail.com",
+       "password": "Rane!2345678"
+     },
     
       "loginWithImproperepassword": {
         "email": "pjaditkar@gmail.com",
@@ -19,7 +19,7 @@
     "register": {
         "firstName": "Prathamesh",
         "lastName": "Jaditkar",
-        "email": "pjaditkar2@gmail.com",
+        "email": "pjaditkar4@gmail.com",
         "password": "Prathamj@12345678",
         "confirmPassword": "Prathamj@12345678"
       },

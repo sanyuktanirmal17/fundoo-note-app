@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 require('dotenv').config();
 
+
 mongoose.Promise = global.Promise;
 
 // Connecting to the database
