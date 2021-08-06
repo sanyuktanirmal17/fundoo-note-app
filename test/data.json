@@ -7,13 +7,13 @@
      },
     
       "loginWithImproperepassword": {
-        "email": "pjaditkar@gmail.com",
-        "password": "Prathamj@12345"
-    },
+        "email": "vashu1234@gmail.com",
+        "password": "vashuA@123456"
+      },
 
     "loginWithImpropereEmail": {
-        "email": "pj@gmail.com",
-        "password": "Prathamj@12345678"
+      "email": "vashu12@gmail.com",
+      "password": "vashuA@123456"
     },
 
     "register": {

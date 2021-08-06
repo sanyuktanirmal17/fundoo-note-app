@@ -9,6 +9,7 @@ const { loginDetails } = require('../models/user')
 
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
+const logger = require('../logger/logger')
 
 class Helper{
 
@@ -43,9 +44,10 @@ class Helper{
      */
     tokenChecker(req, res, next) {
         let token = req.get('token');
+        if(token)
         return (token) ?
-            jwt.verify(token, process.env.SECRET_TOKEN, error => {
-                return (error) ? res.status(400).send({success: false, message: "Invalid Token"}) : next();
+           jwt.verify(token, process.env.SECRET_TOKEN, error => {
+            return (error) ? res.status(400).send({success: false, message: "Invalid Token"}) : next();
             }) :
         res.status(401).send({success: false, message: "Authorisation failed! Invalid user"});
     }

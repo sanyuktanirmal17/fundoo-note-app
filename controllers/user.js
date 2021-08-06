@@ -55,11 +55,11 @@ class Controller{
         }
         service.loginDetails(loginData, (error, token) => {
             if(error){
-                logger.error("Error while authenticating the user", error);
+                // logger.error("Error while authenticating the user", error);
                 return res.status(400).send({success: false, message: "unsuccessful"})
             }
             else{
-                logger.error("authenticating the user", error);
+                // logger.error("authenticating the user", error);
                 return res.status(200).send({success: true, message: "Successfully Logged In", token: token})
             }
         })

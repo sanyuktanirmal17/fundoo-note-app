@@ -69,13 +69,13 @@ class Model {
      user.findOne({email: loginData.email},(error, data) => {
             if(error){ 
                 logger.error("Error while login", error);
-                 callBack(error, null);
+                return callBack(error, null);
             }else if(!data){
-                logger.info("Email is matched", data);
-                 callBack("Invalid Credentials", null);
+                logger.info("Email is matched", null);
+                return  callBack("Invalid Credentials", null);
             }
-            // logger.info("Details login", data);
-            //  callBack(null, data);
+            logger.info("Details login", data);
+           return callBack(null, data);
         })
     }
 
