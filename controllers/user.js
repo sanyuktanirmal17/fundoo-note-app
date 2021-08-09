@@ -6,6 +6,8 @@
 const service = require('../service/user');
 const validateSchema = require('../middleware/user');
 const logger = require("../logger/logger");
+const user = require('../models/user');
+const { data } = require('../logger/logger');
 class Controller{
     /**
      * @description Create and save user and sending response to service
@@ -27,18 +29,14 @@ class Controller{
             password: req.body.password,
             confirmPassword: req.body.confirmPassword
         }
-
-        const userdata ={}
         
         service.createDetails(user, (error,data) => {
             if(error){
-                return res.status(500)
-                .send({success:false, message: "Email already exists", data: null})
+               return  res.status(500).send({success:false, message: "Email already exists", data: null})
             }
-            
             else{
-                return res.status(200)
-                .send({success: true, message: "user has been successfully registered", data: userdata.data = data})
+             return res.status(200)
+                .send({success: true, message: "user has been successfully registered", data:data})
             }
         })
      }
@@ -63,7 +61,39 @@ class Controller{
                 return res.status(200).send({success: true, message: "Successfully Logged In", token: token})
             }
         })
-    }
-}
+        
+     }
 
+     forgotPassword = (req, res) => {
+      try {
+        const { error, value } = validateForgotPassword .validate(req.body);
+        if (error) {
+          logger.error(" Email validation failed", error);
+          return res.status(400).send({success: false, message: error.details[0].message});
+        }
+        const userDetails = {
+          email: req.body.email,
+        };
+        service.forgotPassword(userDetails, (error, data) => {
+          if (error) {
+            logger.error("Error while getting the password reset link", error);
+            res.status(500).send({success: false, message: error,
+            });
+          } else {
+            logger.info("User registered successfully!", data);
+           res.status(200)    .send({success: true,message: "Password reset link email sent",
+              data: data
+            });
+          }
+        });
+      } catch (error) {
+        logger.error("Error while getting the password reset link", error);
+        res.status(500).send({success: false,
+          message: "Some error occurred while getting the password reset link"
+        });
+      }
+    };
+    }
+
+        
 module.exports = new Controller();

@@ -31,10 +31,15 @@ const userSchema = mongoose.Schema({
     confirmPassword: {
         type: String,
         required: true
+    },
+    resetLink:{
+        data:String,
+        default:''
     }
 },{
     timestamps: true
 })
+
 userSchema.pre('save', async function(next){
     if(this.isModified("password")){
         this.password = await bcrypt.hash(this.password, 8)
@@ -57,9 +62,13 @@ class Model {
             password: userdetails.password,
             confirmPassword: userdetails.confirmPassword
         });
-        empSchema.save(callback)
-    };
 
+        empSchema.save({},(error,data)=>{
+            return (error) ? callback(error,null) : callback(null,data)
+            }
+        )
+    };
+ 
     /**
      * @description login user from the database
      * @param loginData 

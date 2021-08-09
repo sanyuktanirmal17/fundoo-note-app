@@ -5,7 +5,7 @@
  * @description  Helper class holds the jwt token data 
  * @author       Sanyukta 
 **************************************************************/
-const { loginDetails } = require('../models/user')
+const { loginDetails, userDetails } = require('../models/user')
 
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
