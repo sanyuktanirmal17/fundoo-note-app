@@ -1,6 +1,10 @@
 /**
- * @description   :  Route the APIs
- * @author        : sanyukta
+ * 
+ * @module       Model
+ * @file         user.js
+ * @description  API Routing
+ * @author       Sanyukta
+ * @since        29/7/2021 
 ********************************************************************/
 const logger = require("../logger/logger");
 
@@ -14,7 +18,7 @@ module.exports = (app) => {
     app.post('/login', controller.login);
 
     //api for forget pasword
-    app.post('/forgotPassword', controller.forgotPassword);
+     app.post('/forgotPassword', controller.forgotPassword);
 }
 
 

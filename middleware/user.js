@@ -9,12 +9,12 @@ const validateSchema = Joi.object({
     confirmPassword: Joi.string().valid(Joi.ref('password')).required()
 }); 
 
-const validateForgotPassword = Joi.object({
+const forgotPasswordValidation = Joi.object({
     email: Joi.string()
       .email().required()
       .pattern(new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$")),
   });
 
-module.exports ={ validateSchema, validateForgotPassword};
+module.exports ={ validateSchema, forgotPasswordValidation};
 
 

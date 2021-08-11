@@ -37,5 +37,12 @@
     "password": "Shweta@12334",
     "confirmPassword": "Shweta@12334"
   }
- }
+ },
+
+ "forgotPasswordData": {
+  "email": "sanyuktanirmal17@gmail.com"
+},
+"forgotPasswordWithImproperDetails": {
+  "email": "sanyu@gmail"
+}
 }

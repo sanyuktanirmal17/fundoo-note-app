@@ -1,163 +1,158 @@
 {
-    "swagger": "2.0",
-    "info": {
+  "swagger": "2.0",
+  "info": {
       "version": "1.0.0",
-      "title": "Fundoo Note App",
-      "description": "Fundoo Note App API",
-      "license": {
-        "name": "MIT",
-        "url": "https://opensource.org/licenses/MIT"
-      }
-    },
-    "host": "localhost:4000",
-    "basePath": "/",
-    "tags": [
+      "title": "FundooNote App",
+      "description": "This app is build for storing notes",
+      "license" : {
+          "name": "MIT License",
+          "url": "https://opensource.org/licenses/MIT"
+      }        
+  },
+  "host": "localhost:5000",
+  "tags": [
       {
-        "name": "Users",
-        "description": "API for users in the system"
+          "name": "FundooNotes",
+          "description": "API for user registration"
       }
-    ],
-    "schemes": [
+  ],
+  "schemes": [
       "http"
-    ],
-    "consumes": [
+  ],
+  "consumes": [
       "application/json"
-    ],
-    "produces": [
+  ],
+  "produces": [
       "application/json"
-    ],
-    "paths": {
-      "/register": {
-        "post": {
-          "tags": [
-            "Register"
-          ],
-          "description": "Create new user in system",
-          "parameters": [
-            {
-              "name": "Register",
-              "in": "body",
-              "description": "User that we want to create",
+  ],
+  "paths": {
+      "/registration": {
+          "post": {
+              "tags": [
+                  "Registration"
+              ],
+              "description": "Create a new user in the FundooNotes App",
+              "parameters": [
+                  {
+                      "name": "User Registration",
+                      "in":"body",
+                      "description": "User that we wants to create",
+                      "schema": {
+                          "$ref": "#/definitions/add"
+                      }
+                  }
+              ],
+              "produces": [
+                  "application/json"
+              ],
               "schema": {
-                "$ref": "#/definitions/register"
+                  "$ref": "#/definitions/add"
+              },
+              "responses": {
+                  "201": {
+                      "description": "User created successfully"
+                  },
+                  "409":{
+                      "description": "User already exist"
+                  },
+                  "500": {
+                      "description": "Internal server error"
+                  }
               }
-            }
-          ],
-          "produces": [
-            "application/json"
-          ],
-          "responses": {
-            "200": {
-              "description": "New user is created",
-              "schema": {
-                "$ref": "#/definitions/register"
-              }
-            }
           }
-        }
       },
       "/login": {
-        "post": {
-          "tags": [
-            "login"
-          ],
-          "description": "login user in system",
-          "parameters": [
-            {
-              "name": "login",
-              "in": "body",
-              "description": "User that we want to login",
+          "post": {
+              "tags": [
+                  "FundooNotes login"
+              ],
+              "description": "Login to FundooNotes",
+              "parameters": [
+                  {
+                      "name": "login",
+                      "in": "body",
+                      "description": "User that we wants to login",
+                      "schema": {
+                          "$ref": "#/definitions/login"
+                      }
+                  }
+              ],
+              "produces": [
+                  "application/json"
+              ],
               "schema": {
-                "$ref": "#/definitions/login"
+                  "$ref": "#/definitions/login"
+              },
+              "responses": {
+                  "200": {
+                      "description": "logged in successfully"
+                  },
+                  "403": {
+                      "description": "Please check user name or password and try again"
+                  },
+                  "400": {
+                      "description": "login failed"
+                  }
               }
-            }
-          ],
-          "produces": [
-            "application/json"
-          ],
-          "responses": {
-            "200": {
-              "description": "New login",
-              "schema": {
-                "$ref": "#/definitions/login"
-              }
-            }
           }
-        }
-      }
-    },
+      },
 
-    "paths": {
       "/forgotPassword": {
-        "post": {
-          "tags": [
-            "forgotPassword"
-          ],
-          "description": "Create reset password ",
-          "parameters": [
-            {
-              "name": "forgotPassword",
-              "in": "body",
-              "description": "User that we want to create",
-              "schema": {
-                "$ref": "#/definitions/forgotPassword"
+          "post": {
+              "tags": [
+                  "FundooNotes"
+              ],
+              "summary": "Forgot Password",
+              "parameters": [
+                  {
+                      "in": "body",
+                      "name": "body",
+                      "description": "forgot password"
+                  }
+              ],
+              "produces": [
+                  "application/json"
+              ],
+              "responses": {
+                  "200": {
+                      "description": "sent mail successfully"
+                  },
+                  "400": {
+                      "description": "unable to send mail"
+                  }
               }
-            }
-          ],
-          "produces": [
-            "application/json"
-          ],
-          "responses": {
-            "200": {
-              "description": "New user is created",
-              "schema": {
-                "$ref": "#/definitions/forgotPassword"
-              }
-            }
           }
-        }
-      },
+      }
+  },  
+      "definitions": {
+          "add": {
+              "type": "object",
+              "properties": {
+                  "firstName": {
+                      "type": "string"
+                  },
+                  "lastName": {
+                      "type": "string"
+                  },
+                  "email": {
+                      "type": "string"
+                  },
+                  "password": {
+                      "type": "string"
 
-    "definitions": {
-      "register": {
-        "type": "object",
-        "properties": {
-          "firstName": {
-            "type": "string"
+                  }
+              }    
           },
-          "lastName": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "password": {
-            "type": "string"
-          },
-          "confirmPassword": {
-            "type": "string"
+          "login": {
+              "type": "object",
+              "properties": {
+                  "email": {
+                      "type": "string"
+                  },
+                  "password" : {
+                      "type": "string"
+                  }
+              }
           }
-        }
-      },
-      "login": {
-        "type": "object",
-        "properties": {
-          "email" : {
-            "type" :"string"
-          },
-        "password": {
-          "type": "string"
-          }
-        }
-      },
-      "forgotPassword": {
-        "type": "object",
-        "properties": {
-          "email" : {
-            "type" :"string"
-          }
-        }
-     } 
-    }
-  } 
-} 
+      }
+}

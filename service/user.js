@@ -6,14 +6,13 @@
  * @since        29/7/2021  
 ***********************************************************************************************/
 
-const model = require('../models/user')
-const tokenModel = require("../models/token.js");
-const bcrypt = require('bcryptjs')
-const helper = require('../middleware/helper')
+const model = require('../models/user');
+const bcrypt = require('bcryptjs');
+const helper = require('../middleware/helper');
+const {sendingEmail} = require('../utility/user');
 const logger = require('../logger/logger');
-const { data } = require('../logger/logger');
-const crypto = require("crypto");
-const email = require("../middleware/email/email")
+
+
 class Service {
     /**
      * @description Create and save user then send response to controller
@@ -38,6 +37,7 @@ class Service {
      * @method loginDetails
      * @param callback callback for controller
      */
+
      loginDetails = (loginData, callback) => {
         model.loginDetails(loginData, (error, data) => {
             if(error){
@@ -64,50 +64,23 @@ class Service {
         })
     }
 
-    forgotPassword = (userDetails, callback) => {
-        model.forgotPassword(userDetails, (error, data) => {
-          if (error) {
-            logger.error("Error while finding user by email", error);
-            callback(error, null);
-          } else {
-            if (data === null) {
-              logger.info("User does not exist", data);
-              callback("User does not exist", null);
-            } else {
-              tokenModel.findTokenByUserId(data._id, (tokenError, tokendata) => {
-                if (tokenError) {
-                  logger.error("Error while finding token by user id", error);
-                  callback(tokenError, null);
-                }
-                });
-            
-                // } else {
-                //   if (tokendata) {
-                //     tokenModel.deleteTokenByUserId(tokendata.userId, (tokenDeleteErr, tokenDeleteSuccess) => {
-                //       if (tokenDeleteErr) {
-                //         logger.error("Error while deleting the token by user id", error);
-                //         callback(tokenDeleteErr, null);
-                //       } else {
-                //         logger.info("Token deleted");
-                //       }
-                //      });
-                //    }
-                // }
-             
-        //       let resetToken = crypto.randomBytes(32).toString("hex");
-        //       const hash = bcrypt.hash(resetToken, Number(process.env.SALT_ROUNDS));
-        //       tokenModel.saveToken(data._id, String(hash), (saveTokenErr, saveTokenSuccess) => {
-        //         if (saveTokenErr) {
-        //           logger.error("Error while saving the token", err);
-        //           callback(saveTokenErr, null);
-        //         } else {
-        //           // const link = `${process.env.CLIENT_URL}/passwordReset?token=${resetToken}&id=${doc._id}`;
-        //           callback(null, link);
-        //         }
-        //       });
+  forgotPassword = (userDetails, callback) => {
+    try{
+       model.forgotPassword(userDetails, (error, data) => {
+        //    console.log(data);
+           if (data){
+               const emailData = {
+                email: data.email,
+                _id: data._id,
+               };
+            error ? callback(error, null): callback(null, sendingEmail(emailData));   
+           }else{
+               callback('This email id does not exist')
            }
-           } 
-        });
-      };
+       })
+    }catch(error){
+        return error;
+    }
+}
 }
 module.exports = new Service(); 

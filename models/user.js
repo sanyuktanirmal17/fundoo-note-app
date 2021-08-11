@@ -10,6 +10,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const logger = require("../logger/logger");
+// const sendEmail = require('../../util/mailGun')
 const userSchema = mongoose.Schema({
     firstName: {
         type: String,
@@ -32,10 +33,10 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    resetLink:{
-        data:String,
-        default:''
-    }
+    // resetLink:{
+    //     data:String,
+    //     default:''
+    // }
 },{
     timestamps: true
 })
@@ -88,9 +89,19 @@ class Model {
         })
     }
 
-
-
-
+/**
+     * @description mongoose function for forgot password
+     * @param {*} email
+     * @param {*} callback 
+     */
+ forgotPassword = (data, callback) => {
+    user.findOne({email : data.email}, (error, data) => {
+        logger.error("email not found, error");
+        return error ? callback(error, null):
+        !data ? callback("email not found", null):
+        callback(null, data)
+    });
 }
+} 
 
 module.exports = new Model();

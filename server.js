@@ -3,16 +3,21 @@ const express = require("express");
 const logger = require("./logger/logger")
  require('dotenv');
 dbconnection();
+const bodyParser = require("body-parser")
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger/swagger.json');
 
 const app = express();
 
 // parse requests of content-type - application/x-www-form-urlencoded
-app.use(express.urlencoded({extended: true}));
+// app.use(express.urlencoded({extended: true}));
 
 // parse requests of content-type - application/json
-app.use(express.json());
+// app.use(express.json());
+  app.use(bodyParser.json());
+
+// parse requests of content-type - application/x-www-form-urlencoded
+ app.use(bodyParser.urlencoded({extended: true,}));
 
 const port = process.env.PORT;
 

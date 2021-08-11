@@ -4,10 +4,11 @@
 */
 
 const service = require('../service/user');
-const validateSchema = require('../middleware/user');
+const {validateSchema, forgotPasswordValidation} = require('../middleware/user');
 const logger = require("../logger/logger");
-const user = require('../models/user');
-const { data } = require('../logger/logger');
+const model = require('../models/user');
+// const { data } = require('../logger/logger');
+// const { messageData } = require('../middleware/messageData');
 class Controller{
     /**
      * @description Create and save user and sending response to service
@@ -18,7 +19,7 @@ class Controller{
         // Validate request
         const validation = validateSchema.validate(req.body)
         if(validation.error){
-            res.status(422).send({message: validation.error.details[0].message})
+            res.status(400).send({message: validation.error.details[0].message})
         }
 
         // Create an employee
@@ -58,42 +59,49 @@ class Controller{
             }
             else{
                 // logger.error("authenticating the user", error);
-                return res.status(200).send({success: true, message: "Successfully Logged In", token: token})
+                return res.status(200).send({success: true, message: "Successfully Logged In"
+                , token: token})
             }
         })
         
      }
 
-     forgotPassword = (req, res) => {
-      try {
-        const { error, value } = validateForgotPassword .validate(req.body);
+ 
+ /**
+     * description controller function for forgot password
+     * @param {*} req 
+     * @param {*} res 
+     * @returns 
+     */
+  forgotPassword = (req, res) =>{
+    try{
+     var userData = {
+         email: req.body.email,
+     }
+     service.forgotPassword(userData, (error, data) => {
         if (error) {
-          logger.error(" Email validation failed", error);
-          return res.status(400).send({success: false, message: error.details[0].message});
+            logger.error("Error on finding mailID",error);
+         return res.status(400).send({
+             success: false,
+             message: error
+         });
         }
-        const userDetails = {
-          email: req.body.email,
-        };
-        service.forgotPassword(userDetails, (error, data) => {
-          if (error) {
-            logger.error("Error while getting the password reset link", error);
-            res.status(500).send({success: false, message: error,
-            });
-          } else {
-            logger.info("User registered successfully!", data);
-           res.status(200)    .send({success: true,message: "Password reset link email sent",
-              data: data
-            });
-          }
+         logger.info("email found and sent link successfully",data);
+         return res.status(200).send({
+             success: true,
+             message: "Link sent successfully",
+             data
+         });
+     });
+    }catch(error){
+        return res.status(500).send({
+            sucess: false,
+            message: error.message
         });
-      } catch (error) {
-        logger.error("Error while getting the password reset link", error);
-        res.status(500).send({success: false,
-          message: "Some error occurred while getting the password reset link"
-        });
-      }
-    };
-    }
+    } 
+  }
+ }
+  
 
         
 module.exports = new Controller();

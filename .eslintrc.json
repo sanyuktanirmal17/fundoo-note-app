@@ -12,9 +12,9 @@
     },
     "rules": {      
          "semi":  ["error", "always"],
-        "linebreak-style": 0,
+         "linebreak-style": 0,
          "no-console": 0,
-          "no-regex-spaces": 0
+         "no-regex-spaces": 0
 
     }
 }
