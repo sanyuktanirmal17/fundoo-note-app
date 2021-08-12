@@ -5,7 +5,7 @@
  * @description  Helper class holds the jwt token data 
  * @author       Sanyukta 
 **************************************************************/
-const { loginDetails, userDetails } = require('../models/user')
+const { loginDetails, userDetails, forgotPassword } = require('../models/user')
 
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
@@ -18,19 +18,24 @@ class Helper{
      * @param {*} loginData
      * @returns 
      */
-   createToken = (loginData) => {
+   createToken = (loginDetails) => {
         return jwt.sign(loginData, process.env.SECRET_TOKEN, {
             expiresIn: "3000000s"});
-
+    
       }
      
     tokenChecker = (data) => {
-        return  jwt.sign({ email: data.email, id: data._id }, process.env.SECRET_TOKEN, { expiresIn: "3000000s" });
-        // console.log(data)
+        const token =  jwt.sign({ email: data.email, id: data._id }, process.env.SECRET_TOKEN, { expiresIn: "3000000s" });
+        console.log(data);
+        return token
         }
-
+        
+        getEmailFromToken(token){
+            const emailToken = jwt.verify(token, process.env.SECRET_TOKEN);
+            return emailToken.email
+        }
     
-
+      
     /*
      * @description function compares with user password and bcrypted password stored in database
      * @param {*} loginPassword 

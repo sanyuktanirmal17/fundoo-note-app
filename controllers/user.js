@@ -4,9 +4,10 @@
 */
 
 const service = require('../service/user');
-const {validateSchema, forgotPasswordValidation} = require('../middleware/user');
+const {validateSchema, forgotPasswordValidation, resetPasswordValidation} = require('../middleware/user');
 const logger = require("../logger/logger");
 const model = require('../models/user');
+const { constants } = require('fs');
 // const { data } = require('../logger/logger');
 // const { messageData } = require('../middleware/messageData');
 class Controller{
@@ -73,11 +74,12 @@ class Controller{
      * @param {*} res 
      * @returns 
      */
+    
   forgotPassword = (req, res) =>{
     try{
      var userData = {
          email: req.body.email,
-     }
+     };
      service.forgotPassword(userData, (error, data) => {
         if (error) {
             logger.error("Error on finding mailID",error);
@@ -100,8 +102,38 @@ class Controller{
         });
     } 
   }
- }
-  
 
-        
+  passwordReset = (req, res) =>{
+    try{const resetValidation = resetPasswordValidation.validate(req.body);
+        if(resetValidation.error){
+            res.status(400).send({message:passwordValidation.error.details[0].message})
+        }
+     const userData = {
+        token: req.headers.token,
+         password: req.body.password
+     }
+     service.forgotPassword(userData, (error, data) => {
+        if (error) {
+            logger.error("Error while reset password",error);
+         return res.status(400).send({
+             success: false,
+             message: error
+         });
+        }
+         logger.info("user able to change password successfully",data);
+         return res.status(200).send({
+             success: true,
+             message: "password change",
+             data
+         });
+     });
+    }catch(error){
+        return res.status(401).send({
+            sucess: false,
+            message: 'Invalid token'
+        });
+    } 
+  }
+ }
+      
 module.exports = new Controller();

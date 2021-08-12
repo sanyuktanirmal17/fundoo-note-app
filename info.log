@@ -885,3 +885,369 @@
 {"driver":true,"name":"MongoError","index":0,"code":11000,"keyPattern":{"email":1},"keyValue":{"email":"pjaditkar4@gmail.com"},"level":"error","message":"Error while registering the new user E11000 duplicate key error collection: fundoo-notes.users index: email_1 dup key: { email: \"pjaditkar4@gmail.com\" }","stack":"MongoError: E11000 duplicate key error collection: fundoo-notes.users index: email_1 dup key: { email: \"pjaditkar4@gmail.com\" }\n    at Function.create (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\core\\error.js:57:12)\n    at toError (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\utils.js:130:22)\n    at E:\\Fundoo Note\\node_modules\\mongodb\\lib\\operations\\common_functions.js:258:39\n    at handler (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\core\\sdam\\topology.js:953:24)\n    at E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\connection_pool.js:350:13\n    at handleOperationResult (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\core\\sdam\\server.js:565:5)\n    at MessageStream.messageHandler (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\connection.js:281:5)\n    at MessageStream.emit (events.js:375:28)\n    at processIncomingData (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:144:12)\n    at MessageStream._write (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:42:5)\n    at writeOrBuffer (internal/streams/writable.js:358:12)\n    at MessageStream.Writable.write (internal/streams/writable.js:303:10)\n    at Socket.ondata (internal/streams/readable.js:726:22)\n    at Socket.emit (events.js:375:28)\n    at addChunk (internal/streams/readable.js:290:12)\n    at readableAddChunk (internal/streams/readable.js:265:9)\n    at Socket.Readable.push (internal/streams/readable.js:204:10)\n    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)","timestamp":"2021-08-11T19:55:02.531Z"}
 {"errors":{"firstName":{"name":"ValidatorError","message":"Path `firstName` is required.","properties":{"message":"Path `firstName` is required.","type":"required","path":"firstName"},"kind":"required","path":"firstName"}},"_message":"user validation failed","level":"error","message":"Error while registering the new user user validation failed: firstName: Path `firstName` is required.","stack":"ValidationError: user validation failed: firstName: Path `firstName` is required.\n    at model.Document.invalidate (E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2760:32)\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2552:17\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\schematype.js:1273:9\n    at processTicksAndRejections (internal/process/task_queues.js:77:11)","timestamp":"2021-08-11T19:55:02.644Z"}
 {"errors":{"firstName":{"name":"ValidatorError","message":"Path `firstName` is required.","properties":{"message":"Path `firstName` is required.","type":"required","path":"firstName"},"kind":"required","path":"firstName"},"lastName":{"name":"ValidatorError","message":"Path `lastName` is required.","properties":{"message":"Path `lastName` is required.","type":"required","path":"lastName"},"kind":"required","path":"lastName"},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email"},"kind":"required","path":"email"},"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password"},"kind":"required","path":"password"},"confirmPassword":{"name":"ValidatorError","message":"Path `confirmPassword` is required.","properties":{"message":"Path `confirmPassword` is required.","type":"required","path":"confirmPassword"},"kind":"required","path":"confirmPassword"}},"_message":"user validation failed","level":"error","message":"Error while registering the new user user validation failed: firstName: Path `firstName` is required., lastName: Path `lastName` is required., email: Path `email` is required., password: Path `password` is required., confirmPassword: Path `confirmPassword` is required.","stack":"ValidationError: user validation failed: firstName: Path `firstName` is required., lastName: Path `lastName` is required., email: Path `email` is required., password: Path `password` is required., confirmPassword: Path `confirmPassword` is required.\n    at model.Document.invalidate (E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2760:32)\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2552:17\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\schematype.js:1273:9\n    at processTicksAndRejections (internal/process/task_queues.js:77:11)","timestamp":"2021-08-11T19:55:02.677Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-11T19:58:08.856Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-11T19:58:09.104Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-11T19:58:09.105Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-11T19:58:09.192Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-11T19:58:09.193Z"}
+{"$__":{"strictMode":true,"selected":{},"getters":{},"_id":"610cf6dd00ab1c28fc873b76","wasPopulated":false,"activePaths":{"paths":{"confirmPassword":"init","password":"init","email":"init","lastName":"init","firstName":"init","_id":"init","createdAt":"init","updatedAt":"init","__v":"init"},"states":{"ignore":{},"default":{},"init":{"_id":true,"firstName":true,"lastName":true,"email":true,"password":true,"confirmPassword":true,"createdAt":true,"updatedAt":true,"__v":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"cachedRequired":{},"session":null,"$setCalled":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":{"skipId":true,"isNew":false,"willInit":true,"defaults":true}},"isNew":false,"$locals":{},"$op":null,"_doc":{"_id":"610cf6dd00ab1c28fc873b76","firstName":"Raja","lastName":"Rane","email":"rajrane@gmail.com","password":"$2a$08$Q2ZzjBsMQcudodxmNV/vH.4W3my/SnZRSwbK/qPGWZYztpNSEUQ3C","confirmPassword":"$2a$08$62hOlCr9se7ACjdRvVbsd.IQej/m3mP4pHuK7.Cnyf9mZu/Jx6yvS","createdAt":"2021-08-06T08:46:21.238Z","updatedAt":"2021-08-06T08:46:21.238Z","__v":0},"$init":true,"level":"info","message":"Details login","timestamp":"2021-08-11T19:58:09.285Z"}
+{"level":"info","message":"Token generated","timestamp":"2021-08-11T19:58:09.440Z"}
+{"$__":{"strictMode":true,"selected":{},"getters":{},"_id":"610d4fafa3fe912d38a619ce","wasPopulated":false,"activePaths":{"paths":{"confirmPassword":"init","password":"init","email":"init","lastName":"init","firstName":"init","_id":"init","createdAt":"init","updatedAt":"init","__v":"init"},"states":{"ignore":{},"default":{},"init":{"_id":true,"firstName":true,"lastName":true,"email":true,"password":true,"confirmPassword":true,"createdAt":true,"updatedAt":true,"__v":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"cachedRequired":{},"session":null,"$setCalled":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":{"skipId":true,"isNew":false,"willInit":true,"defaults":true}},"isNew":false,"$locals":{},"$op":null,"_doc":{"_id":"610d4fafa3fe912d38a619ce","firstName":"vashu","lastName":"butla","email":"vashu1234@gmail.com","password":"$2a$08$NW/dc.iLj5grF7N7LRky5upI3CL1CngXW1tm8EbVi7oJnHddBgvUS","confirmPassword":"$2a$08$1WQ460o/ZTGUI9vvVAgwMOzfz4xbFKPGk5pbdFgldoKeFsaJrAE12","createdAt":"2021-08-06T15:05:19.837Z","updatedAt":"2021-08-06T15:05:19.837Z","__v":0},"$init":true,"level":"info","message":"Details login","timestamp":"2021-08-11T19:58:09.474Z"}
+{"level":"info","message":"Token generated","timestamp":"2021-08-11T19:58:09.563Z"}
+{"level":"info","message":"Email is matched","timestamp":"2021-08-11T19:58:09.613Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-11T19:58:09.614Z"}
+{"driver":true,"name":"MongoError","index":0,"code":11000,"keyPattern":{"email":1},"keyValue":{"email":"pjaditkar4@gmail.com"},"level":"error","message":"Error while registering the new user E11000 duplicate key error collection: fundoo-notes.users index: email_1 dup key: { email: \"pjaditkar4@gmail.com\" }","stack":"MongoError: E11000 duplicate key error collection: fundoo-notes.users index: email_1 dup key: { email: \"pjaditkar4@gmail.com\" }\n    at Function.create (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\core\\error.js:57:12)\n    at toError (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\utils.js:130:22)\n    at E:\\Fundoo Note\\node_modules\\mongodb\\lib\\operations\\common_functions.js:258:39\n    at handler (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\core\\sdam\\topology.js:953:24)\n    at E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\connection_pool.js:350:13\n    at handleOperationResult (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\core\\sdam\\server.js:565:5)\n    at MessageStream.messageHandler (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\connection.js:281:5)\n    at MessageStream.emit (events.js:375:28)\n    at processIncomingData (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:144:12)\n    at MessageStream._write (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:42:5)\n    at writeOrBuffer (internal/streams/writable.js:358:12)\n    at MessageStream.Writable.write (internal/streams/writable.js:303:10)\n    at Socket.ondata (internal/streams/readable.js:726:22)\n    at Socket.emit (events.js:375:28)\n    at addChunk (internal/streams/readable.js:290:12)\n    at readableAddChunk (internal/streams/readable.js:265:9)\n    at Socket.Readable.push (internal/streams/readable.js:204:10)\n    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)","timestamp":"2021-08-11T19:58:09.851Z"}
+{"errors":{"firstName":{"name":"ValidatorError","message":"Path `firstName` is required.","properties":{"message":"Path `firstName` is required.","type":"required","path":"firstName"},"kind":"required","path":"firstName"},"lastName":{"name":"ValidatorError","message":"Path `lastName` is required.","properties":{"message":"Path `lastName` is required.","type":"required","path":"lastName"},"kind":"required","path":"lastName"},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email"},"kind":"required","path":"email"},"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password"},"kind":"required","path":"password"},"confirmPassword":{"name":"ValidatorError","message":"Path `confirmPassword` is required.","properties":{"message":"Path `confirmPassword` is required.","type":"required","path":"confirmPassword"},"kind":"required","path":"confirmPassword"}},"_message":"user validation failed","level":"error","message":"Error while registering the new user user validation failed: firstName: Path `firstName` is required., lastName: Path `lastName` is required., email: Path `email` is required., password: Path `password` is required., confirmPassword: Path `confirmPassword` is required.","stack":"ValidationError: user validation failed: firstName: Path `firstName` is required., lastName: Path `lastName` is required., email: Path `email` is required., password: Path `password` is required., confirmPassword: Path `confirmPassword` is required.\n    at model.Document.invalidate (E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2760:32)\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2552:17\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\schematype.js:1273:9\n    at processTicksAndRejections (internal/process/task_queues.js:77:11)","timestamp":"2021-08-11T19:58:09.905Z"}
+{"errors":{"firstName":{"name":"ValidatorError","message":"Path `firstName` is required.","properties":{"message":"Path `firstName` is required.","type":"required","path":"firstName"},"kind":"required","path":"firstName"}},"_message":"user validation failed","level":"error","message":"Error while registering the new user user validation failed: firstName: Path `firstName` is required.","stack":"ValidationError: user validation failed: firstName: Path `firstName` is required.\n    at model.Document.invalidate (E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2760:32)\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2552:17\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\schematype.js:1273:9\n    at processTicksAndRejections (internal/process/task_queues.js:77:11)","timestamp":"2021-08-11T19:58:09.918Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T02:26:40.439Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T02:30:10.818Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T02:30:10.819Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T02:30:47.746Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T02:30:47.749Z"}
+{"level":"error","message":"Error while registering the new user Operation `users.insertOne()` buffering timed out after 10000ms","stack":"MongooseError: Operation `users.insertOne()` buffering timed out after 10000ms\n    at Timeout.<anonymous> (E:\\Fundoo Note\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:197:23)\n    at listOnTimeout (internal/timers.js:557:17)\n    at processTimers (internal/timers.js:500:7)","timestamp":"2021-08-12T02:32:26.475Z"}
+{"level":"error","message":"Error while registering the new user Operation `users.insertOne()` buffering timed out after 10000ms","stack":"MongooseError: Operation `users.insertOne()` buffering timed out after 10000ms\n    at Timeout.<anonymous> (E:\\Fundoo Note\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:197:23)\n    at listOnTimeout (internal/timers.js:557:17)\n    at processTimers (internal/timers.js:500:7)","timestamp":"2021-08-12T02:32:44.650Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T02:33:23.755Z"}
+{"level":"error","message":"Error while registering the new user Operation `users.insertOne()` buffering timed out after 10000ms","stack":"MongooseError: Operation `users.insertOne()` buffering timed out after 10000ms\n    at Timeout.<anonymous> (E:\\Fundoo Note\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:197:23)\n    at listOnTimeout (internal/timers.js:557:17)\n    at processTimers (internal/timers.js:500:7)","timestamp":"2021-08-12T02:38:38.834Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T02:39:12.090Z"}
+{"$__":{"strictMode":true,"inserting":true,"getters":{},"_id":"611489d4f8b9031b7c9f11ef","wasPopulated":false,"activePaths":{"paths":{"confirmPassword":"require","password":"require","email":"require","lastName":"require","firstName":"require"},"states":{"ignore":{},"default":{},"init":{},"modify":{},"require":{"confirmPassword":true,"password":true,"email":true,"lastName":true,"firstName":true}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"cachedRequired":{},"session":null,"$setCalled":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":{"defaults":true},"validating":null,"backup":{"activePaths":{"modify":{"firstName":true,"lastName":true,"email":true,"createdAt":true,"updatedAt":true,"password":true,"confirmPassword":true},"default":{"_id":true}}},"savedState":{}},"isNew":false,"$locals":{},"$op":null,"_doc":{"_id":"611489d4f8b9031b7c9f11ef","firstName":"vaishali","lastName":"Kamble","email":"pjaditkar123@gmail.com","password":"$2a$08$UZITu19H3vcAn5qOrXlxrenfntGMRxePaGlw9lTiSyekJleHUVaHa","confirmPassword":"$2a$08$E1k3LiXPWwgGdmdYfdolAOQ7HCmo/n90qquTn6/71RF.Z.fVgZrhW","createdAt":"2021-08-12T02:39:16.655Z","updatedAt":"2021-08-12T02:39:16.655Z","__v":0},"level":"info","message":"User registered successfully!","timestamp":"2021-08-12T02:39:17.086Z"}
+{"$__":{"strictMode":true,"selected":{},"getters":{},"_id":"611489d4f8b9031b7c9f11ef","wasPopulated":false,"activePaths":{"paths":{"confirmPassword":"init","password":"init","email":"init","lastName":"init","firstName":"init","_id":"init","createdAt":"init","updatedAt":"init","__v":"init"},"states":{"ignore":{},"default":{},"init":{"_id":true,"firstName":true,"lastName":true,"email":true,"password":true,"confirmPassword":true,"createdAt":true,"updatedAt":true,"__v":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"cachedRequired":{},"session":null,"$setCalled":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":{"skipId":true,"isNew":false,"willInit":true,"defaults":true}},"isNew":false,"$locals":{},"$op":null,"_doc":{"_id":"611489d4f8b9031b7c9f11ef","firstName":"vaishali","lastName":"Kamble","email":"pjaditkar123@gmail.com","password":"$2a$08$UZITu19H3vcAn5qOrXlxrenfntGMRxePaGlw9lTiSyekJleHUVaHa","confirmPassword":"$2a$08$E1k3LiXPWwgGdmdYfdolAOQ7HCmo/n90qquTn6/71RF.Z.fVgZrhW","createdAt":"2021-08-12T02:39:16.655Z","updatedAt":"2021-08-12T02:39:16.655Z","__v":0},"$init":true,"level":"info","message":"Details login","timestamp":"2021-08-12T02:39:35.520Z"}
+{"level":"info","message":"Token generated","timestamp":"2021-08-12T02:39:35.800Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T02:39:54.831Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T02:39:55.066Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T02:39:58.101Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T02:41:15.101Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T02:41:15.113Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T02:41:16.357Z"}
+{"level":"info","message":"Server is listening on port : 5000","timestamp":"2021-08-12T02:47:39.501Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T02:48:43.633Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T02:48:49.629Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T02:48:49.708Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T02:48:51.106Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T02:54:54.846Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T02:54:54.858Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T02:54:56.082Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T02:56:30.219Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T02:58:53.587Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T02:58:53.611Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T02:58:54.952Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T03:00:10.817Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T03:00:10.829Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T03:00:12.235Z"}
+{"$__":{"strictMode":true,"inserting":true,"getters":{},"_id":"61149079761a422304ba8667","wasPopulated":false,"activePaths":{"paths":{"confirmPassword":"require","password":"require","email":"require","lastName":"require","firstName":"require"},"states":{"ignore":{},"default":{},"init":{},"modify":{},"require":{"confirmPassword":true,"password":true,"email":true,"lastName":true,"firstName":true}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"cachedRequired":{},"session":null,"$setCalled":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":{"defaults":true},"validating":null,"backup":{"activePaths":{"modify":{"firstName":true,"lastName":true,"email":true,"createdAt":true,"updatedAt":true,"password":true,"confirmPassword":true},"default":{"_id":true}}},"savedState":{}},"isNew":false,"$locals":{},"$op":null,"_doc":{"_id":"61149079761a422304ba8667","firstName":"vaishali","lastName":"Kamble","email":"sanyuktanirmal17@gmail.com","password":"$2a$08$Zvbvf5vC9kj65LOoOTK7eOaM2Nu78naKkCGqKgqoi5/RY3KNGsM2K","confirmPassword":"$2a$08$aKzhZPrT.QIFwYqbz0gzmeZdCgJI4Irbpc25ky6QIhKZuVFawCCMm","createdAt":"2021-08-12T03:07:37.262Z","updatedAt":"2021-08-12T03:07:37.262Z","__v":0},"level":"info","message":"User registered successfully!","timestamp":"2021-08-12T03:07:37.594Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T03:07:51.450Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T03:07:51.459Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T03:07:52.770Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:18:01.869Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:18:14.398Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T03:18:26.243Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T03:18:26.267Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T03:18:27.487Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:28:47.437Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:29:10.914Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T03:34:24.588Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T03:34:24.675Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T03:34:25.917Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T03:38:51.672Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T03:38:51.674Z"}
+{"$__":{"strictMode":true,"inserting":true,"getters":{},"_id":"611497f639abfc1b20892be4","wasPopulated":false,"activePaths":{"paths":{"confirmPassword":"require","password":"require","email":"require","lastName":"require","firstName":"require"},"states":{"ignore":{},"default":{},"init":{},"modify":{},"require":{"confirmPassword":true,"password":true,"email":true,"lastName":true,"firstName":true}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"cachedRequired":{},"session":null,"$setCalled":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":{"defaults":true},"validating":null,"backup":{"activePaths":{"modify":{"firstName":true,"lastName":true,"email":true,"createdAt":true,"updatedAt":true,"password":true,"confirmPassword":true},"default":{"_id":true}}},"savedState":{}},"isNew":false,"$locals":{},"$op":null,"_doc":{"_id":"611497f639abfc1b20892be4","firstName":"vivek","lastName":"mishra","email":"mishravivek43@gmail.com","password":"$2a$08$g8EZqtwTcOLIZa2tMz6.ZuuVcyS/040ikYBDDe80txa97.HiwzXIu","confirmPassword":"$2a$08$ZvBm1QUBxMib0pw.mz1vKeraDtYlRG9H6l4N81/s9YwqV893Xaaea","createdAt":"2021-08-12T03:39:34.124Z","updatedAt":"2021-08-12T03:39:34.124Z","__v":0},"level":"info","message":"User registered successfully!","timestamp":"2021-08-12T03:39:34.481Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T03:39:41.341Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T03:39:41.353Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T03:39:42.437Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:42:30.701Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T03:42:35.402Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T03:42:35.455Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T03:42:36.627Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:43:50.831Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T03:43:53.928Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T03:43:54.037Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T03:43:55.216Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:46:09.668Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:47:51.511Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:48:00.291Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:48:19.491Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:48:31.339Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:48:33.880Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:48:40.475Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:48:51.061Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T03:48:57.203Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T03:48:57.338Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T03:48:58.565Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:49:33.844Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:49:44.299Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:50:16.176Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:50:21.512Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T03:50:38.118Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:51:01.490Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T03:51:04.256Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T03:51:04.363Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T03:51:05.570Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:51:52.392Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:51:55.842Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T03:52:29.704Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T03:52:44.619Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T03:52:44.818Z"}
+{"accepted":["sanyuktanirmal17@gmail.com"],"rejected":[],"envelopeTime":1201,"messageTime":1231,"messageSize":618,"response":"250 2.0.0 OK  1628740369 a185sm1149524pfa.205 - gsmtp","envelope":{"from":"sanyuktan161@gmail.com","to":["sanyuktanirmal17@gmail.com"]},"messageId":"<89210a66-9503-f5ee-362b-34512253d426@gmail.com>","level":"info","timestamp":"2021-08-12T03:52:48.619Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T05:00:43.025Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T05:00:59.578Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T05:01:41.147Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T05:01:41.663Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T05:01:41.746Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T05:01:42.886Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T05:02:44.781Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T05:02:52.825Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T05:02:52.931Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T05:02:54.249Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:01:16.247Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:01:29.245Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:02:31.833Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:02:53.756Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:03:24.410Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T06:03:33.699Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T06:03:33.805Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T06:03:35.142Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:04:20.169Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T06:04:20.665Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T06:04:20.693Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T06:04:21.901Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:04:35.209Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:06:34.021Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:06:48.441Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:12:13.702Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T06:12:32.832Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T06:12:34.096Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:13:03.450Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T06:13:10.594Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T06:13:11.847Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:13:56.482Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:14:56.105Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:43:00.325Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:43:23.002Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:43:50.941Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:44:10.937Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:44:17.373Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:44:31.701Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:44:46.819Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:44:56.800Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:45:03.947Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:45:16.680Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:45:50.814Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:45:57.971Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:46:15.118Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:46:31.401Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:46:36.051Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:46:44.031Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:49:58.616Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:51:08.169Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:52:00.652Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:52:04.817Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:53:37.899Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T06:54:31.379Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T07:10:34.893Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T07:11:19.286Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T07:11:29.923Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T08:27:31.591Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T09:35:56.132Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T09:36:36.026Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T09:37:26.286Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T09:37:54.120Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T09:38:00.931Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T09:39:16.791Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T10:32:38.906Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T10:32:46.323Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T10:33:02.260Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T10:34:58.110Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T10:36:34.757Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T10:39:18.377Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T10:39:33.048Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T10:39:43.219Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T10:42:55.455Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T10:42:58.279Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T10:43:11.524Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T10:43:28.849Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T10:43:37.465Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T10:47:54.204Z"}
+{"driver":true,"name":"MongoError","index":0,"code":11000,"keyPattern":{"email":1},"keyValue":{"email":"sanyuktanirmal17@gmail.com"},"level":"error","message":"Error while registering the new user E11000 duplicate key error collection: fundoo-notes.users index: email_1 dup key: { email: \"sanyuktanirmal17@gmail.com\" }","stack":"MongoError: E11000 duplicate key error collection: fundoo-notes.users index: email_1 dup key: { email: \"sanyuktanirmal17@gmail.com\" }\n    at Function.create (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\core\\error.js:57:12)\n    at toError (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\utils.js:130:22)\n    at E:\\Fundoo Note\\node_modules\\mongodb\\lib\\operations\\common_functions.js:258:39\n    at handler (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\core\\sdam\\topology.js:953:24)\n    at E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\connection_pool.js:350:13\n    at handleOperationResult (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\core\\sdam\\server.js:565:5)\n    at MessageStream.messageHandler (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\connection.js:281:5)\n    at MessageStream.emit (events.js:375:28)\n    at processIncomingData (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:144:12)\n    at MessageStream._write (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:42:5)\n    at writeOrBuffer (internal/streams/writable.js:358:12)\n    at MessageStream.Writable.write (internal/streams/writable.js:303:10)\n    at Socket.ondata (internal/streams/readable.js:726:22)\n    at Socket.emit (events.js:375:28)\n    at addChunk (internal/streams/readable.js:290:12)\n    at readableAddChunk (internal/streams/readable.js:265:9)","timestamp":"2021-08-12T10:53:17.437Z"}
+{"$__":{"strictMode":true,"inserting":true,"getters":{},"_id":"6114fe5415f7973a68143cb9","wasPopulated":false,"activePaths":{"paths":{"confirmPassword":"require","password":"require","email":"require","lastName":"require","firstName":"require"},"states":{"ignore":{},"default":{},"init":{},"modify":{},"require":{"confirmPassword":true,"password":true,"email":true,"lastName":true,"firstName":true}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"cachedRequired":{},"session":null,"$setCalled":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":{"defaults":true},"validating":null,"backup":{"activePaths":{"modify":{"firstName":true,"lastName":true,"email":true,"createdAt":true,"updatedAt":true,"password":true,"confirmPassword":true},"default":{"_id":true}}},"savedState":{}},"isNew":false,"$locals":{},"$op":null,"_doc":{"_id":"6114fe5415f7973a68143cb9","firstName":"tanishka","lastName":"nirmal","email":"tanishkanirmal2@gmail.com","password":"$2a$08$DxaRSgqOQcB2PSRQpgCYD.7b2FLSOr71nAsdOP/SfoYb5eaJRV006","confirmPassword":"$2a$08$pf8sMhKRropjwmTWaWKH0uVIuh9YIz1Yn9s0UF3Qzpcs8A9s4qakC","createdAt":"2021-08-12T10:56:20.190Z","updatedAt":"2021-08-12T10:56:20.190Z","__v":0},"level":"info","message":"User registered successfully!","timestamp":"2021-08-12T10:56:20.454Z"}
+{"$__":{"strictMode":true,"selected":{},"getters":{},"_id":"6114fe5415f7973a68143cb9","wasPopulated":false,"activePaths":{"paths":{"confirmPassword":"init","password":"init","email":"init","lastName":"init","firstName":"init","_id":"init","createdAt":"init","updatedAt":"init","__v":"init"},"states":{"ignore":{},"default":{},"init":{"_id":true,"firstName":true,"lastName":true,"email":true,"password":true,"confirmPassword":true,"createdAt":true,"updatedAt":true,"__v":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"cachedRequired":{},"session":null,"$setCalled":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":{"skipId":true,"isNew":false,"willInit":true,"defaults":true}},"isNew":false,"$locals":{},"$op":null,"_doc":{"_id":"6114fe5415f7973a68143cb9","firstName":"tanishka","lastName":"nirmal","email":"tanishkanirmal2@gmail.com","password":"$2a$08$DxaRSgqOQcB2PSRQpgCYD.7b2FLSOr71nAsdOP/SfoYb5eaJRV006","confirmPassword":"$2a$08$pf8sMhKRropjwmTWaWKH0uVIuh9YIz1Yn9s0UF3Qzpcs8A9s4qakC","createdAt":"2021-08-12T10:56:20.190Z","updatedAt":"2021-08-12T10:56:20.190Z","__v":0},"$init":true,"level":"info","message":"Details login","timestamp":"2021-08-12T10:56:56.721Z"}
+{"level":"info","message":"Token generated","timestamp":"2021-08-12T10:56:56.913Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T10:58:35.675Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T10:58:50.283Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T11:06:52.449Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T11:06:52.606Z"}
+{"accepted":["tanishkanirmal2@gmail.com"],"rejected":[],"envelopeTime":915,"messageTime":1198,"messageSize":613,"response":"250 2.0.0 OK  1628766416 i18sm3073049pgb.83 - gsmtp","envelope":{"from":"sanyuktan161@gmail.com","to":["tanishkanirmal2@gmail.com"]},"messageId":"<d5a97aa0-3efc-d0e4-2f6e-27cbbc75674b@gmail.com>","level":"info","timestamp":"2021-08-12T11:06:56.140Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T11:09:25.268Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T11:09:33.612Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T11:10:10.194Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T11:10:10.321Z"}
+{"accepted":["pjaditkar@gmail.com"],"rejected":[],"envelopeTime":889,"messageTime":2070,"messageSize":607,"response":"250 2.0.0 OK  1628766614 u18sm2937819pfg.25 - gsmtp","envelope":{"from":"sanyuktan161@gmail.com","to":["pjaditkar@gmail.com"]},"messageId":"<f5fc3781-d5b2-9642-75a0-eacde7f185b9@gmail.com>","level":"info","timestamp":"2021-08-12T11:10:14.514Z"}
+{"$__":{"strictMode":true,"selected":{},"getters":{},"_id":"6114fe5415f7973a68143cb9","wasPopulated":false,"activePaths":{"paths":{"confirmPassword":"init","password":"init","email":"init","lastName":"init","firstName":"init","_id":"init","createdAt":"init","updatedAt":"init","__v":"init"},"states":{"ignore":{},"default":{},"init":{"_id":true,"firstName":true,"lastName":true,"email":true,"password":true,"confirmPassword":true,"createdAt":true,"updatedAt":true,"__v":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"cachedRequired":{},"session":null,"$setCalled":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":{"skipId":true,"isNew":false,"willInit":true,"defaults":true}},"isNew":false,"$locals":{},"$op":null,"_doc":{"_id":"6114fe5415f7973a68143cb9","firstName":"tanishka","lastName":"nirmal","email":"tanishkanirmal2@gmail.com","password":"$2a$08$DxaRSgqOQcB2PSRQpgCYD.7b2FLSOr71nAsdOP/SfoYb5eaJRV006","confirmPassword":"$2a$08$pf8sMhKRropjwmTWaWKH0uVIuh9YIz1Yn9s0UF3Qzpcs8A9s4qakC","createdAt":"2021-08-12T10:56:20.190Z","updatedAt":"2021-08-12T10:56:20.190Z","__v":0},"$init":true,"level":"info","message":"Details login","timestamp":"2021-08-12T11:16:44.959Z"}
+{"level":"info","message":"Token generated","timestamp":"2021-08-12T11:16:45.291Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T11:20:36.349Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T11:23:30.057Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T11:23:36.183Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T11:23:36.289Z"}
+{"accepted":["pjadtkar@gmail.com"],"rejected":[],"envelopeTime":1230,"messageTime":888,"messageSize":598,"response":"250 2.0.0 OK  1628767420 z20sm3116139pfr.121 - gsmtp","envelope":{"from":"sanyuktan161@gmail.com","to":["pjadtkar@gmail.com"]},"messageId":"<0992dae6-82dd-7991-c496-ba5149c44393@gmail.com>","level":"info","timestamp":"2021-08-12T11:23:39.622Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T11:24:31.787Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T11:24:37.642Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T11:24:37.730Z"}
+{"accepted":["pjadtkar@gmail.com"],"rejected":[],"envelopeTime":854,"messageTime":1456,"messageSize":598,"response":"250 2.0.0 OK  1628767481 136sm3402551pge.77 - gsmtp","envelope":{"from":"sanyuktan161@gmail.com","to":["pjadtkar@gmail.com"]},"messageId":"<c4fc80f3-11fb-1bc2-3d5b-3719a08a1e01@gmail.com>","level":"info","timestamp":"2021-08-12T11:24:41.580Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T11:25:47.906Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T11:25:50.277Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T11:26:07.738Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T11:26:30.668Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T11:26:43.277Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T11:26:43.281Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T11:27:13.323Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T11:27:13.412Z"}
+{"accepted":["tanishkanirmal2@gmail.com"],"rejected":[],"envelopeTime":846,"messageTime":775,"messageSize":605,"response":"250 2.0.0 OK  1628767642 r4sm3076864pfc.167 - gsmtp","envelope":{"from":"sanyuktan161@gmail.com","to":["tanishkanirmal2@gmail.com"]},"messageId":"<939c342c-2ee2-6371-cdb2-0780b2b44648@gmail.com>","level":"info","timestamp":"2021-08-12T11:27:22.178Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T11:28:27.745Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T11:28:27.761Z"}
+{"accepted":["tanishkanirmal2@gmail.com"],"rejected":[],"envelopeTime":848,"messageTime":1337,"messageSize":622,"response":"250 2.0.0 OK  1628767711 j19sm3030412pfr.82 - gsmtp","envelope":{"from":"sanyuktan161@gmail.com","to":["tanishkanirmal2@gmail.com"]},"messageId":"<6e09fcc0-12c4-7e0f-4192-1d3a09f35090@gmail.com>","level":"info","timestamp":"2021-08-12T11:28:31.082Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T11:30:34.298Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T11:30:34.312Z"}
+{"accepted":["tanishkanirmal2@gmail.com"],"rejected":[],"envelopeTime":853,"messageTime":1607,"messageSize":622,"response":"250 2.0.0 OK  1628767837 x20sm3103870pfh.188 - gsmtp","envelope":{"from":"sanyuktan161@gmail.com","to":["tanishkanirmal2@gmail.com"]},"messageId":"<39b08234-3129-6d13-c2e0-42fae904fb75@gmail.com>","level":"info","timestamp":"2021-08-12T11:30:37.839Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T11:31:04.674Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T11:31:04.684Z"}
+{"accepted":["tanishkanirmal2@gmail.com"],"rejected":[],"envelopeTime":835,"messageTime":826,"messageSize":622,"response":"250 2.0.0 OK  1628767867 n15sm3114355pff.149 - gsmtp","envelope":{"from":"sanyuktan161@gmail.com","to":["tanishkanirmal2@gmail.com"]},"messageId":"<24e4c0b7-b357-1eed-7c7c-69f21be49499@gmail.com>","level":"info","timestamp":"2021-08-12T11:31:07.395Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T12:09:18.123Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T12:09:28.054Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T12:09:28.163Z"}
+{"accepted":["tanishkanirmal2@gmail.com"],"rejected":[],"envelopeTime":1822,"messageTime":1082,"messageSize":615,"response":"250 2.0.0 OK  1628770172 y67sm3367409pfg.218 - gsmtp","envelope":{"from":"sanyuktan161@gmail.com","to":["tanishkanirmal2@gmail.com"]},"messageId":"<13e04fac-f4e3-9a3b-b30e-69ddc0059a85@gmail.com>","level":"info","timestamp":"2021-08-12T12:09:32.314Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T16:26:22.556Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T16:30:11.590Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T16:30:11.592Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T16:32:01.023Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T16:32:02.175Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T16:32:02.177Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T16:32:05.377Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T16:32:05.378Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T16:32:23.607Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T16:32:24.543Z"}
+{"accepted":["sanyuktanirmal17@gmail.com"],"rejected":[],"envelopeTime":2519,"messageTime":1094,"messageSize":616,"response":"250 2.0.0 OK  1628785958 z13sm10469841pjd.44 - gsmtp","envelope":{"from":"sanyuktan161@gmail.com","to":["sanyuktanirmal17@gmail.com"]},"messageId":"<c33d903a-21c1-fda9-e4df-b4c4ccc1cb4d@gmail.com>","level":"info","timestamp":"2021-08-12T16:32:38.557Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T16:38:40.270Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T16:42:54.229Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T16:42:54.233Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T17:06:39.700Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T17:08:39.449Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T17:09:38.323Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T17:12:00.251Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T17:12:11.484Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T17:14:59.207Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T17:16:26.947Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T17:16:49.615Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T17:16:56.632Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T17:16:56.723Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T17:16:58.545Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T17:18:07.374Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T17:18:49.004Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T17:18:49.007Z"}
+{"driver":true,"name":"MongoError","index":0,"code":11000,"keyPattern":{"email":1},"keyValue":{"email":"sanyuktanirmal17@gmail.com"},"level":"error","message":"Error while registering the new user E11000 duplicate key error collection: fundoo-notes.users index: email_1 dup key: { email: \"sanyuktanirmal17@gmail.com\" }","stack":"MongoError: E11000 duplicate key error collection: fundoo-notes.users index: email_1 dup key: { email: \"sanyuktanirmal17@gmail.com\" }\n    at Function.create (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\core\\error.js:57:12)\n    at toError (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\utils.js:130:22)\n    at E:\\Fundoo Note\\node_modules\\mongodb\\lib\\operations\\common_functions.js:258:39\n    at handler (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\core\\sdam\\topology.js:953:24)\n    at E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\connection_pool.js:350:13\n    at handleOperationResult (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\core\\sdam\\server.js:565:5)\n    at MessageStream.messageHandler (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\connection.js:281:5)\n    at MessageStream.emit (events.js:375:28)\n    at processIncomingData (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:144:12)\n    at MessageStream._write (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:42:5)\n    at writeOrBuffer (internal/streams/writable.js:358:12)\n    at MessageStream.Writable.write (internal/streams/writable.js:303:10)\n    at Socket.ondata (internal/streams/readable.js:726:22)\n    at Socket.emit (events.js:375:28)\n    at addChunk (internal/streams/readable.js:290:12)\n    at readableAddChunk (internal/streams/readable.js:265:9)","timestamp":"2021-08-12T17:19:21.374Z"}
+{"$__":{"strictMode":true,"selected":{},"getters":{},"_id":"6114fe5415f7973a68143cb9","wasPopulated":false,"activePaths":{"paths":{"confirmPassword":"init","password":"init","email":"init","lastName":"init","firstName":"init","_id":"init","createdAt":"init","updatedAt":"init","__v":"init"},"states":{"ignore":{},"default":{},"init":{"_id":true,"firstName":true,"lastName":true,"email":true,"password":true,"confirmPassword":true,"createdAt":true,"updatedAt":true,"__v":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"cachedRequired":{},"session":null,"$setCalled":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":{"skipId":true,"isNew":false,"willInit":true,"defaults":true}},"isNew":false,"$locals":{},"$op":null,"_doc":{"_id":"6114fe5415f7973a68143cb9","firstName":"tanishka","lastName":"nirmal","email":"tanishkanirmal2@gmail.com","password":"$2a$08$DxaRSgqOQcB2PSRQpgCYD.7b2FLSOr71nAsdOP/SfoYb5eaJRV006","confirmPassword":"$2a$08$pf8sMhKRropjwmTWaWKH0uVIuh9YIz1Yn9s0UF3Qzpcs8A9s4qakC","createdAt":"2021-08-12T10:56:20.190Z","updatedAt":"2021-08-12T10:56:20.190Z","__v":0},"$init":true,"level":"info","message":"Details login","timestamp":"2021-08-12T17:20:03.728Z"}
+{"level":"info","message":"Token generated","timestamp":"2021-08-12T17:20:03.908Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T17:29:18.015Z"}
+{"$__":{"strictMode":true,"selected":{},"getters":{},"_id":"61149079761a422304ba8667","wasPopulated":false,"activePaths":{"paths":{"confirmPassword":"init","password":"init","email":"init","lastName":"init","firstName":"init","_id":"init","createdAt":"init","updatedAt":"init","__v":"init"},"states":{"ignore":{},"default":{},"init":{"_id":true,"firstName":true,"lastName":true,"email":true,"password":true,"confirmPassword":true,"createdAt":true,"updatedAt":true,"__v":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"cachedRequired":{},"session":null,"$setCalled":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":{"skipId":true,"isNew":false,"willInit":true,"defaults":true}},"isNew":false,"$locals":{},"$op":null,"_doc":{"_id":"61149079761a422304ba8667","firstName":"vaishali","lastName":"Kamble","email":"sanyuktanirmal17@gmail.com","password":"$2a$08$Zvbvf5vC9kj65LOoOTK7eOaM2Nu78naKkCGqKgqoi5/RY3KNGsM2K","confirmPassword":"$2a$08$aKzhZPrT.QIFwYqbz0gzmeZdCgJI4Irbpc25ky6QIhKZuVFawCCMm","createdAt":"2021-08-12T03:07:37.262Z","updatedAt":"2021-08-12T03:07:37.262Z","__v":0},"$init":true,"level":"info","message":"Details login","timestamp":"2021-08-12T17:35:41.058Z"}
+{"level":"info","message":"Token generated","timestamp":"2021-08-12T17:35:41.327Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T17:36:53.642Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T17:36:53.644Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T17:36:55.724Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T17:36:55.726Z"}
+{"errors":{"confirmPassword":{"name":"ValidatorError","message":"Path `confirmPassword` is required.","properties":{"message":"Path `confirmPassword` is required.","type":"required","path":"confirmPassword"},"kind":"required","path":"confirmPassword"}},"_message":"user validation failed","level":"error","message":"Error while registering the new user user validation failed: confirmPassword: Path `confirmPassword` is required.","stack":"ValidationError: user validation failed: confirmPassword: Path `confirmPassword` is required.\n    at model.Document.invalidate (E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2760:32)\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2552:17\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\schematype.js:1273:9\n    at processTicksAndRejections (internal/process/task_queues.js:77:11)","timestamp":"2021-08-12T17:38:21.748Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T17:39:34.054Z"}
+{"errors":{"confirmPassword":{"name":"ValidatorError","message":"Path `confirmPassword` is required.","properties":{"message":"Path `confirmPassword` is required.","type":"required","path":"confirmPassword"},"kind":"required","path":"confirmPassword"}},"_message":"user validation failed","level":"error","message":"Error while registering the new user user validation failed: confirmPassword: Path `confirmPassword` is required.","stack":"ValidationError: user validation failed: confirmPassword: Path `confirmPassword` is required.\n    at model.Document.invalidate (E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2760:32)\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2552:17\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\schematype.js:1273:9\n    at processTicksAndRejections (internal/process/task_queues.js:77:11)","timestamp":"2021-08-12T17:52:54.334Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T17:53:51.894Z"}
+{"driver":true,"name":"MongoError","index":0,"code":11000,"keyPattern":{"email":1},"keyValue":{"email":"sanyuktanirmal17@gmail.com"},"level":"error","message":"Error while registering the new user E11000 duplicate key error collection: fundoo-notes.users index: email_1 dup key: { email: \"sanyuktanirmal17@gmail.com\" }","stack":"MongoError: E11000 duplicate key error collection: fundoo-notes.users index: email_1 dup key: { email: \"sanyuktanirmal17@gmail.com\" }\n    at Function.create (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\core\\error.js:57:12)\n    at toError (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\utils.js:130:22)\n    at E:\\Fundoo Note\\node_modules\\mongodb\\lib\\operations\\common_functions.js:258:39\n    at handler (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\core\\sdam\\topology.js:953:24)\n    at E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\connection_pool.js:350:13\n    at handleOperationResult (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\core\\sdam\\server.js:565:5)\n    at MessageStream.messageHandler (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\connection.js:281:5)\n    at MessageStream.emit (events.js:375:28)\n    at processIncomingData (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:144:12)\n    at MessageStream._write (E:\\Fundoo Note\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:42:5)\n    at writeOrBuffer (internal/streams/writable.js:358:12)\n    at MessageStream.Writable.write (internal/streams/writable.js:303:10)\n    at Socket.ondata (internal/streams/readable.js:726:22)\n    at Socket.emit (events.js:375:28)\n    at addChunk (internal/streams/readable.js:290:12)\n    at readableAddChunk (internal/streams/readable.js:265:9)","timestamp":"2021-08-12T17:53:59.884Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T17:54:23.745Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T17:54:23.746Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T17:54:56.445Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T17:54:56.627Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T17:54:59.042Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T17:55:20.984Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T17:55:30.191Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T17:55:30.349Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T17:55:31.829Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T18:00:42.832Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T18:00:52.626Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T18:00:59.590Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T18:07:26.225Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T18:07:35.216Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T18:07:35.331Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T18:07:37.262Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T18:11:25.295Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T18:11:46.711Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T18:11:48.275Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T18:11:48.276Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T18:11:59.103Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T18:11:59.229Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T18:12:01.910Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T18:21:44.760Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T18:21:45.456Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T18:21:45.503Z"}
+{"accepted":["sanyuktanirmal17@gmail.com"],"rejected":[],"envelopeTime":1319,"messageTime":1039,"messageSize":608,"response":"250 2.0.0 OK  1628792509 x81sm4212270pfc.22 - gsmtp","envelope":{"from":"sanyuktan161@gmail.com","to":["sanyuktanirmal17@gmail.com"]},"messageId":"<67150003-ae87-52cf-e591-17a4617c26be@gmail.com>","level":"info","timestamp":"2021-08-12T18:21:49.383Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T18:25:43.154Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T18:25:43.156Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T18:35:26.714Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T18:35:42.870Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T18:35:51.064Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T18:35:51.193Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T18:35:53.566Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T18:37:29.429Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T18:37:42.383Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T18:37:42.519Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T18:37:49.038Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T18:46:59.635Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T18:49:59.152Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T18:50:23.888Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T18:50:23.968Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T18:50:25.441Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T18:50:44.534Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T18:50:55.379Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T18:50:55.436Z"}
+{"accepted":["sanyuktanirmal17@gmail.com"],"rejected":[],"envelopeTime":1058,"messageTime":1236,"messageSize":608,"response":"250 2.0.0 OK  1628794259 j6sm4241497pfn.107 - gsmtp","envelope":{"from":"sanyuktan161@gmail.com","to":["sanyuktanirmal17@gmail.com"]},"messageId":"<23555041-2fd2-915c-9052-c2faccd94a72@gmail.com>","level":"info","timestamp":"2021-08-12T18:50:59.154Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T19:00:22.833Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T19:01:40.019Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T19:02:28.965Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T19:05:28.825Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T19:05:46.217Z"}
+{"accepted":["sanyuktanirmal17@gmail.com"],"rejected":[],"envelopeTime":2002,"messageTime":862,"messageSize":608,"response":"250 2.0.0 OK  1628795151 e13sm4277392pfi.210 - gsmtp","envelope":{"from":"sanyuktan161@gmail.com","to":["sanyuktanirmal17@gmail.com"]},"messageId":"<e2be7718-e3a2-2cb0-e14d-565e890d99ab@gmail.com>","level":"info","timestamp":"2021-08-12T19:05:50.793Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T19:06:55.716Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T19:07:42.636Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T19:08:04.991Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T19:08:06.695Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T19:12:36.378Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T19:12:37.981Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T19:15:32.094Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T19:16:39.032Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T19:20:16.664Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T19:20:55.101Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T19:21:40.953Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T19:21:41.108Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T19:21:42.579Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T19:21:52.782Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T19:21:52.783Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T19:21:54.465Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T19:21:54.466Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T19:30:35.250Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T19:38:57.183Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T19:39:20.305Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T19:39:27.125Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T19:39:27.234Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T19:39:29.030Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T19:41:30.054Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T19:41:30.760Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T19:42:20.371Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T19:42:23.740Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T19:42:23.874Z"}
+{"code":"EENVELOPE","response":"553 5.1.3 The recipient address <!DOCTYPE html> is not a valid RFC-5321 address. y14sm10943324pji.14 - gsmtp","responseCode":553,"command":"RCPT TO","rejected":["!DOCTYPE html"],"rejectedErrors":[{"code":"EENVELOPE","response":"553 5.1.3 The recipient address <!DOCTYPE html> is not a valid RFC-5321 address. y14sm10943324pji.14 - gsmtp","responseCode":553,"command":"RCPT TO","recipient":"!DOCTYPE html"}],"level":"error","timestamp":"2021-08-12T19:42:26.338Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T19:43:00.813Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T19:43:13.514Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T19:43:13.615Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-12T19:43:15.278Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T19:44:53.576Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T19:44:53.578Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T19:45:15.425Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T19:45:15.427Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T19:46:23.271Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T19:46:28.306Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T19:46:28.368Z"}
+{"accepted":["sanyuktanirmal17@gmail.com"],"rejected":[],"envelopeTime":1449,"messageTime":1098,"messageSize":608,"response":"250 2.0.0 OK  1628797592 j128sm4514047pfd.38 - gsmtp","envelope":{"from":"sanyuktan161@gmail.com","to":["sanyuktanirmal17@gmail.com"]},"messageId":"<772abf6f-559e-c053-a49b-be66d816e663@gmail.com>","level":"info","timestamp":"2021-08-12T19:46:32.691Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T20:00:48.791Z"}

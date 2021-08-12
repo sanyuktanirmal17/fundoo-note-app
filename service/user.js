@@ -82,5 +82,24 @@ class Service {
         return error;
     }
 }
+
+passwordReset = (userInput, callback) => {
+    const  email = helper.getEmailFromToken(userInput.token)
+    const  inputData = {
+        email: email,
+        password: userInput.password
+    }
+
+    model.updatePassword(inputData, (error, data) =>{
+        if(error){
+            logger.error("Some error occured while updating password", error)
+            callback(error, null)
+         }else{
+            logger.info("Password has been reset successfully", data)
+            callback(null, data)
+         } 
+    })
+}
+  
 }
 module.exports = new Service(); 

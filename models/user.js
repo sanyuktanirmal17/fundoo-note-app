@@ -102,6 +102,17 @@ class Model {
         callback(null, data)
     });
 }
+
+updatePassword = async(inputData, callback) =>{
+    const salt = await bcrypt.gensalt(10);
+    const data = await user.findOne({email: inputData.email})
+    const hash = bcrypt.hashSync(inputData.password, (error, hashPassword) =>{
+        return error? error: hashPassword
+    })
+    user.findByIdAndUpdate(data._id, {password: hash},(error, data) => {
+        return error ? callback(error, null) : callback(null, data)
+    })
+}
 } 
 
 module.exports = new Model();

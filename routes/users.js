@@ -19,7 +19,10 @@ module.exports = (app) => {
 
     //api for forget pasword
      app.post('/forgotPassword', controller.forgotPassword);
-}
+
+     //api for Reset pasword
+     app.post('/resetPassword', controller.passwordReset);
+    }
 
 
 

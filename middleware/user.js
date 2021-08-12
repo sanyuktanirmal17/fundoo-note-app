@@ -12,9 +12,16 @@ const validateSchema = Joi.object({
 const forgotPasswordValidation = Joi.object({
     email: Joi.string()
       .email().required()
-      .pattern(new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$")),
+      .pattern(new RegExp
+        ("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$")),
   });
 
-module.exports ={ validateSchema, forgotPasswordValidation};
+  const resetPasswordValidation  = Joi.object({
+    password: Joi.string()
+      .email().required()
+      .pattern(new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})')),
+  });
+
+module.exports = { validateSchema, forgotPasswordValidation, resetPasswordValidation};
 
 
