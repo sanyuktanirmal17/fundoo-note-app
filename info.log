@@ -1251,3 +1251,6 @@
 {"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-12T19:46:28.368Z"}
 {"accepted":["sanyuktanirmal17@gmail.com"],"rejected":[],"envelopeTime":1449,"messageTime":1098,"messageSize":608,"response":"250 2.0.0 OK  1628797592 j128sm4514047pfd.38 - gsmtp","envelope":{"from":"sanyuktan161@gmail.com","to":["sanyuktanirmal17@gmail.com"]},"messageId":"<772abf6f-559e-c053-a49b-be66d816e663@gmail.com>","level":"info","timestamp":"2021-08-12T19:46:32.691Z"}
 {"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T20:00:48.791Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-12T20:07:38.535Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-12T20:07:46.976Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T20:07:46.977Z"}
