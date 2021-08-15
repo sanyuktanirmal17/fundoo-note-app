@@ -315,3 +315,128 @@
 {"message":"email not found, error","level":"error","timestamp":"2021-08-12T19:46:28.307Z"}
 {"message":"email not found, error","level":"error","timestamp":"2021-08-12T20:07:46.976Z"}
 {"level":"error","message":"Error on finding mailID","timestamp":"2021-08-12T20:07:46.978Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T02:51:15.933Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-13T02:51:15.935Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T02:53:58.612Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-13T02:53:58.613Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T02:57:59.111Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T03:02:41.945Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-13T03:02:43.201Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T03:09:30.069Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-13T03:09:30.075Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T03:09:32.595Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-13T03:09:32.597Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T03:09:39.449Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T03:13:39.598Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-13T03:13:41.592Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T03:15:05.300Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-13T03:15:06.423Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T03:27:34.367Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-13T03:27:34.368Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T03:27:51.877Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-13T03:27:51.879Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T03:27:58.385Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-13T03:27:58.386Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T03:28:55.057Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-13T03:28:56.112Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T03:34:22.197Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-13T03:34:22.198Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T03:37:59.753Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-13T03:38:00.988Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T03:57:50.881Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T04:00:23.292Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T04:09:29.462Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-13T04:09:29.463Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T04:52:47.754Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-13T04:52:47.755Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T05:06:04.337Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-13T05:06:04.339Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T05:21:27.130Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-13T05:21:27.132Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T05:21:35.986Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T05:22:06.467Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T05:24:20.998Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-13T05:24:21.001Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T05:24:33.690Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T05:26:18.386Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-13T05:26:19.944Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T05:26:58.362Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-13T05:26:58.364Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T05:34:34.949Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T05:37:56.745Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-13T05:37:58.270Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T05:39:58.650Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-13T05:39:58.652Z"}
+{"message":"email not found, error","level":"error","timestamp":"2021-08-13T05:45:07.723Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-13T05:45:09.394Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T05:51:52.237Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-13T05:51:53.589Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T05:57:21.985Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T05:58:42.471Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-13T05:58:43.724Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T06:00:03.815Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T06:02:25.984Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-13T06:02:25.986Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T06:02:42.634Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-13T06:02:44.211Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T06:07:43.465Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T14:11:50.312Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T14:13:18.878Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-13T14:13:21.051Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T14:15:43.483Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-13T14:15:43.486Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T14:33:35.173Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T18:04:18.246Z"}
+{"code":"EAUTH","command":"API","level":"error","timestamp":"2021-08-13T18:04:26.483Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T18:07:51.272Z"}
+{"code":"EAUTH","command":"API","level":"error","timestamp":"2021-08-13T18:07:52.358Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T18:08:58.151Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-13T18:08:58.153Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T18:15:19.815Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T18:16:23.335Z"}
+{"code":"EAUTH","command":"API","level":"error","timestamp":"2021-08-13T18:16:24.591Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T18:21:39.384Z"}
+{"code":"EAUTH","command":"API","level":"error","timestamp":"2021-08-13T18:21:40.718Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T18:22:21.629Z"}
+{"code":"EAUTH","command":"API","level":"error","timestamp":"2021-08-13T18:22:22.639Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T18:22:40.630Z"}
+{"code":"EAUTH","command":"API","level":"error","timestamp":"2021-08-13T18:22:41.722Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T18:31:17.415Z"}
+{"code":"EAUTH","command":"API","level":"error","timestamp":"2021-08-13T19:34:55.849Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T19:36:51.550Z"}
+{"code":"EAUTH","command":"API","level":"error","timestamp":"2021-08-13T19:36:52.659Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T19:40:29.050Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T19:41:13.705Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-13T19:41:16.859Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T20:01:14.225Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T20:02:26.851Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-13T20:03:09.149Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-13T20:03:13.806Z"}
+{"level":"error","message":"Some error occured","timestamp":"2021-08-13T20:31:08.898Z"}
+{"level":"error","message":"Some error occured","timestamp":"2021-08-13T20:34:31.996Z"}
+{"level":"error","message":"Some error occured","timestamp":"2021-08-13T20:36:14.647Z"}
+{"level":"error","message":"Some error occured","timestamp":"2021-08-13T20:37:23.488Z"}
+{"level":"error","message":"Some error occured","timestamp":"2021-08-13T20:39:12.803Z"}
+{"level":"error","message":"Some error occured","timestamp":"2021-08-13T20:47:30.005Z"}
+{"level":"error","message":"Some error occured data is not defined","stack":"ReferenceError: data is not defined\n    at Model.forgotPass (E:\\Fundoo Note\\models\\user.js:109:29)\n    at Service.forgotPass (E:\\Fundoo Note\\service\\user.js:92:13)\n    at forgotPassword (E:\\Fundoo Note\\controllers\\user.js:111:15)\n    at Layer.handle [as handle_request] (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at Route.dispatch (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at E:\\Fundoo Note\\node_modules\\express\\lib\\router\\index.js:281:22\n    at Function.process_params (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\index.js:275:10)\n    at urlencodedParser (E:\\Fundoo Note\\node_modules\\body-parser\\lib\\types\\urlencoded.js:82:7)\n    at Layer.handle [as handle_request] (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\index.js:317:13)\n    at E:\\Fundoo Note\\node_modules\\express\\lib\\router\\index.js:284:7\n    at Function.process_params (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\index.js:275:10)","timestamp":"2021-08-13T20:48:28.955Z"}
+{"level":"error","message":"Some error occured data is not defined","stack":"ReferenceError: data is not defined\n    at Model.forgotPass (E:\\Fundoo Note\\models\\user.js:109:29)\n    at Service.forgotPass (E:\\Fundoo Note\\service\\user.js:92:13)\n    at forgotPassword (E:\\Fundoo Note\\controllers\\user.js:111:15)\n    at Layer.handle [as handle_request] (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at Route.dispatch (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at E:\\Fundoo Note\\node_modules\\express\\lib\\router\\index.js:281:22\n    at Function.process_params (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\index.js:275:10)\n    at urlencodedParser (E:\\Fundoo Note\\node_modules\\body-parser\\lib\\types\\urlencoded.js:82:7)\n    at Layer.handle [as handle_request] (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\index.js:317:13)\n    at E:\\Fundoo Note\\node_modules\\express\\lib\\router\\index.js:284:7\n    at Function.process_params (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (E:\\Fundoo Note\\node_modules\\express\\lib\\router\\index.js:275:10)","timestamp":"2021-08-13T20:48:56.550Z"}
+{"level":"error","message":"Some error occured","timestamp":"2021-08-13T20:49:56.884Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-14T02:42:26.524Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-14T03:27:08.923Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-14T03:28:57.333Z"}
+{"code":"EENVELOPE","command":"API","level":"error","timestamp":"2021-08-14T03:28:58.668Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-14T03:34:38.416Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-14T09:30:14.966Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-14T15:11:15.366Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-14T15:52:51.321Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-14T16:29:20.403Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-14T16:54:12.534Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-14T17:05:01.260Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-14T17:06:11.531Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-14T17:12:42.261Z"}
+{"code":"EAUTH","command":"API","level":"error","timestamp":"2021-08-14T17:12:44.759Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-14T17:26:02.192Z"}
+{"code":"EAUTH","command":"API","level":"error","timestamp":"2021-08-14T17:26:03.382Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-14T17:49:30.619Z"}
+{"code":"EAUTH","command":"API","level":"error","timestamp":"2021-08-14T17:49:32.451Z"}
+{"stringValue":"\"{ email: 'sanyuktan161@gmail.com' }\"","kind":"ObjectId","value":{"email":"sanyuktan161@gmail.com"},"path":"_id","reason":{},"valueType":"Object","level":"error","message":"Some error occured while updating password Cast to ObjectId failed for value \"{ email: 'sanyuktan161@gmail.com' }\" (type Object) at path \"_id\" for model \"user\"","stack":"CastError: Cast to ObjectId failed for value \"{ email: 'sanyuktan161@gmail.com' }\" (type Object) at path \"_id\" for model \"user\"\n    at model.Query.exec (E:\\Fundoo Note\\node_modules\\mongoose\\lib\\query.js:4498:21)\n    at model.Query.Query.findOneAndUpdate (E:\\Fundoo Note\\node_modules\\mongoose\\lib\\query.js:3147:8)\n    at Function.Model.findOneAndUpdate (E:\\Fundoo Note\\node_modules\\mongoose\\lib\\model.js:2583:13)\n    at Function.Model.findByIdAndUpdate (E:\\Fundoo Note\\node_modules\\mongoose\\lib\\model.js:2710:32)\n    at Model.updatePassword (E:\\Fundoo Note\\models\\user.js:150:12)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)","timestamp":"2021-08-15T08:00:59.773Z"}

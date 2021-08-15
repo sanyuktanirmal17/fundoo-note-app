@@ -4,7 +4,7 @@
 */
 
 const service = require('../service/user');
-const {validateSchema, forgotPasswordValidation, resetPasswordValidation} = require('../middleware/user');
+const {validateSchema, forgotPasswordValidation,resetPasswordValidation} = require('../middleware/user');
 const logger = require("../logger/logger");
 const model = require('../models/user');
 const { constants } = require('fs');
@@ -77,10 +77,12 @@ class Controller{
     
   forgotPassword = (req, res) =>{
     try{
-     var userData = {
+     const userData = {
          email: req.body.email,
      };
+     console.log("email found controller", userData)
      service.forgotPassword(userData, (error, data) => {
+        console.log( "controller call back", userData)
         if (error) {
             logger.error("Error on finding mailID",error);
          return res.status(400).send({
@@ -88,6 +90,7 @@ class Controller{
              message: error
          });
         }
+        
          logger.info("email found and sent link successfully",data);
          return res.status(200).send({
              success: true,
@@ -102,37 +105,38 @@ class Controller{
         });
     } 
   }
+  
+/**
+     * description controller function for forgot password
+     * @param {*} req
+     * @param {*} res
+     * @returns
+     */
 
-  passwordReset = (req, res) =>{
-    try{const resetValidation = resetPasswordValidation.validate(req.body);
-        if(resetValidation.error){
-            res.status(400).send({message:passwordValidation.error.details[0].message})
-        }
-     const userData = {
+resetPassword = (req, res) => {
+    try {    
+      const userData = {
         token: req.headers.token,
-         password: req.body.password
-     }
-     service.forgotPassword(userData, (error, data) => {
-        if (error) {
-            logger.error("Error while reset password",error);
-         return res.status(400).send({
-             success: false,
-             message: error
-         });
-        }
-         logger.info("user able to change password successfully",data);
-         return res.status(200).send({
-             success: true,
-             message: "password change",
-             data
-         });
-     });
-    }catch(error){
-        return res.status(401).send({
-            sucess: false,
-            message: 'Invalid token'
-        });
-    } 
+        password: req.body.password,
+        confirmPassword: req.body.password,
+      };
+      service.passwordReset(userData, (error, data) => ((error) ? res.status(400).send({
+        sucess: false,
+        message: error,
+      })
+     : res.status(200).send({
+          success: true,
+          message: 'Your password has been reset successfully!!',
+          data,
+
+        })));
+    } catch (error) {
+      return res.status(500).send({
+        sucess: false,
+        message: error.message,
+
+      });
+    }
   }
  }
       

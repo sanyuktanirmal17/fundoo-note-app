@@ -9,9 +9,8 @@
 const model = require('../models/user');
 const bcrypt = require('bcryptjs');
 const helper = require('../middleware/helper');
-const {sendingEmail} = require('../utility/user');
+ const {sendingEmail, verifyingToken } = require('../utility/user');
 const logger = require('../logger/logger');
-
 
 class Service {
     /**
@@ -33,7 +32,7 @@ class Service {
     }
 
     /**
-     * @description sends the info to loginApi in the controller
+     * @description sends the data to loginApi in the controller
      * @method loginDetails
      * @param callback callback for controller
      */
@@ -45,14 +44,14 @@ class Service {
                 return callback(error, null)
             }
             if(helper.bcryptAuthentication(loginData.password, data.password)){
-                //  logger.info("Token is generated", helper.createToken({loginData});
+                //  logger.data("Token is generated", helper.createToken({loginData});
                 const token = helper.createToken({loginData})
                 if(token)
                 {
                     logger.info("Token generated",token)
                     return callback(null, token)
                 }else{
-                    logger.error("Token not generated",erroe)
+                    logger.error("Token not generated",error)
                     return callback(error, null)  
                 }
                 //  return (token) ? callback(null, token) : callback(error, null)  
@@ -66,8 +65,9 @@ class Service {
 
   forgotPassword = (userDetails, callback) => {
     try{
+        console.log("email found service", userDetails);
        model.forgotPassword(userDetails, (error, data) => {
-        //    console.log(data);
+         console.log("email service", userDetails);
            if (data){
                const emailData = {
                 email: data.email,
@@ -75,7 +75,8 @@ class Service {
                };
             error ? callback(error, null): callback(null, sendingEmail(emailData));   
            }else{
-               callback('This email id does not exist')
+
+               callback('This email id does not exist', userDetails)
            }
        })
     }catch(error){
@@ -83,23 +84,51 @@ class Service {
     }
 }
 
-passwordReset = (userInput, callback) => {
-    const  email = helper.getEmailFromToken(userInput.token)
-    const  inputData = {
-        email: email,
-        password: userInput.password
-    }
+// passwordReset = (userInput, callback) => {
+//     // const  email = helper.getEmailFromToken(userInput.token)
+//     const  inputData = {
+//         email: email,
+//         password: userInput.password
+//     }
 
-    model.updatePassword(inputData, (error, data) =>{
-        if(error){
-            logger.error("Some error occured while updating password", error)
-            callback(error, null)
-         }else{
-            logger.info("Password has been reset successfully", data)
-            callback(null, data)
-         } 
-    })
+//     model.resetPassword(inputData, (error, data) =>{
+//         if(error){
+//             logger.error("Some error occured while updating password", error)
+//             callback(error, null)
+//          }else{
+//             logger.info("Password has been reset successfully", data)
+//             callback(null, data)
+//          } 
+//     })
+// }
+
+/**
+     * @description it acts as a middleware between controller and model for reset password
+     * @param {*} userInput
+     * @param {*} callback
+     * @returns
+     */
+ passwordReset = (userInput, callback) => {
+    try {
+      const email = helper.getEmailFromToken(userInput.token);
+      const inputData = {
+        email: email,
+        password: userInput.password,
+        confirmPassword: userInput.password,
+      };
+
+      model.updatePassword(inputData, (error, data) => {
+        if (error) {
+          logger.error('Some error occured while updating password', error);
+          callback(error, null);
+        } else {
+          logger.info('Password has been reset successfully', data);
+          callback(null, data);
+        }
+      });
+    } catch (error) {
+      return callback(error, null);
+    }
 }
-  
 }
 module.exports = new Service(); 

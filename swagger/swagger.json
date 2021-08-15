@@ -1,174 +1,212 @@
 {
-  "swagger": "2.0",
-  "info": {
-      "version": "1.0.0",
-      "title": "FundooNote App",
-      "description": "This app is build for storing notes",
-      "license" : {
-          "name": "MIT License",
-          "url": "https://opensource.org/licenses/MIT"
-      }        
-  },
-  "host": "localhost:4000",
-  "basePath": "/",
-  "tags": [
-      {
-          "name": "FundooNotes",
-          "description": "API for user registration"
-      }
-  ],
-  "schemes": [
-      "http"
-  ],
-  "consumes": [
-      "application/json"
-  ],
-  "produces": [
-      "application/json"
-  ],
-  "paths": {
-      "/register": {
-          "post": {
-              "tags": [
-                  "Registration"
-              ],
-              "description": "Create a new user in the FundooNotes App",
-              "parameters": [
-                  {
-                      "name": "User Registration",
-                      "in":"body",
-                      "description": "User that we wants to create",
-                      "schema": {
-                          "$ref": "#/definitions/add"
-                      }
-                  }
-              ],
-              "produces": [
-                  "application/json"
-              ],
-              "schema": {
-                  "$ref": "#/definitions/add"
-              },
-              "responses": {
-                  "200": {
-                      "description": "User created successfully"
-                  },
-                  "409":{
-                      "description": "User already exist"
-                  },
-                  "500": {
-                      "description": "Internal server error"
-                  }
-              }
-          }
-      },
-      "/login": {
-          "post": {
-              "tags": [
-                  "FundooNotes login"
-              ],
-              "description": "Login to FundooNotes",
-              "parameters": [
-                  {
-                      "name": "login",
-                      "in": "body",
-                      "description": "User that we wants to login",
-                      "schema": {
-                          "$ref": "#/definitions/login"
-                      }
-                  }
-              ],
-              "produces": [
-                  "application/json"
-              ],
-              "schema": {
-                  "$ref": "#/definitions/login"
-              },
-              "responses": {
-                  "200": {
-                      "description": "logged in successfully"
-                  },
-                  "403": {
-                      "description": "Please check user name or password and try again"
-                  },
-                  "400": {
-                      "description": "login failed"
-                  }
-              }
-          }
-      },
-
-      "/forgotPassword": {
-          "post": {
-              "tags": [
-                  "FundooNotes"
-              ],
-              "summary": "Forgot Password",
-              "parameters": [
-                  {
-                      "in": "email",
-                      "name": "body",
-                      "description": "forgot password"
-                  }
-              ],
-              "produces": [
-                  "application/json"
-              ],
-              "responses": {
-                  "200": {
-                      "description": "sent mail successfully"
-                  },
-                  "400": {
-                      "description": "unable to send mail"
-                  }
-              }
-          }
-      }
-  },  
-      "definitions": {
-          "add": {
-              "type": "object",
-              "properties": {
-                  "firstName": {
-                      "type": "string"
-                  },
-                  "lastName": {
-                      "type": "string"
-                  },
-                  "email": {
-                      "type": "string"
-                  },
-                  "password": {
-                      "type": "string"
-
-                  }
-              }    
-          },
-          "login": {
-              "type": "object",
-              "properties": {
-                  "email": {
-                      "type": "string"
-                  },
-                  "password" : {
-                      "type": "string"
-                  }
-              }
-          },
-          "forgotPassword":{
-            "type":"object",
-            "properties":{
-              "email":{
-                "type":"string"
-              }
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "FundooNote App",
+        "description": "This app is build for storing notes",
+        "license" : {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        }        
+    },
+    "host": "localhost:4000",
+    "tags": [
+        {
+            "name": "FundooNotes",
+            "description": "API for user registration"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/register": {
+            "post": {
+                "tags": [
+                    "Registration"
+                ],
+                "description": "Create a new user in the FundooNotes App",
+                "parameters": [
+                    {
+                        "name": "User Registration",
+                        "in":"body",
+                        "description": "User that we wants to create",
+                        "schema": {
+                            "$ref": "#/definitions/add"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "schema": {
+                    "$ref": "#/definitions/add"
+                },
+                "responses": {
+                    "201": {
+                        "description": "User created successfully"
+                    },
+                    "409":{
+                        "description": "User already exist"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
             }
-          },
-          "securityDefinitions" : {
-            "JWT" : {
-              "type": "apiKey",
-              "name": "token",
-              "in": "header"
-          }
-      }
-    }
+        },
+        "/login": {
+            "post": {
+                "tags": [
+                    "FundooNotes login"
+                ],
+                "description": "Login to FundooNotes",
+                "parameters": [
+                    {
+                        "name": "login",
+                        "in": "body",
+                        "description": "User that we wants to login",
+                        "schema": {
+                            "$ref": "#/definitions/login"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "schema": {
+                    "$ref": "#/definitions/login"
+                },
+                "responses": {
+                    "200": {
+                        "description": "logged in successfully"
+                    },
+                    "403": {
+                        "description": "Please check user name or password and try again"
+                    },
+                    "400": {
+                        "description": "login failed"
+                    }
+                }
+            }
+        },      
+        "/forgotPassword": {
+            "post": {
+                "tags": [
+                    "FundooNotes forgotPassword"
+                ],
+                "Summary": "user receives an email about link to reset password",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "body",
+                        "schema": 
+                        {
+                            "$ref": "#/definitions/forgotPassword"
+                        }
+                    }        
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "505": {
+                        "description": "Internal Error"
+                    }
+                }
+            }
+        },
+        "/resetPassword": {
+            "put": {
+                "tags": [
+                    "FundooNotes resetPassword"
+                ],
+                "Summarry": "reset password",
+                "parameters": [
+                    {
+                        "name": "resetPassword",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/resetPassword"
+                        }
+                    },
+                    {
+                        "name": "token",
+                        "in": "header"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "401": {
+                        "description": "Unauthorized User"
+                    },
+                    "500": {
+                        "description": "Internal Error"
+                    }
+                }
+            }
+        }
+    },
+        "definitions": {
+            "add": {
+                "type": "object",
+                "properties": {
+                    "firstName": {
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+
+                    }
+                }    
+            },
+            "login": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                    "password" : {
+                        "type": "string"
+                    }
+                }
+            },
+            "forgotPassword": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    }
+                }
+            },
+            "resetPassword": {
+                "type": "object",
+                "properties": {
+                    "password": {
+                        "type": "string"
+                    }
+                }
+            }
+
+        }
 }

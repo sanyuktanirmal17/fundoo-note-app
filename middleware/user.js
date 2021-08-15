@@ -20,8 +20,11 @@ const forgotPasswordValidation = Joi.object({
     password: Joi.string()
       .email().required()
       .pattern(new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})')),
+      confirmPassword: Joi.string().valid(Joi.ref('password')).required()
   });
 
+
+  
 module.exports = { validateSchema, forgotPasswordValidation, resetPasswordValidation};
 
 

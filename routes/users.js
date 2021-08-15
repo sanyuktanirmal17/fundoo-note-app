@@ -7,7 +7,7 @@
  * @since        29/7/2021 
 ********************************************************************/
 const logger = require("../logger/logger");
-
+const { verifyingToken } = require('../utility/user')
 const controller = require('../controllers/user')
 module.exports = (app) => {
     
@@ -21,7 +21,7 @@ module.exports = (app) => {
      app.post('/forgotPassword', controller.forgotPassword);
 
      //api for Reset pasword
-     app.post('/resetPassword', controller.passwordReset);
+     app.put('/resetPassword', controller.resetPassword);
     }
 
 

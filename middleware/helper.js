@@ -18,21 +18,36 @@ class Helper{
      * @param {*} loginData
      * @returns 
      */
-   createToken = (loginDetails) => {
+   createToken = (loginData) => {
         return jwt.sign(loginData, process.env.SECRET_TOKEN, {
             expiresIn: "3000000s"});
     
       }
      
-    tokenChecker = (data) => {
+    generatToken = (data) => {
         const token =  jwt.sign({ email: data.email, id: data._id }, process.env.SECRET_TOKEN, { expiresIn: "3000000s" });
         console.log(data);
         return token
         }
+
+    // generateToken(loginData) {
+    //     console.log("input", loginIn)
+    //     const token = jwt.sign(loginInput, process.env.SECRET_KEY, {
+    //       expiresIn: '3000s',
+    //     });
+    //     return token;
+    //   }
+
+      forgotPasswordToken(loginData) {
+        const token = jwt.sign(loginData.toJSON(), process.env.SECRET_TOKEN, {
+          expiresIn: '3000s',
+        });
+        return token;
+      }
         
         getEmailFromToken(token){
-            const emailToken = jwt.verify(token, process.env.SECRET_TOKEN);
-            return emailToken.email
+            const decoded = jwt.verify(token, process.env.SECRET_TOKEN);
+            return decoded.email
         }
     
       
@@ -46,32 +61,7 @@ class Helper{
         let result = bcrypt.compareSync(loginPassword, databasePassword)
         return (loginPassword && databasePassword) ? result : false;
     }
-    
-    // /**
-    //  * @description function checks and validates the user token and authorises only if token is correct
-    //  * @param {*} req
-    //  * @param {*} res 
-    //  * @param {*} next 
-    //  * @returns 
-    //  */
-    // tokenChecker(req, res, next) {
-    //     let token = req.get('token');
-    //     if(token)
-    //     return (token) ?
-    //        jwt.verify(token, process.env.SECRET_TOKEN, error => {
-    //         return (error) ? res.status(400).send({success: false, message: "Invalid Token"}) : next();
-    //         }) :
-    //     res.status(401).send({success: false, message: "Authorisation failed! Invalid user"});
-    // }
-
-    checkToken(req, res, next){
-        let token = req.get('token');
-        return(token)?
-        jwt.verify(token, SECRET_KEY, error =>{
-            return (error) ? res.status(400).send({message: "Invalid Token"}):next();
-        }) : 
-        res.status(401).send({message: "Missing token! Unauthorized User!"})
-    }
+         
 }
 
 module.exports = new Helper();
