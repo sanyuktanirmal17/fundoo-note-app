@@ -62,13 +62,14 @@ chai.use(chaiHttp)
         })
      })
     
-    })
+})
 /* 
  POST API test for registeration
     */
     describe('POST /register', () => {
-        it("It_should_post_register_details", (done) => {
-            const registerData = userdata.data.register
+        it('It_should_post_register_details', function (done) {
+            this.timeout(10000);
+            const registerData = userdata.register;
             chai.request(server)
                 .post("/register")
                 .send(registerData)
@@ -81,9 +82,6 @@ chai.use(chaiHttp)
                 done();
             })
         }) 
-    
-    
-
 
         it("Given_valid_details_except_firstname_It_should_not_post_register_details", () => {
             const DataWithoutFirstName = userdata.data.WithoutFirstName
@@ -99,21 +97,110 @@ chai.use(chaiHttp)
         })
 
     
-       it("Given_valid_details_except_lastname_It_should_not_post_register_details", (done) => {
-            const DataWithoutLastName = userdata.WithoutLastName
+       it("GivenvalidDetails_exceptlastname_ItshouldnotPostRegisterDetails", (done) => {
+            const DataWithoutLastName = userdata.data.WithoutLastName
             chai.request(server)
                 .post("/register")
                 .send(DataWithoutLastName)
                 .end((error, res) => {
                       
-                      res.body.should.be.a('object')
-                      res.body.should.have.property("message").eql('\"lastName\" is not allowed to be empty')  
+                    //   res.body.should.be.a('object')
+                    //   res.body.should.have.property("message").eql('\"lastName\" is not allowed to be empty')  
                       res.should.have.status(400)
                 done();
             })
          })
     })
 
-    
+    /**
+    * POST request test
+    *  Forgot Password 
+    */
+         describe(' POST /forgorPassword' , () => {
+            it('writtenMail_shouldBeCorrect_shouldSendMail_True', (done) => {
+              const forgotPassword = userdata.data.forgotPasswordData
+              chai
+                .request(server)
+                .post('/forgotPassword')
+                .send(forgotPassword)
+                .end((error, res) => {
+                  if (error) {
+                    return done(error)
+                  }
+                  res.should.have.status(200)
+                  res.body.should.have.property('success').eql(true)
+                  res.body.should.have.property('message').eql(' Email sent successfully')
+                  done()
+                })
+            })
+            it('writtenMail_NotCorrect_shouldNotSendMail_False', (done) => {
+              const forgotPassword = userdata.data.forgotPasswordWithImproperData
+              chai
+                .request(server)
+                .post('/forgotPassword')
+                .send(forgotPassword)
+                .end((error, res) => {
+                  if (error) {
+                    return done(error)
+                  }
+                  res.should.have.status(400)
+                  res.body.should.have.property('success').eql(true)
+                  res.body.should.have.property('message').eql('failed to send email')
+                  done()
+                })
+            })
+        })
 
+/**
+ * PUT request test
+ *  Reset Password 
+ */
+describe('PUT /resetPassword', () => {
+    it('givenValidDetails_WhenWrittenCorrect_shouldResetPassword', function (done) {
+        this.timeout(10000);
+        const passData= userdata.data.userResetPasswordTrue;
+        const userToken = userdata.data.ResetPasswordTokenTrue;
+      chai.request(server)
+        .put('/resetPassword')
+        .set('token', userToken)
+        .send(passData)
+        .end((error, res) => {
+          res.should.have.status(200)
+          res.body.should.be.a('object')
+          res.body.should.have.property('success').eql(true)
+          res.body.should.have.property('message').eql('password changed successfully')
+          return done()
+        })
+    })
+  
+    it('givenTokenDetails_shouldEmpty_shouldNotDiveResetPassword', function (done) {
+        this.timeout(10000);
+    const passData = userdata.data.userResetPasswordFalse;
+      chai.request(server)
+        .put('/resetPassword')
+        .set('headerParameter', '')
+        .send(passData)
+        .end((error, res) => {
+          res.should.have.status(400)
+          res.body.should.be.a('object')
+          res.body.should.have.property('message').eql('failed reset the password')
+          return done()
+        })
+    })
+  
+    it('givenTokendetails_writtenIncorrect_shouldNotResetPassword', function (done) {
+         const passData = userdata.data.userResetPasswordTrue;
+         const userToken = userdata.data.ResetPasswordTokenFalse;
+      chai.request(server)
+        .put('/resetPassword')
+        .set('token', userToken)
+        .send(passData)
+        .end((error, res) => {
+          res.should.have.status(400)
+          res.body.should.be.a('object')
+          res.body.should.have.property('message').eql('failed reset the password')
+          return done()
+        })
+    })
+  })
 

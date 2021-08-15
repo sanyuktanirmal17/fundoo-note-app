@@ -8,8 +8,7 @@ const {validateSchema, forgotPasswordValidation,resetPasswordValidation} = requi
 const logger = require("../logger/logger");
 const model = require('../models/user');
 const { constants } = require('fs');
-// const { data } = require('../logger/logger');
-// const { messageData } = require('../middleware/messageData');
+
 class Controller{
     /**
      * @description Create and save user and sending response to service
@@ -32,7 +31,7 @@ class Controller{
             confirmPassword: req.body.confirmPassword
         }
         
-        service.createDetails(user, (error,data) => {
+        service.createDetails = (user, (error,data) => {
             if(error){
                return  res.status(500).send({success:false, message: "Email already exists", data: null})
             }

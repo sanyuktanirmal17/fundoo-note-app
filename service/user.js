@@ -84,24 +84,6 @@ class Service {
     }
 }
 
-// passwordReset = (userInput, callback) => {
-//     // const  email = helper.getEmailFromToken(userInput.token)
-//     const  inputData = {
-//         email: email,
-//         password: userInput.password
-//     }
-
-//     model.resetPassword(inputData, (error, data) =>{
-//         if(error){
-//             logger.error("Some error occured while updating password", error)
-//             callback(error, null)
-//          }else{
-//             logger.info("Password has been reset successfully", data)
-//             callback(null, data)
-//          } 
-//     })
-// }
-
 /**
      * @description it acts as a middleware between controller and model for reset password
      * @param {*} userInput

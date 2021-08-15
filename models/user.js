@@ -64,7 +64,7 @@ class Model {
             confirmPassword: userdetails.confirmPassword
         });
 
-        empSchema.save({},(error,data)=>{
+        empSchema.save = ({},(error,data)=>{
             return (error) ? callback(error,null) : callback(null,data)
             }
         )
@@ -103,39 +103,6 @@ class Model {
         callback(null, data)
     });
 }
-
-// forgotPass = (data, callback) => {
-//     try {
-//       // eslint-disable-next-line no-nested-ternary
-//       user.findOne({ email: data.email }, (err, data) => (err ? callback(err, null)
-//         : !data ? callback('email not found', null)
-//           : callback(null, data)));
-//     } catch (error) {
-//       return callback(error, null);
-//     }
-//   }
-
-
-/**
-     * @description mongoose function for forgot password
-     * @param {*} email
-     * @param {*} callback
-     */
-
-  
-// resetPassword = async(inputData, callback) =>{
-//     try{
-//         let data = await model.findOne({email: inputData.email})
-//         let hash = bcrypt.hashSync(inputData.password,10,(error, hashPassword) =>{
-//             return error? error: hashPassword
-//         })
-//         user.Update({ email: data.email }, {password: hash},(error, data) => {
-//             return error ? callback(error, null) : callback(null, data)
-//         })
-//     }catch(error){
-//         return callback(error, null)
-//     }
-// }
 
 /**
      * @description mongooose method for reseting the password
