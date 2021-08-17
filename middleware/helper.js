@@ -30,13 +30,43 @@ class Helper{
         return token
         }
 
-    // generateToken(loginData) {
-    //     console.log("input", loginIn)
-    //     const token = jwt.sign(loginInput, process.env.SECRET_KEY, {
-    //       expiresIn: '3000s',
-    //     });
-    //     return token;
-    //   }
+        /**
+         * verify token for CRUD Operation
+         * @param {*} req 
+         * @param {*} res 
+         * @param {*} next 
+         */
+         
+        verifyToken = (req, res, next) => {
+          try {
+            const decode = jwt.verify(req.headers.token, process.env.JWT);
+            client.get('token', (err, token) => {
+              if (err) throw err;
+              if (req.headers.token === token) {
+                req.userData = decode;
+                const userId = decode.id;
+              }
+              next();
+            });
+          } catch (error) {
+            res.status(401).send({
+              error: 'Your token has expiered',
+            });
+          }
+        };
+
+         redisMiddleWare = (req, res, next) => {
+          client.get('note', (err, note) => {
+            if (err) {
+              throw err;
+            } else if (note) {
+              res.send(JSON.parse(note));
+            } else {
+              next();
+            }
+          });
+        };
+        
 
       forgotPasswordToken(loginData) {
         const token = jwt.sign(loginData.toJSON(), process.env.SECRET_TOKEN, {
@@ -61,6 +91,16 @@ class Helper{
         let result = bcrypt.compareSync(loginPassword, databasePassword)
         return (loginPassword && databasePassword) ? result : false;
     }
+
+    /**
+ *
+ * @param {*} KEY
+ * @param {*} value
+ * @description : here we have set the key and value in redis function
+ */
+redisFunction = (KEY, value) => {
+  client.setex(KEY, 1200, JSON.stringify(value));
+};
          
 }
 

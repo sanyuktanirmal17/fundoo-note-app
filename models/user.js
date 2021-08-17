@@ -55,7 +55,7 @@ class Model {
      * @param user
      * @param callback 
      */
-    createDetails =(userdetails, callback) => {
+    createDetails = (userdetails, callback) => {
         const empSchema = new user({
             firstName: userdetails.firstName,
             lastName: userdetails.lastName,
@@ -64,7 +64,7 @@ class Model {
             confirmPassword: userdetails.confirmPassword
         });
 
-        empSchema.save = ({},(error,data)=>{
+        empSchema.save({},(error,data)=>{
             return (error) ? callback(error,null) : callback(null,data)
             }
         )

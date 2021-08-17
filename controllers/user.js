@@ -31,7 +31,7 @@ class Controller{
             confirmPassword: req.body.confirmPassword
         }
         
-        service.createDetails = (user, (error,data) => {
+        service.createDetails(user, (error,data) => {
             if(error){
                return  res.status(500).send({success:false, message: "Email already exists", data: null})
             }
