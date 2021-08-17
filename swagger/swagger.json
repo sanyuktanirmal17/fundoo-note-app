@@ -64,7 +64,7 @@
         "/login": {
             "post": {
                 "tags": [
-                    "FundooNotes login"
+                    " login"
                 ],
                 "description": "Login to FundooNotes",
                 "parameters": [
@@ -99,7 +99,7 @@
         "/forgotPassword": {
             "post": {
                 "tags": [
-                    "FundooNotes forgotPassword"
+                    "forgotPassword"
                 ],
                 "Summary": "user receives an email about link to reset password",
                 "parameters": [
@@ -131,7 +131,7 @@
         "/resetPassword": {
             "put": {
                 "tags": [
-                    "FundooNotes resetPassword"
+                    " resetPassword"
                 ],
                 "Summarry": "reset password",
                 "parameters": [
@@ -159,6 +159,148 @@
                     }
                 }
             }
+        },
+        "/notes": {
+            "post": {
+                "tags": ["Notes"],
+                "description": "creating notes",
+                "parameters": [{
+                    "name": "create notes",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Notes"
+                    }
+                }],
+                "responses": {
+                    "201": {
+                        "description": "Registered"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                },
+                "security": [{
+                    "JWT": []
+                }]
+            }
+        },
+        "/notes": {
+            "get": {
+                "tags": ["Notes"],
+                "description": "get notes",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                },
+                "security": [{
+                    "JWT": []
+                }]
+            }
+        },
+        "/notes/{:noteId}": {
+            "put": {
+                "tags": ["Notes"],
+                "description": "update note using ID",
+                "parameters": [{
+                        "name": "notesId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "new NotesDetails",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Notes"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                },
+                "security": [{
+                    "JWT": []
+                }]
+
+            }
+        },
+        "/delete/{:notesId}": {
+            "delete": {
+                "tags": ["Notes"],
+                "description": "delete note using ID",
+                "parameters": [{
+                        "name": "notesId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "delete description",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/DeleteNote"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                },
+                "security": [{
+                    "JWT": []
+                }]
+            }
+        }
+    },
+    "securityDefinitions": {
+        "JWT": {
+            "type": "apiKey",
+            "name": "token",
+            "in": "Headers"
         }
     },
         "definitions": {
@@ -167,15 +309,19 @@
                 "properties": {
                     "firstName": {
                         "type": "string"
+                       
                     },
                     "lastName": {
                         "type": "string"
+                        
                     },
                     "email": {
                         "type": "string"
+                        
                     },
                     "password": {
                         "type": "string"
+            
 
                     }
                 }    
@@ -204,6 +350,25 @@
                 "properties": {
                     "password": {
                         "type": "string"
+                    }
+                }
+            },
+            "Notes": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            },
+            "DeleteNote": {
+                "type": "object",
+                "properties": {
+                    "isDeleted": {
+                        "type": "boolean"
                     }
                 }
             }
