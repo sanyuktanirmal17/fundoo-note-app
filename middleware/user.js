@@ -23,8 +23,16 @@ const forgotPasswordValidation = Joi.object({
       confirmPassword: Joi.string().valid(Joi.ref('password')).required()
   });
 
+  const notesValidation = Joi.object({
+    title: Joi.string()
+      .required(),
+  
+    description: Joi.string()
+      .required(),
+  });
+
 
   
-module.exports = { validateSchema, forgotPasswordValidation, resetPasswordValidation};
+module.exports = { validateSchema, forgotPasswordValidation, resetPasswordValidation, notesValidation};
 
 

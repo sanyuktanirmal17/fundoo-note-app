@@ -54,7 +54,12 @@ class Helper{
             });
           }
         };
-
+/**
+ * using radis 
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ */
          redisMiddleWare = (req, res, next) => {
           client.get('note', (err, note) => {
             if (err) {

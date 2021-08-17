@@ -485,3 +485,7 @@
 {"level":"error","message":"Error on finding mailID","timestamp":"2021-08-16T03:44:52.034Z"}
 {"level":"error","message":"email not found","timestamp":"2021-08-16T03:45:02.062Z"}
 {"code":"EDNS","syscall":"queryA","hostname":"smtp.gmail.com","command":"CONN","level":"error","timestamp":"2021-08-16T03:46:17.605Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-17T02:32:33.896Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-17T02:32:33.902Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-17T02:32:50.566Z"}
+{"level":"error","message":"Please enter a valid password","timestamp":"2021-08-17T12:10:30.064Z"}

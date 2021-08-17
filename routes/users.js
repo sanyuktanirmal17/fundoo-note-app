@@ -6,12 +6,10 @@
  * @author       Sanyukta
  * @since        29/7/2021 
 ********************************************************************/
-
-// const { verifyingToken, redisMiddleWare } = require('../utility/user');
-const helper = require("../middleware/helper");
+const helper = require("../utility/user");
 const controller = require('../controllers/user');
 const note= require('../controllers/notes');
-// const { required } = require("joi");
+
 module.exports = (app) => {
     
     //api for registration
@@ -27,13 +25,13 @@ module.exports = (app) => {
      app.put('/resetPassword', controller.resetPassword);
 
      // CRUD 
-     app.post('/notes', helper.verifyToken, note.createNote);
+     app.post('/notes', helper.verifyingToken, note.createNote);
 
-     app.put('/notes/:noteId', helper.verifyToken, note.updateNote);
+     app.put('/notes/:noteId', helper.verifyingToken, note.updateNote);
  
-     app.get('/notes', helper.verifyToken, helper.redisMiddleWare, note.retrieveNote);
+     app.get('/notes', helper.verifyingToken,  note.retrieveNote);
  
-     app.delete('/notes/:noteId', helper.verifyToken, note.deleteNote);
+     app.delete('/notes/:noteId', helper.verifyingToken, note.deleteNote);
     }
 
 

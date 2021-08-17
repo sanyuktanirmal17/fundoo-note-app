@@ -1,3 +1,12 @@
+
+/*************************************************************************
+ * purpose          :to save find update and delete in the database
+ * @file            :note.js
+ * @author          :sanyukta 
+ * @version         :1.0.0
+***********************************************************************/
+
+
 const mongoose = require('mongoose');
 const note = require('../service/notes');
 /**
@@ -18,9 +27,9 @@ const noteSchema = mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId, ref: 'User'
   },
-  collaboratorId: [{
-    type: mongoose.Schema.Types.ObjectId, ref: 'User'
-  }],
+  // collaboratorId: [{
+  //   type: mongoose.Schema.Types.ObjectId, ref: 'User'
+  // }],.;
 }, {
   timestamps: true,
   versionKey: false,
@@ -40,7 +49,7 @@ class NotesModel {
     const note = new noteModel({
       title: noteInfo.title,
       description: noteInfo.description,
-      userId: noteInfo.userId
+      // userId: noteInfo.userId
     });
     note.save(callback);
   };
@@ -49,10 +58,10 @@ class NotesModel {
    * @param {*} notesID : here we will use the id to update the note.
    * @description : updateNote is used to update the note.
    */
-  updateNote = (notesID, callback) => {
-    noteModel.findByIdAndUpdate(notesID.noteId, {
-      title: notesID.title,
-      description: notesID.description,
+  updateNote = (noteID, callback) => {
+    noteModel.findByIdAndUpdate(noteID.noteId, {
+      title: noteID.title,
+      description: noteID.description,
     }, { new: true }).then((noteone) => {
       callback(null, noteone);
     }).catch((err) => {
@@ -64,11 +73,13 @@ class NotesModel {
    * @param {*} callback
    * @description : here retrieveNote is used to retrieve all the notes created.
    */
-  retrieveNote = (callback) => {
-    noteModel.find((err, notedata) => {
-      (err) ? callback(err, null) : callback(null, notedata);
-    });
-  };
+  // retrieveNote = (callback) => {
+    retrieveNote = (callback) => {
+      noteModel.find((err, notedata) => {
+        (err) ? callback(err, null) : callback(null, notedata);
+      });
+    };
+
   /**
    * 
    * @description : deleteNote is used to delete the particular note with its id.

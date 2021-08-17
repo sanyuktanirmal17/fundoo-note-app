@@ -1,4 +1,14 @@
+/********************************************************************************************************
+ * @description   : It is use to taking the request from the client and gives the response and
+ *                  validating whether the input is correct or not.
+ * @file          : user.js
+ * @author        : sanyukta
+********************************************************************************************************/
+
 const noteServices = require('../service/notes');
+require('dotenv');
+const { notesValidation } = require('../middleware/user');
+
 class NotesController {
       /**
      * 
@@ -7,18 +17,25 @@ class NotesController {
      * @param {http Response} res 
      *  
      */
-    createNote = (req, res) => {
+    
+      createNote = (req, res) => {
         try {
-            if ((!req.body.title) || (!req.body.description)) {
+            // if ((!req.body.title) || (!req.body.description)) {
+            //     return res.status(400).send({
+            //         success: false,
+            //         message: 'Please fill correct and complete details.'
+            //     });
+            // };
+            let validateNote = notesValidation.validate(req.body);
+            if (validateNote.error) {
                 return res.status(400).send({
-                    success: false,
-                    message: 'Please fill correct and complete details.'
+                    message: validateNote.error.details[0].message
                 });
-            };
+            }
             const noteData = {
                 title: req.body.title,
                 description: req.body.description,
-                userId: req.userId
+                // userId: req.userId
             }
             noteServices.createNote(noteData, (err, data) => {
                 if (err) {
@@ -62,7 +79,7 @@ class NotesController {
             const noteData = {
                 title: req.body.title,
                 description: req.body.description,
-                noteId: req.params.noteId
+                 noteId: req.params.noteId
             }
 
             noteServices.updateNote(noteData, (err, noteResult) => {
@@ -95,7 +112,7 @@ class NotesController {
      * @param {http Response} res 
      *  
      */
-    retrieveNote = (req, res) => {
+     retrieveNote = (req, res) => {
         try {
             noteServices.retrieveNote((err, noteResult) => {
                 if (err) {

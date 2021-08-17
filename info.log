@@ -2093,3 +2093,118 @@
 {"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-16T18:25:03.943Z"}
 {"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-16T18:41:04.618Z"}
 {"$__":{"strictMode":true,"selected":{},"getters":{},"_id":"6113bbfe310e90161418866e","wasPopulated":false,"activePaths":{"paths":{"confirmPassword":"init","password":"init","email":"init","lastName":"init","firstName":"init","_id":"init","createdAt":"init","updatedAt":"init","__v":"init"},"states":{"ignore":{},"default":{},"init":{"_id":true,"firstName":true,"lastName":true,"email":true,"password":true,"confirmPassword":true,"createdAt":true,"updatedAt":true,"__v":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"cachedRequired":{},"session":null,"$setCalled":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":{"skipId":true,"isNew":false,"willInit":true,"defaults":true}},"isNew":false,"$locals":{},"$op":null,"_doc":{"_id":"6113bbfe310e90161418866e","firstName":"vaishali","lastName":"Kamble","email":"sanyuktan161@gmail.com","password":"$2a$10$gDjKlQziIo6Y3d7drhi7fOpVhCqgrdutokH3NwOg2hJ/VPZXIdfxO","confirmPassword":"$2a$08$H2CXkVUS.s5K5gMZ/7qCRO7yWLKi4T3Ue9uXCdpiqqBUKoDlgqqCK","createdAt":"2021-08-11T12:01:02.958Z","updatedAt":"2021-08-16T03:44:18.761Z","__v":0},"$init":true,"level":"info","message":"Password has been reset successfully","timestamp":"2021-08-16T18:44:20.600Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T02:21:48.741Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T02:29:29.007Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T02:32:29.142Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-17T02:32:33.896Z"}
+{"level":"error","message":"Error on finding mailID","timestamp":"2021-08-17T02:32:33.901Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-17T02:32:50.566Z"}
+{"level":"info","message":"email found and sent link successfully","timestamp":"2021-08-17T02:32:50.920Z"}
+{"accepted":["sanyuktanirmal17@gmail.com"],"rejected":[],"envelopeTime":1638,"messageTime":824,"messageSize":853,"response":"250 2.0.0 OK  1629167574 y3sm557412pgc.67 - gsmtp","envelope":{"from":"sanyuktanirmal17@gmail.com","to":["sanyuktanirmal17@gmail.com"]},"messageId":"<47fad2db-748a-462d-33be-28f55b940ff9@gmail.com>","level":"info","timestamp":"2021-08-17T02:32:55.125Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T02:44:58.366Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T02:45:04.704Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T02:46:02.817Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T02:46:18.425Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:16:53.355Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:26:55.561Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:28:10.765Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:34:50.129Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:34:53.121Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:35:00.296Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:35:10.885Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:35:18.827Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:35:27.123Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:35:34.249Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:36:17.515Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:38:10.931Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:38:48.055Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:39:04.379Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:39:11.744Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:39:44.666Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:41:40.326Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:41:53.009Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:42:00.495Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:42:04.529Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:42:11.660Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:42:17.381Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:42:37.311Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:42:48.324Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:43:02.136Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:44:49.146Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:52:13.083Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T03:52:19.949Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T04:02:29.702Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T04:02:39.765Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T04:03:07.181Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T04:03:11.604Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T04:03:17.016Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T04:03:28.363Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T04:03:36.678Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T04:03:43.600Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T04:04:04.154Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T04:06:59.195Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T10:21:35.129Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T10:25:07.810Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T10:25:31.886Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T10:27:43.479Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T10:32:25.344Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T11:26:48.372Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T11:56:00.690Z"}
+{"$__":{"strictMode":true,"selected":{},"getters":{},"_id":"61149079761a422304ba8667","wasPopulated":false,"activePaths":{"paths":{"confirmPassword":"init","password":"init","email":"init","lastName":"init","firstName":"init","_id":"init","createdAt":"init","updatedAt":"init","__v":"init"},"states":{"ignore":{},"default":{},"init":{"_id":true,"firstName":true,"lastName":true,"email":true,"password":true,"confirmPassword":true,"createdAt":true,"updatedAt":true,"__v":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"cachedRequired":{},"session":null,"$setCalled":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":{"skipId":true,"isNew":false,"willInit":true,"defaults":true}},"isNew":false,"$locals":{},"$op":null,"_doc":{"_id":"61149079761a422304ba8667","firstName":"vaishali","lastName":"Kamble","email":"sanyuktanirmal17@gmail.com","password":"$2a$10$y4PVQd9cNBswZEOVflrao.x.wILFiyNH2WOsQBhsBZcf53Y016Onu","confirmPassword":"$2a$08$aKzhZPrT.QIFwYqbz0gzmeZdCgJI4Irbpc25ky6QIhKZuVFawCCMm","createdAt":"2021-08-12T03:07:37.262Z","updatedAt":"2021-08-15T15:01:21.183Z","__v":0},"$init":true,"level":"info","message":"Details login","timestamp":"2021-08-17T12:10:29.455Z"}
+{"level":"error","message":"Please enter a valid password","timestamp":"2021-08-17T12:10:30.063Z"}
+{"$__":{"strictMode":true,"selected":{},"getters":{},"_id":"61192ff68ef03f2d88dfeb50","wasPopulated":false,"activePaths":{"paths":{"confirmPassword":"init","password":"init","email":"init","lastName":"init","firstName":"init","_id":"init","createdAt":"init","updatedAt":"init","__v":"init"},"states":{"ignore":{},"default":{},"init":{"_id":true,"firstName":true,"lastName":true,"email":true,"password":true,"confirmPassword":true,"createdAt":true,"updatedAt":true,"__v":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"cachedRequired":{},"session":null,"$setCalled":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":{"skipId":true,"isNew":false,"willInit":true,"defaults":true}},"isNew":false,"$locals":{},"$op":null,"_doc":{"_id":"61192ff68ef03f2d88dfeb50","firstName":"tanishka","lastName":"nirmal","email":"tanishkanirmal@gmail.com","password":"$2a$08$KeVOqvlydluRuJxciGTf0ek1A767mnZGYfmEsY4db0pbmI62Enpfu","confirmPassword":"$2a$08$bTvnXM1tVkbKD/fQwEevMekxddLcW8/W4RIY8yAlHO7f0JgRboqvy","createdAt":"2021-08-15T15:17:10.269Z","updatedAt":"2021-08-15T15:17:10.269Z","__v":0},"$init":true,"level":"info","message":"Details login","timestamp":"2021-08-17T12:11:17.528Z"}
+{"level":"info","message":"Token generated","timestamp":"2021-08-17T12:11:17.672Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T13:49:15.088Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T13:49:43.120Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T13:56:45.824Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T13:56:53.703Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T14:00:31.624Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T14:00:54.424Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T14:02:16.706Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T14:02:28.622Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T14:14:23.317Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T14:15:26.244Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T14:16:10.514Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T14:16:19.581Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T14:16:23.540Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T14:16:35.267Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T14:16:47.722Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T14:16:58.446Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T14:17:15.065Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T14:17:17.177Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T14:18:12.838Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T14:26:21.871Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T14:34:26.571Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T14:34:38.270Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T14:38:23.816Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T15:07:23.225Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T15:07:31.223Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T15:44:00.345Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T15:44:24.991Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T15:51:11.202Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T15:51:18.028Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T15:51:31.458Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T15:51:36.484Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T15:51:56.936Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T16:10:24.145Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T16:12:51.296Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T16:13:02.305Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T16:14:25.513Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T16:14:41.740Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T16:14:50.372Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T16:14:52.903Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T16:17:15.369Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T16:17:27.760Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T16:17:31.094Z"}
+{"$__":{"strictMode":true,"selected":{},"getters":{},"_id":"61192ff68ef03f2d88dfeb50","wasPopulated":false,"activePaths":{"paths":{"confirmPassword":"init","password":"init","email":"init","lastName":"init","firstName":"init","_id":"init","createdAt":"init","updatedAt":"init","__v":"init"},"states":{"ignore":{},"default":{},"init":{"_id":true,"firstName":true,"lastName":true,"email":true,"password":true,"confirmPassword":true,"createdAt":true,"updatedAt":true,"__v":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"cachedRequired":{},"session":null,"$setCalled":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":{"skipId":true,"isNew":false,"willInit":true,"defaults":true}},"isNew":false,"$locals":{},"$op":null,"_doc":{"_id":"61192ff68ef03f2d88dfeb50","firstName":"tanishka","lastName":"nirmal","email":"tanishkanirmal@gmail.com","password":"$2a$08$KeVOqvlydluRuJxciGTf0ek1A767mnZGYfmEsY4db0pbmI62Enpfu","confirmPassword":"$2a$08$bTvnXM1tVkbKD/fQwEevMekxddLcW8/W4RIY8yAlHO7f0JgRboqvy","createdAt":"2021-08-15T15:17:10.269Z","updatedAt":"2021-08-15T15:17:10.269Z","__v":0},"$init":true,"level":"info","message":"Details login","timestamp":"2021-08-17T16:36:24.363Z"}
+{"level":"info","message":"Token generated","timestamp":"2021-08-17T16:36:24.631Z"}
+{"$__":{"strictMode":true,"selected":{},"getters":{},"_id":"61192ff68ef03f2d88dfeb50","wasPopulated":false,"activePaths":{"paths":{"confirmPassword":"init","password":"init","email":"init","lastName":"init","firstName":"init","_id":"init","createdAt":"init","updatedAt":"init","__v":"init"},"states":{"ignore":{},"default":{},"init":{"_id":true,"firstName":true,"lastName":true,"email":true,"password":true,"confirmPassword":true,"createdAt":true,"updatedAt":true,"__v":true},"modify":{},"require":{}},"stateNames":["require","modify","init","default","ignore"]},"pathsToScopes":{},"cachedRequired":{},"session":null,"$setCalled":{},"emitter":{"_events":{},"_eventsCount":0,"_maxListeners":0},"$options":{"skipId":true,"isNew":false,"willInit":true,"defaults":true}},"isNew":false,"$locals":{},"$op":null,"_doc":{"_id":"61192ff68ef03f2d88dfeb50","firstName":"tanishka","lastName":"nirmal","email":"tanishkanirmal@gmail.com","password":"$2a$08$KeVOqvlydluRuJxciGTf0ek1A767mnZGYfmEsY4db0pbmI62Enpfu","confirmPassword":"$2a$08$bTvnXM1tVkbKD/fQwEevMekxddLcW8/W4RIY8yAlHO7f0JgRboqvy","createdAt":"2021-08-15T15:17:10.269Z","updatedAt":"2021-08-15T15:17:10.269Z","__v":0},"$init":true,"level":"info","message":"Details login","timestamp":"2021-08-17T16:38:33.797Z"}
+{"level":"info","message":"Token generated","timestamp":"2021-08-17T16:38:33.916Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T16:47:15.070Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T16:50:26.958Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T16:52:38.341Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T17:06:35.138Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T17:24:45.965Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T17:49:43.024Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T18:10:54.899Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-17T18:12:51.603Z"}

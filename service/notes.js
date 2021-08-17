@@ -1,5 +1,11 @@
+
+/***********************************************************************************************
+* @description   : It is work as a middleware between models and controller
+* @file          : note.js
+* @author        : sanyukta
+*************************************************************************************************/
 const notemodel = require('../models/notes');
-const { redisFunction } = require('../middleware/helper');
+
 
 class NotesService {
 /**
@@ -17,22 +23,24 @@ class NotesService {
  *                  then pass it to models for updating the note
  */
 updateNote = (noteData, callback) => {
+    // notemodel.updateNote(noteData, callback);
     const KEY = 'note';
     notemodel.updateNote(noteData, (err, result) => {
-        err ? callback(err, null) : redisFunction(KEY, result), callback(null, result);
+        err ? callback(err, null) : callback(null, result);
     });
 };
 /**
  * 
  * @description : retrieveNote is used to retrieve data for all the notes created
  */
+//  retrieveNote = (callback) => {
 retrieveNote = (callback) => {
     notemodel.retrieveNote((err, result) => {
         err ? callback(err, null) : callback(null, result);
     });
 }
 /**
- * 
+ * ,
  * @param {*} noteIds will take the id for the note you wants to delete
  * @description : deleteNote is used to delete the note which is created earlier.
  */
