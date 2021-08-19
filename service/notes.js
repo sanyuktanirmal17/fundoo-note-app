@@ -13,40 +13,84 @@ class NotesService {
      * @param {*} noteInfo will take data for the note
      * @description : createNote is used to take data from controller then pass it to models
      */
- createNote = (noteInfo, callback) => {
-    notemodel.createNote(noteInfo, callback);
-};
+ async createNote(noteInfo) {
+try{
+   return await notemodel.createNote(noteInfo);
+}catch (err){
+    return err;
+  }
+}
+
 /**
- * 
  * @param {*} noteInfo will take data for the note to update it.
  * @description : updateNote is used to take data from controller 
  *                  then pass it to models for updating the note
  */
-updateNote = (noteData, callback) => {
-    // notemodel.updateNote(noteData, callback);
+
+ updateNote = (noteData, callback) => {
+     
     const KEY = 'note';
     notemodel.updateNote(noteData, (err, result) => {
         err ? callback(err, null) : callback(null, result);
     });
 };
+
+// updateNote = (noteID, noteData)  => {
+//     console.log("noteData", noteData)
+//       notemodel.updateNote(noteID, noteData)
+//        .then(data => {
+//            return data;
+//        })
+//        .catch(error =>
+//         {
+//             return error;
+//         })
+//     }      
+       
+     
+
 /**
  * 
  * @description : retrieveNote is used to retrieve data for all the notes created
  */
 //  retrieveNote = (callback) => {
 retrieveNote = (callback) => {
+try {
     notemodel.retrieveNote((err, result) => {
         err ? callback(err, null) : callback(null, result);
     });
+}
+catch(err){
+    return err;
+}
 }
 /**
  * ,
  * @param {*} noteIds will take the id for the note you wants to delete
  * @description : deleteNote is used to delete the note which is created earlier.
  */
-deleteNote = (noteIds, callback) => {
-    notemodel.deleteNote(noteIds, callback);
-};
+// deleteNote = (noteIds, callback) => {
+// try{
+//     notemodel.deleteNote(noteIds, callback);
+// }
+//     catch(err)
+//   {
+//     return err;
+//   }
+//  };
+deleteNote(noteId)  {
+ try{
+      return notemodel.deleteNote(noteId).then(res => {
+        return res
+    }).catch(error => {
+         return error;
+    })
+}
+ catch(error)
+  {
+    return err;
+  }
+ };
 }
 
     module.exports = new NotesService();

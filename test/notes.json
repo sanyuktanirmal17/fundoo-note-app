@@ -1,0 +1,22 @@
+{
+    "notes": {
+        "credential": {
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbkRhdGEiOnsiZW1haWwiOiJ0YW5pc2hrYW5pcm1hbEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IlRhbmlzaGthQDI4MTEifSwiaWF0IjoxNjI5MjAyMjc3LCJleHAiOjE2MzIyMDIyNzd9.zV6hvQYomn-lHKV9r6iT40Vqnu55HZy-43l1q8CYWrc",
+            "wrongToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ind3dy5nYXV0YW05NzE5OTdAZ21haWwuY29tIi"
+        },
+        "createNote": {
+            "title": "Note",
+            "description": "Creating Note"
+        },
+        "createNoteWithImproperData": {
+            "title": "Success..."
+        },
+        "updateData": {
+            "title": "Changed",
+            "description": "changed for testing purpose"
+        },
+        "changeTrashStatus": {
+            "isTrashed": true
+        }
+    }
+}

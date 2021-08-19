@@ -18,14 +18,14 @@ class NotesController {
      *  
      */
     
-      createNote = (req, res) => {
+    async  createNote(req, res) {
         try {
-            // if ((!req.body.title) || (!req.body.description)) {
-            //     return res.status(400).send({
-            //         success: false,
-            //         message: 'Please fill correct and complete details.'
-            //     });
-            // };
+            if ((!req.body.title) || (!req.body.description)) {
+                return res.status(400).send({
+                    success: false,
+                    message: 'Please fill correct and complete details.'
+                });
+            };
             let validateNote = notesValidation.validate(req.body);
             if (validateNote.error) {
                 return res.status(400).send({
@@ -37,27 +37,11 @@ class NotesController {
                 description: req.body.description,
                 // userId: req.userId
             }
-            noteServices.createNote(noteData, (err, data) => {
-                if (err) {
-                    return res.status(401).send({
-                        success: false,
-                        message: 'Un-able to create your note, please check it again.',
-                        err,
-                    });
-                } else {
-                    return res.status(200).send({
-                        success: true,
-                        message: 'Your note created successfully',
-                        data
-                    });
-                }
-            });
-        }
-        catch (error) {
-            res.status(500).send({
-                success: false,
-                message: "There is some internal error from server"
-            })
+            const notesCreated = await noteServices.createNote(noteData);
+            res.send({success: true, message: "Notes Created!", data: notesCreated});
+        } catch (error) {
+            console.log(error);
+            res.status(500).send({success: false, message: "Some error occurred while creating notes" });
         }
     }
     /**
@@ -67,7 +51,7 @@ class NotesController {
      * @param {http Response} res 
      *  
      */
-    updateNote = (req, res) => {
+     updateNote = (req, res) => {
         try {
             if ((!req.body.title) || (!req.body.description)) {
                 return res.status(400).send({
@@ -104,7 +88,8 @@ class NotesController {
                 message: "There is some internal error from server."
             })
         }
-    };
+    }; 
+    
     /**
      * 
      * @method : retrieveNote is used to retrieve the notes.
@@ -145,21 +130,22 @@ class NotesController {
      */
     deleteNote = (req, res) => {
         try {
-            const noteId = req.params.noteId;
-            noteServices.deleteNote(noteId, (err, noteResult) => {
-                if (noteResult === null) {
-                    return res.status(404).send({
+            const noteId = req.params;
+            noteServices.deleteNote(noteId)
+                .then(noteData => {
+                    res.status(200).send({
+                          success: true, 
+                          message: "Notes removed successfully!", 
+                          data:noteData
+                     });
+                }).catch(error =>{
+                    res.status(500).send({
                         success: false,
-                        message: 'No note found with an Id - ' + noteId + ' please check it again.',
-                    });
-                } else {
-                    return res.status(200).send({
-                        success: true,
-                        message: 'Your note  is deleted successfully'
-                    });
-                }
-            });
-        }
+                         message: "Some error occurred while removing notes",
+                         error
+                    })
+                })       
+            }
         catch (error) {
             res.status(500).send({
                 success: false,

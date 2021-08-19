@@ -8,6 +8,7 @@
 
 
 const mongoose = require('mongoose');
+const { error } = require('../logger/logger');
 const note = require('../service/notes');
 /**
  * 
@@ -24,9 +25,9 @@ const noteSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  userId: {
-    type: mongoose.Schema.Types.ObjectId, ref: 'User'
-  },
+  // userId: {
+  //   type: mongoose.Schema.Types.ObjectId, ref: 'User'
+  // },
   // collaboratorId: [{
   //   type: mongoose.Schema.Types.ObjectId, ref: 'User'
   // }],.;
@@ -45,50 +46,82 @@ class NotesModel {
    * @param {*} noteInfo : here we will save our data.
    * @description : createNote is used to create and save the note data.
    */
-  createNote = (noteInfo, callback) => {
+  async createNote(noteInfo)  {
+    try {
     const note = new noteModel({
       title: noteInfo.title,
       description: noteInfo.description,
       // userId: noteInfo.userId
     });
-    note.save(callback);
-  };
-  /**
-   * 
-   * @param {*} notesID : here we will use the id to update the note.
-   * @description : updateNote is used to update the note.
-   */
-  updateNote = (noteID, callback) => {
-    noteModel.findByIdAndUpdate(noteID.noteId, {
-      title: noteID.title,
-      description: noteID.description,
-    }, { new: true }).then((noteone) => {
-      callback(null, noteone);
-    }).catch((err) => {
-      callback(err, null);
-    });
-  };
+    return await note.save({});
+  } catch (error) {
+    return error;
+}
+}
+  
+updateNote = (noteID, callback) => {
+  noteModel.findByIdAndUpdate(noteID.noteId, {
+    title: noteID.title,
+    description: noteID.description,
+  }, { new: true }).then((noteone) => {
+    callback(null, noteone);
+  }).catch((err) => {
+    callback(err, null);
+  });
+};
+  
+
+  // updateNote = (noteID, noteData) => {
+  //    noteModel.findByIdAndUpdate(noteID, {
+  //     title: noteData.title,
+  //     description: noteData.description
+  //     },{new: true}).then(res =>{
+  //       console.log(res);
+  //         return res;
+  //       }).catch(err =>
+  //         {
+  //           return  err;
+  //         }
+  //    )
+  //   }
+    
+    
+  
   /**
    * 
    * @param {*} callback
    * @description : here retrieveNote is used to retrieve all the notes created.
    */
-  // retrieveNote = (callback) => {
     retrieveNote = (callback) => {
+      try {
       noteModel.find((err, notedata) => {
         (err) ? callback(err, null) : callback(null, notedata);
       });
+    }
+      catch (err){
+        return err;
+      }
     };
 
+  
   /**
-   * 
-   * @description : deleteNote is used to delete the particular note with its id.
+   *@description : deleteNote is used to delete the particular note with its id.
+   * @param {*} noteId 
+   * @returns  
+   * Promise
    */
-  deleteNote = (noteIds, callback) => {
-    noteModel.findByIdAndRemove(noteIds, (err, noteresult) => {
-      (err) ? callback(err, null) : callback(null, noteresult);
-    });
-  };
-}
 
+deleteNote(noteId) {
+  try {
+    return noteModel.findByIdAndRemove(noteId).then(res => {
+      return res}).catch(error => {
+        return error;
+      })
+    }
+    catch(error){
+      return error;
+    };
+  }
+  
+}
     module.exports = new NotesModel();

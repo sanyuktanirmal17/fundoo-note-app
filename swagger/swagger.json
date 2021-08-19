@@ -188,7 +188,7 @@
                 }]
             }
         },
-        "/notes": {
+        "/notes/": {
             "get": {
                 "tags": ["Notes"],
                 "description": "get notes",
@@ -259,7 +259,7 @@
                 "tags": ["Notes"],
                 "description": "delete note using ID",
                 "parameters": [{
-                        "name": "notesId",
+                        "name": "noteId",
                         "in": "path",
                         "required": true,
                         "type": "string"
@@ -363,15 +363,8 @@
                         "type": "string"
                     }
                 }
-            },
-            "DeleteNote": {
-                "type": "object",
-                "properties": {
-                    "isDeleted": {
-                        "type": "boolean"
-                    }
-                }
             }
-
+            
         }
+
 }
