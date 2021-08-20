@@ -8,6 +8,7 @@
 const noteServices = require('../service/notes');
 require('dotenv');
 const { notesValidation } = require('../middleware/user');
+logger = require('../logger/logger');
 
 class NotesController {
       /**
@@ -28,7 +29,7 @@ class NotesController {
             };
             let validateNote = notesValidation.validate(req.body);
             if (validateNote.error) {
-                return res.status(400).send({
+                return res.status(422).send({
                     message: validateNote.error.details[0].message
                 });
             }
@@ -139,6 +140,7 @@ class NotesController {
                           data:noteData
                      });
                 }).catch(error =>{
+                    logger.error("Error while deleting the note", error);
                     res.status(500).send({
                         success: false,
                          message: "Some error occurred while removing notes",
@@ -147,6 +149,7 @@ class NotesController {
                 })       
             }
         catch (error) {
+            logger.error("Error while deleting the note", error);
             res.status(500).send({
                 success: false,
                 message: "There is some internal error from server"

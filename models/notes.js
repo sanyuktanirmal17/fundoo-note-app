@@ -8,7 +8,9 @@
 
 
 const mongoose = require('mongoose');
-const { error } = require('../logger/logger');
+// const { error } = require('../logger/logger');
+logger = require('../logger/logger');
+
 const note = require('../service/notes');
 /**
  * 
@@ -25,9 +27,9 @@ const noteSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  // userId: {
-  //   type: mongoose.Schema.Types.ObjectId, ref: 'User'
-  // },
+  userId: {
+    type: mongoose.Schema.Types.ObjectId, ref: 'User'
+  },
   // collaboratorId: [{
   //   type: mongoose.Schema.Types.ObjectId, ref: 'User'
   // }],.;
@@ -113,12 +115,15 @@ updateNote = (noteID, callback) => {
 
 deleteNote(noteId) {
   try {
-    return noteModel.findByIdAndRemove(noteId).then(res => {
+    return noteModel.findByIdAndRemove(noteId.noteId)
+    .then(res => {
+      logger.info("Note deleted successfully", note);
       return res}).catch(error => {
         return error;
       })
     }
     catch(error){
+      logger.error("Error while deleting the note by id", error);
       return error;
     };
   }

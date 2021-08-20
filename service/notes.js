@@ -28,7 +28,6 @@ try{
  */
 
  updateNote = (noteData, callback) => {
-     
     const KEY = 'note';
     notemodel.updateNote(noteData, (err, result) => {
         err ? callback(err, null) : callback(null, result);
@@ -68,26 +67,22 @@ catch(err){
  * ,
  * @param {*} noteIds will take the id for the note you wants to delete
  * @description : deleteNote is used to delete the note which is created earlier.
+ * Promise
  */
-// deleteNote = (noteIds, callback) => {
-// try{
-//     notemodel.deleteNote(noteIds, callback);
-// }
-//     catch(err)
-//   {
-//     return err;
-//   }
-//  };
 deleteNote(noteId)  {
  try{
       return notemodel.deleteNote(noteId).then(res => {
+        
+        logger.info("Note deleted successfully!", noteId);
         return res
     }).catch(error => {
+        logger.error("Error while deleting note by id", error);
          return error;
     })
 }
  catch(error)
   {
+    logger.error("Error while deleting note by id", err);
     return err;
   }
  };

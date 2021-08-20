@@ -1,195 +1,201 @@
-const chai = require('chai');
-const chaiHttp = require('chai-http');
-const server = require('../server');
 
+const chai = require('chai')
+
+const chaiHttp = require('chai-http')
+ require('superagent')
+const server = require('../server')
+const notesData = require('./notes.json')
+
+const should = chai.should();
 chai.use(chaiHttp);
-const noteData = require('./notes.json');
+let token = '';
 
-chai.should();
-
-describe('notes', () => {
-  it('givenNoteDetails_whenProper_shouldAbleToCreateANote', (done) => {
-    chai
-      .request(server)
-      .post('/notes')
-      .set('token', `${noteData.notes.credential.token}`)
-      .send(noteData.notes.createNotes)
-      .end((err, res) => {
-        res.should.have.status(200);
-        done();
-      });
+beforeEach((done) => {
+    chai.request(server)
+        .post('/login')
+        .send(notesData.validUser)
+        .end((error, res) => {
+            if (error) {
+                return done(error);
+            }
+            res.should.have.status(200);
+            token = res.body.token;
+            return done();
+        });
   });
 
-  it('givenNoteDetails_whenImProper_shouldNotAbleToCreateANote', (done) => {
-    chai
-      .request(server)
-      .post('/notes')
-      .set('token', `${noteData.notes.credential.token}`)
-      .send(noteData.notes.createNoteWithImproperData)
-      .end((err, res) => {
-        res.should.have.status(404);
+    /**
+     * /POST request 
+     * For Note Create
+     */
+    describe('POST notes /notes', () => {
+        it('givenValidDataItShould_makePOSTRequestAndCreateNotes_andReturnsStatusCodeAs200', (done) => {
+            let NoteInfo  = notesData.validNote
+            chai.request(server)
+                .post('/notes')
+                .send(NoteInfo)
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                     res.should.have.status(200);
+                     res.body.should.be.a('object');
+                     res.body.should.have.property("success").eql(true);
+                    return done();
+                });
+        });
+
+        it('givenTitleAsEmpty_ValidDescription_ReturnsStatus400', (done) => {
+            let NoteInfo  = notesData.InvalidDataNote
+            chai.request(server)
+                .post('/notes')
+                .send(NoteInfo)
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(400);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property("success").eql(false);
+                    return done();
+                });
+        });
+
+        it('givenInvalidData_WithTitle_Shouldfail_ReturnsStatus400', (done) => {
+            let NoteInfo = notesData.validDescription
+            chai.request(server)
+                .post('/notes')
+                .send(NoteInfo)
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(400);
+                     res.body.should.be.a('object');
+                     res.body.should.have.property("success").eql(false);
+                    return done();
+                });
+        });
+    });
+
+
+    /**
+     * /GET request 
+     * Get all database of notes
+     */
+    describe('GET all /notes', () => {
+        it('givenValidInoput_ToGetAllNotes_ReturnsStat200', (done) => {
+            chai.request(server)
+                .get('/notes')
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(200);
+                     res.body.should.be.a('object');
+                     res.body.should.have.property("success").eql(true);
+                    res.body.should.have.property("data").should.be.a('object');
+                    return done();
+                });
+        });
+    });
+
+     /**
+      * /PUT request 
+      * Usin NoteID
+      * 
+      */
+    describe('PUT /notes/:noteId', () => {
+        it('giveValidData_updateWithNoteID_ReturnsStatus200', (done) => {
+            chai.request(server)
+                .put('/notes/611f19270e103305341ae27b')
+                .send(notesData.validUpdateNote)
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(200);
+                     res.body.should.be.a('object');
+                     res.body.should.have.property("success").eql(true);
+                    return done();
+                });
+        });
+
+        it('givenTitle_WithDescription_notCorrect_ShouldReturnsStatus400', (done) => {
+            chai.request(server)
+                .put('/notes/611f19270e103305341ae27b')
+                .send(notesData.invalidUpdateNote)
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(400);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property("success").eql(false);
+                    return done();
+                });
+        });
+
+        it('giveInvalidData_WithTitle_ShouldGivetatus400', (done) => {
+            chai.request(server)
+                .put('/notes/611f19270e103305341ae27b')
+                .send(notesData.invalidDescription)
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(400);
+                     res.body.should.be.a('object');
+                     res.body.should.have.property("success").eql(false);
+                    
+                    return done();
+                });
+        });
+    });
+
+    /**
+     * /DELETE request 
+     * using ID
+     * 
+     */
+    describe('notes/:noteId', () => {
+        it('giveValidData_deleteUsingNoteID_ReturnsStatus200', (done) => {
+            chai.request(server)
+                .delete('/notes/6119eeb5e390f34140e68305')
+                .send(notesData.DeleteID)
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                     res.body.should.have.property("success").eql(true);
+                    return done();
+                });
+        });
+
+        // it('givenInValidData_deleteByNoteID_andReturnStatus400', (done) => {
+        //     chai.request(server)
+        //         .delete('/notes/6119eeb5e390f34140e683789')
+        //         .send(notesData.FalseId)
+        //         .set('token', token)
+        //         .end((error, res) => {
+        //             if (error) {
+        //                 return done(error);
+        //             }
+        //             res.should.have.status(404);
+        //             // res.body.should.be.a('object');
+        //             // res.body.should.have.property("success").eql(false);
+        //             return done();
+        //         });
+        // });
       });
-    done();
-  });
 
-  it('givenNoteDetails_whenProper_ButTokenMissing_shouldNotAbleToCreateANote', (done) => {
-    chai
-      .request(server)
-      .post('/notes')
-      .send(noteData.notes.createNote)
-      .end((err, res) => {
-        res.should.have.status(404);
-      });
-    done();
-  });
-
-  it('givenNoteDetails_whenProper_ButTokenIsWrong_shouldNotAbleToCreateANote', (done) => {
-    chai
-      .request(server)
-      .post('/notes')
-      .set('token', `${noteData.notes.credential.wrongToken}`)
-      .send(noteData.notes.createNoteWithImproperData)
-      .end((err, res) => {
-        res.should.have.status(404);
-      });
-    done();
-  });
-});
-
-describe('retriveNotes', () => {
-  it('givenDetails_whenProper_shouldAbleToRetriveAllNote', (done) => {
-    chai
-      .request(server)
-      .get('/notes')
-      .set('token', `${noteData.notes.credential.token}`)
-      .send()
-      .end((err, res) => {
-        res.should.have.status(200);
-        done();
-      });
-  });
-  it('givenToken_whenImProper_shouldNotAbleToRetriveAllNote', (done) => {
-    chai
-      .request(server)
-      .get('/notes')
-      .set('token', `${noteData.notes.credential.wrongToken}`)
-      .send()
-      .end((err, res) => {
-        res.should.have.status(404);
-        done();
-      });
-  });
-});
-
-describe('update notes', () => {
-  it('givenNoteIDDetails_whenProper_shouldAbleToUpdate_ExistingNote', (done) => {
-    chai
-      .request(server)
-      .put('/notes/611b49d6b47fff45d89a8144')
-      .set('token', `${noteData.notes.credential.token}`)
-      .send(noteData.notes.updateData)
-      .end((err, res) => {
-        res.should.have.status(200);
-        done();
-      });
-  });
-
-  it('givenNoteIDDetails_whenNotIDImProper_shouldNotAbleToUpdate_ExistingNote', (done) => {
-    chai
-      .request(server)
-      .put('/notes/611c750e4d6cc640084c9b41')
-      .set('token', `${noteData.notes.credential.token}`)
-      .send(noteData.notes.updateData)
-      .end((err, res) => {
-        res.should.have.status(404);
-      });
-    done();
-  });
-
-  it('givenToken_whenImProper_shouldNotAbleToUpdate_ExistingNote', (done) => {
-    chai
-      .request(server)
-      .put('/notes/611c750e4d6cc640084c9b41')
-      .set('token', `${noteData.notes.credential.wrongToken}`)
-      .send(noteData.notes.updateData)
-      .end((err, res) => {
-        res.should.have.status(404);
-      });
-    done();
-  });
-
-  it('givenNoteIDisEmpty_whenImProper_shouldNotAbleToUpdate_ExistingNote', (done) => {
-    chai
-      .request(server)
-      .put('/notes/')
-      .set('token', `${noteData.notes.credential.token}`)
-      .send(noteData.notes.updateData)
-      .end((err, res) => {
-        res.should.have.status(404);
-      });
-    done();
-  });
-});
-
-
-// describe('delete note', () => {
-//   it('givenNoteIDDetails_whenProper_shouldAbleToAddInTrash', (done) => {
-//     chai
-//       .request(server)
-//       .delete('/notes/611b49d6b47fff45d89a8144')
-// 
-    //   .set('token', `${noteData.notes.credential.token}`)
-//       .send(noteData.notes.changeTrashStatus)
-//       .end((err, res) => {
-//         res.should.have.status(200);
-//         done();
-//       });
-//   });
-
-//   it('givenNoteIDDetails_whenEmpty_shouldNotAbleToAddInTrash', (done) => {
-//     chai
-//       .request(server)
-//       .delete('/notes/')
-//       .set('token', `${noteData.notes.credential.token}`)
-//       .send(noteData.notes.changeTrashStatus)
-//       .end((err, res) => {
-//         res.should.have.status(404);
-//         done();
-//       });
-//   });
-
-//   it('givenNoteIDDetails_whenImProper_shouldNotAbleToAddInTrash', (done) => {
-//     chai
-//       .request(server)
-//       .delete('/notes/611b49d6b47fff45d89a84')
-//       .set('token', `${noteData.notes.credential.token}`)
-//       .send(noteData.notes.changeTrashStatus)
-//       .end((err, res) => {
-//         res.should.have.status(404);
-//       });
-//     done();
-//   });
-
-//   it('givenToken_whenImProper_shouldNotAbleToAddInTrash', (done) => {
-//     chai
-//       .request(server)
-//       .delete('/notes/611b49d6b47fff45d89a8144')
-//       .set('token', `${noteData.notes.credential.wrongToken}`)
-//       .send(noteData.notes.changeTrashStatus)
-//       .end((err, res) => {
-//         res.should.have.status(404);
-//         done();
-//       });
-//   });
-
-//   it('givenToken_whenEmpty_shouldAbleToAddInTrash', (done) => {
-//     chai
-//       .request(server)
-//       .delete('/notes/60961015ba511f4c480119a9')
-//       .send(noteData.notes.changeTrashStatus)
-//       .end((err, res) => {
-//         res.should.have.status(401);
-//         done();
-//       });
-//    });
-// });

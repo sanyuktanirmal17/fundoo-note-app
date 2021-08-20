@@ -63,34 +63,10 @@ const sendingEmail  = (data) => {
 });
 }
 
-const verifyingToken = (req, res, next) => {
-  const token = req.get('token')
-  try {
-    if (token) {
-      jwt.verify(token, process.env.SECRET_TOKEN, error => {
-        if (error) {
-          return res.status(400).send({ 
-            success: false, 
-            message: 'Invalid Token' })
-        } else {
-          next()
-        }
-      })
-    } else {
-      return res.status(401).send({
-         success: false,
-          message: 'Unauthorized user' })
-    }
-  } catch (error) {
-    return res.status(500).send({ 
-      success: false, 
-      message: 'statement missing ' })
-  }
-}
- 
+
 module.exports = {
-  verifyingToken,
   sendingEmail,
+  // authenticateToken
   // getEmailFromToken
 }
 

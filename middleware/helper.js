@@ -54,24 +54,7 @@ class Helper{
             });
           }
         };
-/**
- * using radis 
- * @param {*} req 
- * @param {*} res 
- * @param {*} next 
- */
-         redisMiddleWare = (req, res, next) => {
-          client.get('note', (err, note) => {
-            if (err) {
-              throw err;
-            } else if (note) {
-              res.send(JSON.parse(note));
-            } else {
-              next();
-            }
-          });
-        };
-        
+
 
       forgotPasswordToken(loginData) {
         const token = jwt.sign(loginData.toJSON(), process.env.SECRET_TOKEN, {
@@ -97,15 +80,52 @@ class Helper{
         return (loginPassword && databasePassword) ? result : false;
     }
 
-    /**
- *
- * @param {*} KEY
- * @param {*} value
- * @description : here we have set the key and value in redis function
- */
-redisFunction = (KEY, value) => {
-  client.setex(KEY, 1200, JSON.stringify(value));
-};
+    // authenticateToken(req, res, next) {
+    //   const token = req.headers.authorization;
+    //   if (token) {
+    //       jwt.verify(token.split(" ")[1], process.env.SECRET_TOKEN, (err) => {
+    //           if (err) {
+    //               return res.status(500).send({
+    //                   success: false,
+    //                   message: err.message || 'Failed To Authenticate Token!',
+    //               });
+    //           } else {
+    //               next();
+    //           }
+    //       });
+    //   } else {
+    //       return res.status(401).send({
+    //           success: false,
+    //           message: 'Unauthorized User!',
+    //       });
+    //   }
+    // }
+
+     verifyingToken = (req, res, next) => {
+      const token = req.get('token')
+      try {
+        if (token) {
+          jwt.verify(token, process.env.SECRET_TOKEN, error => {
+            if (error) {
+              return res.status(400).send({ 
+                success: false, 
+                message: 'Invalid Token' })
+            } else {
+              next()
+            }
+          })
+        } else {
+          return res.status(401).send({
+             success: false,
+              message: 'Unauthorized user' })
+        }
+      } catch (error) {
+        return res.status(500).send({ 
+          success: false, 
+          message: 'statement missing ' })
+      }
+    
+    }
          
 }
 

@@ -6,7 +6,7 @@
  * @author       Sanyukta
  * @since        29/7/2021 
 ********************************************************************/
-const helper = require("../utility/user");
+const helper = require("../middleware/helper");
 const controller = require('../controllers/user');
 const note= require('../controllers/notes');
 
