@@ -4573,3 +4573,4 @@
 {"level":"info","message":"Token generated","timestamp":"2021-08-22T20:41:28.920Z"}
 {"accepted":["tanishkanirmal@gmail.com"],"rejected":[],"envelopeTime":1271,"messageTime":956,"messageSize":848,"response":"250 2.0.0 OK  1629664891 o10sm11494650pjg.34 - gsmtp","envelope":{"from":"sanyuktanirmal17@gmail.com","to":["tanishkanirmal@gmail.com"]},"messageId":"<bdcfb53e-5add-b745-5fb4-63d17e9ba1e2@gmail.com>","level":"info","timestamp":"2021-08-22T20:41:32.129Z"}
 {"accepted":["tanishkanirmal@gmail.com"],"rejected":[],"envelopeTime":1268,"messageTime":958,"messageSize":848,"response":"250 2.0.0 OK  1629664891 b20sm13062108pfl.9 - gsmtp","envelope":{"from":"sanyuktanirmal17@gmail.com","to":["tanishkanirmal@gmail.com"]},"messageId":"<a9c10b69-cab4-0ec7-2db5-f6a899a88989@gmail.com>","level":"info","timestamp":"2021-08-22T20:41:32.143Z"}
+{"level":"info","message":"Server is listening on port : 4000","timestamp":"2021-08-23T02:21:01.291Z"}
