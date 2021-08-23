@@ -33,7 +33,7 @@ app.get('/',(req,res) => {
     res.json({"message": "Welcome to Fundoo Notes App"})
 })
 
-// Require Employee routes
+// Require user routes
 require('./routes/users')(app);
 
 // listen for requests

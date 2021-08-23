@@ -5,11 +5,12 @@
  * @description  Helper class holds the jwt token data 
  * @author       Sanyukta 
 **************************************************************/
-const { loginDetails, userDetails, forgotPassword } = require('../models/user')
+const { loginDetails, userDetails, forgotPassword } = require('../models/user');
 
-const jwt = require('jsonwebtoken')
-const bcrypt = require('bcryptjs')
-const logger = require('../logger/logger')
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+const logger = require('../logger/logger');
+const { required } = require('joi');
 
 class Helper{
 
@@ -20,7 +21,7 @@ class Helper{
      */
    createToken = (loginData) => {
         return jwt.sign(loginData, process.env.SECRET_TOKEN, {
-            expiresIn: "3000000s"});
+            expiresIn: "24h"});
     
       }
      
@@ -101,32 +102,25 @@ class Helper{
     //   }
     // }
 
-     verifyingToken = (req, res, next) => {
-      const token = req.get('token')
+    verifyingToken = (req, res, next) => {
+      let token = req.get('token')
       try {
         if (token) {
           jwt.verify(token, process.env.SECRET_TOKEN, error => {
             if (error) {
-              return res.status(400).send({ 
-                success: false, 
-                message: 'Invalid Token' })
+              return res.status(400).send({ success: false, message: 'Invalid Token' })
             } else {
               next()
             }
           })
         } else {
-          return res.status(401).send({
-             success: false,
-              message: 'Unauthorized user' })
+          return res.status(401).send({ success: false, message: 'Authorisation failed! Invalid user' })
         }
       } catch (error) {
-        return res.status(500).send({ 
-          success: false, 
-          message: 'statement missing ' })
+        return res.status(500).send({ success: false, message: 'Something went wrong!' })
       }
-    
     }
-
+    
     //  verifyToken = (req, res, next) => {
     //   try {
     //     const decode = jwt.verify(req.headers.token, process.env.JWT);

@@ -1,143 +1,265 @@
-// const chai = require('chai');
-// const chaiHttp = require('chai-http');
-// const server = require('../server');
+const mocha = require('mocha')
+const chai = require('chai')
+// chai-http is an addon plugin for  Chai Assertion Library
+ const chaiHttp = require('chai-http')
+const server = require('../server')
+const userInputs = require('../test/label.json')
+const userInput = require('../test/notes.json')
+const userData = require('../test/data.json');
 
-// chai.use(chaiHttp);
-// const labelData = require('./label.json');
 
-// chai.should();
-// let token = ' ';
+//assertion style
+const should = chai.should();
+chai.use(chaiHttp);
+let token = '';
 
-// describe('Labels', () => {
-//     before((done) => {
-//         chai.request(server)
-//             .post('/login')
-//             .send(labelData.labels.login)
-//             .end((err, res) => {
-//                 token = res.body.Token;
-//                 done();
-//             });
-//     });
+beforeEach((done) => {
+    chai.request(server)
+        .post('/login')
+        .send(userData.user.userLoginPos)
+        .end((error, res) => {
+            if (error) {
+              return done(error);
+            }
+            token = res.body.token;
+            done();
+        });
+});
 
-//     describe('create Label', () => {
-//         it('givenLabelDetails_whenProper_ShouldCreateLabel', () => {
-//             chai.request(server).post('/label').set('token', token)
-//                 .send(labelData.labels.createLabel)
-//                 .end((err, res) => {
-//                     res.should.have.status(200);
-//                 });
-//         });
-//         it('givenLabelDetails_whenWrong_ShouldNotCreateLabel', () => {
-//             chai.request(server).post('/label').set('token', token)
-//                 .send()
-//                 .end((err, res) => {
-//                     res.should.have.status(500);
-//                 });
-//         });
-//         it('givenToken_whenWrong_shouldNotCreateLabel', () => {
-//             chai.request(server).post('/label').set('token', `${labelData.labels.genratedToken.wrongToken}`)
-//                 .send(labelData.labels.createLabel)
-//                 .end((err, res) => {
-//                     res.should.have.status(401);
-//                 });
-//         });
-//     });
+    /**
+     * /POST request test
+     * Positive and Negative - Creation of Labels
+     */
+     describe('POST labels /create', () => {
+        it('givenCreteLabelDetails_whenProper_shouldmakePOSTRequestAndCreateLabel', (done) => {
+            chai.request(server)
+                .post('/createLabel/611dc8d14652ea03d066b38e')
+                .send(userInputs.labelCreatePos)
+                .set('token', token)
+                .end((error, res) => {
+                    res.should.have.status(200);
+                   // res.body.should.be.a('object');
+                    res.body.should.have.property("success").eql(true);
+                    res.body.should.have.property("message").eql("Label Created!");
+                    // res.body.should.have.property("data").should.be.a('object');
+                    if (error) {
+                        return done(error);
+                    }
+                    done();
+                });
+        })
 
-//     describe('retrieve Label', () => {
-//         it('giveToken_whenProper_ShouldRetrieveLabel', () => {
-//             chai.request(server).get('/label').set('token', token)
-//                 .send()
-//                 .end((err, res) => {
-//                     res.should.have.status(200);
-//                 });
-//         });
-//         it('givenToken_whenWrong_shouldNotCreateLabel', () => {
-//             chai.request(server).post('/label').set('token', `${labelData.labels.genratedToken.wrongToken}`)
-//                 .send(labelData.labels.createLabel)
-//                 .end((err, res) => {
-//                     res.should.have.status(401);
-//                 });
-//         });
-//     });
+        it('givenDetails_WhenNotPassingToken_shouldNotCreateLable', (done) => {
+            chai.request(server)
+                .post('/createLabel/611dc8d14652ea03d066b38e')
+                .send(userInputs.labelCreatePos)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(401);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property("message").eql("Authorisation failed! Invalid user");
+                    return done();
+                });
+        });
 
-//     describe('update Label', () => {
-//         it('giveCorrectIdForUpdate_whenProper_ShouldUpdateLabel', () => {
-//             chai.request(server).put('/label/60bed76e9315901fa8648bda')
-//                 .set('token', token)
-//                 .send(labelData.labels.updateLabel)
-//                 .end((err, res) => {
-//                     res.should.have.status(200);
-//                 });
-//         });
-//         it('givenLabelId_whenWrong_ShouldNotUpdateLabel', () => {
-//             chai.request(server).put('/label/60bed76e9315901648bda')
-//                 .set('token', token)
-//                 .send(labelData.labels.updateLabel)
-//                 .end((err, res) => {
-//                     res.should.have.status(400);
-//                 });
-//         });
-//         it('givenTokenDetails_whenWrong_shouldNotCreateLabel', () => {
-//             chai.request(server).post('/label').set('token', `${labelData.labels.genratedToken.wrongToken}`)
-//                 .send(labelData.labels.createLabel)
-//                 .end((err, res) => {
-//                     res.should.have.status(401);
-//                 });
-//         });
-//     });
+        it('givenLabelId_whenNoNotesId_shouldNotAbleToDeletTheLabel', (done) => {
+            chai.request(server)
+            .post('/createLabel')
+            .send(userInputs.labelCreateNegWithNoNotesId)
+            .set('token', token)
+            .end((error, res) => {
+                if (error) {
+                    return done(error);
+                }
+                res.should.have.status(404);
+                res.body.should.be.a('object');
+                return done();
+            });
+        });
 
-//     describe('delete Label', () => {
-//         it('giveLabelId_whenProper_shouldDeleteLabel', () => {
-//             chai.request(server).delete('/label/60bee68f2bea9217f44af367')
-//                 .set('token', token).send()
-//                 .end((err, res) => {
-//                     res.should.have.status(200);
-//                 });
-//         });
+        it('givenLabelDetails_WhenEmptyLabel_shouldNotCreateLable', (done) => {
+            chai.request(server)
+            .post('/createLabel/611dc8d14652ea03d066b38e')
+            .send(userInputs.labelCreateNeg)
+            .set('token', token)
+            .end((error, res) => {
+                if (error) {
+                    return done(error);
+                }
+                    res.should.have.status(400);
+                    res.body.should.have.property("message").eql('"labelName" is not allowed to be empty');
+                    return done();
+                })
+        })
+    })
 
-//         it('giveLabelId_whenWrong_ShouldNotDeleteLabel', () => {
-//             chai.request(server).delete('/label/60bee68f2bea9217f4467')
-//                 .set('token', token).send()
-//                 .end((err, res) => {
-//                     res.should.have.status(400);
-//                 });
-//         });
-//         it('givenTokenDetails_whenWrong_shouldNotDeleteLabel', () => {
-//             chai.request(server).post('/label').set('token', `${labelData.labels.genratedToken.wrongToken}`)
-//                 .send(labelData.labels.createLabel)
-//                 .end((err, res) => {
-//                     res.should.have.status(401);
-//                 });
-//         });
-//     });
+        /**
+     * /GET request test
+     * Positive and Negative - Get all Labels from database
+     */
+    describe('GET all /Labels', () => {
+        it('givenValidDetails__whenProper_shouldGETRequestToGetAllLabels', (done) => {
+            chai.request(server)
+                .get('/labels/labels')
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property("success").eql(true);
+                    res.body.should.have.property("message").eql("Labels Retrieved!");
+                    return done();
+                });
+        });
 
-//     describe('add Label To Note', () => {
-//         it('givenLabelAndNoteId_whenProper_shouldAddLabelToTheNote', () => {
-//             chai.request(server).post('/addLabelToNote').set('token', token)
-//                 .send(labelData.labels.addLabelIntoNote)
-//                 .end((err, res) => {
-//                     res.should.have.status(200);
-//                 });
-//         });
-//         it('givenLabelId_whenWrong_ShouldNotAddLabelToNote', () => {
-//             chai.request(server).delete('/label/60c2cb2932aa660f550')
-//                 .set('token', token).send()
-//                 .end((err, res) => {
-//                     res.should.have.status(400);
-//                 });
-//         });
-//         it('givenTokenDetails_whenWrong_ShouldNotAddLabelToNote', () => {
-//             chai.request(server).post('/addLabelToNote').set('token', `${labelData.labels.genratedToken.wrongToken}`)
-//                 .send(labelData.labels.addLabelIntoNote)
-//                 .end((err, res) => {
-//                     res.should.have.status(401);
-//                 });
-//         });
-//         it('givenTokenDetails_whenMissing_shouldNotAddLabelToTheNote', () => {
-//             chai.request(server).post('/addLabelToNote').send(labelData.labels.addLabelIntoNote)
-//                 .end((err, res) => {
-//                     res.should.have.status(401);
-//                 });
-//         });
-//     });
-// })
+
+        it('givenDetails_WhenNotPassingToken_shouldNotGetAllLabels', (done) => {
+            chai.request(server)
+                .get('/labels/labels')
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(401);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property("message").eql("Authorisation failed! Invalid user");
+                    return done();
+                });
+        });
+    });
+
+    /**
+      * /PUT request test
+      * Positive and Negative - Updating a single contact using ID into database 
+      */
+     describe('PUT /updateLabel/:Labeld', () => {
+        it('givenUpdateLabelDetails_whenProper_shouldMakePUTRequestToUpdateLable', (done) => {
+            chai.request(server)
+                .put('/updateLabel/611dc8d14652ea03d066b38e')
+                .send(userInputs.lablePutPos)
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property("success").eql(true);
+                    res.body.should.have.property("message").eql("Label Name Updated!");
+                    return done();
+                });
+        });
+
+        it('givenWrongLabelId_whenImProper_shouldNotAbleToUpdateTheLabel', (done) => {
+            chai.request(server)
+                .put('/updateLabel/611dc8d14652ea03d066b38e')
+                .send(userInputs.lablePutEmptyNeg)
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    if (error) {
+                        return done(error);
+                    }
+                        res.should.have.status(400);
+                        res.body.should.have.property("message").eql('"labelName" is not allowed to be empty');
+                        return done();
+                    })
+        })
+
+        it('givenLabelId_whenNoNotesId_shouldNotAbleToDeletTheLabel', (done) => {
+            chai.request(server)
+            .put('/updateLabel')
+                .send(userInputs.lablePutPos)
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(404);
+                    res.body.should.be.a('object');
+                    return done();
+                });
+        });
+
+        it('givenDetails_WhenNotPassingToken_shouldNotUpdateLable', (done) => {
+            chai.request(server)
+                .put('/updateLabel/611dc8d14652ea03d066b38e')
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(401);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property("message").eql("Authorisation failed! Invalid user");
+                    return done();
+                });
+        });
+    });
+
+    /**
+     * /DELETE request test
+     * Positive and Negative - Deleting a single contact using ID into database 
+     */
+     describe('delete/:labelId', () => {
+        it('givenValidDatat_whenProper_shouldDeleteInDB', (done) => {
+            chai.request(server)
+                .delete('/deleteLabel/6119eeb5e390f34140e68305')
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property("success").eql(true);
+                    res.body.should.have.property("message").eql("Label Deleted!");
+                    return done();
+                });
+        });
+
+        it('givenLabelId_whenNoLabelId_shouldNotAbleToDeletTheLabel', (done) => {
+            chai.request(server)
+                .delete('/deleteLabel')
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(400);
+                    return done();
+                });
+        });
+
+        it('givenDetails_WhenNotPassingToken_shouldNotDeleteLabel', (done) => {
+            chai.request(server)
+            .delete('/deleteLabel/6119eeb5e390f34140e68305')
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(401);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property("message").eql("Authorisation failed! Invalid user");
+                    return done();
+                });
+        });
+    });
+
+
+
+        
+
+
+
+
+
+
+
+
+

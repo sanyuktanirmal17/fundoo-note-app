@@ -1,48 +1,41 @@
-
-
 {
-    "validUser": {
-        "email": "tanishkanirmal@gmail.com",
-        "password": "Tanishka@2811"
-    },
+    "notesCreatePos": {
+    "title": "Test Notes",
+    "description": "testing notes app"
+},
 
-    "validNote": {
-        "title": "Test Data",
-        "description": "Fundoo Note"
-    },
+"notesCreateNegTitle": {
+    "title": "",
+    "description": "this is my second notes"
+},
 
-    "InvalidDataNote": {
-        "title": "",
-        "description": "new notes"
-    },
+"notesCreateNegDescription": {
+    "title": "Test Notes",
+    "description": ""
+},
 
-    "validDescription": {
-        "title": "Test Data",
-        "description": ""
-    },
+"notesPutPos": {
+    "title": "Test Notes",
+    "description": "testing notes app"
+},
 
-    "getNotesById": "611f19270e103305341ae27b",
+"notesPutNegTitle": {
+    "title": "",
+    "description": "this is my second notes"
+},
 
-    "getNotesByIdNeg": "611f19270e103305341ae27b",
+"notesPutNegDescription": {
+    "title": "Test Notes",
+    "description": ""
+},
 
-    "validUpdateNote": {
-        "title": "latest fundoo note",
-        "description": "new fundoo note app"
-    },
+"notesDelPos": {
+    "isDeleted": true
+},
 
-    "invalidDescription": {
-        "title": "",
-        "description": "new notes"
-    },
-
-    
-
-    "DeleteID": {
-        "isDeleted": true
-    },
-
-    "FalseId":"6119eeb5e390f34140e683789" 
-    
+"notesDelNeg": {
+    "isDeleted": ""
+}
 }
 
 

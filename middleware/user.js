@@ -23,13 +23,39 @@ const forgotPasswordValidation = Joi.object({
       confirmPassword: Joi.string().valid(Joi.ref('password')).required()
   });
 
-  const notesValidation = Joi.object({
+
+
+  const notesCreationValidation = Joi.object({
     title: Joi.string()
       .required(),
   
     description: Joi.string()
       .required(),
   });
+  
+  
+  const labelValidation = Joi.object({
+    labelName: Joi.string()
+    .required(),
+  });
+  
+  
+  
+  const addingRemovingLabelValidation = Joi.object({
+    notesId: Joi.string()
+    .required(),
+  
+    labelId: Joi.string()
+    .required(),
+  });
+
+  // const notesValidation = Joi.object({
+  //   title: Joi.string()
+  //     .required(),
+  
+  //   description: Joi.string()
+  //     .required(),
+  // });
 
   // const labelValidation = joi.object({
     // labelName: joi.string().required()
@@ -41,7 +67,8 @@ const forgotPasswordValidation = Joi.object({
 // }) 
 
   
-module.exports = { validateSchema, forgotPasswordValidation, resetPasswordValidation, notesValidation
+module.exports = { validateSchema, forgotPasswordValidation, resetPasswordValidation,  notesCreationValidation ,
+  labelValidation,addingRemovingLabelValidation 
   
 };
 

@@ -160,7 +160,7 @@
                 }
             }
         },
-        "/notes": {
+        "/createNotes": {
             "post": {
                 "tags": ["Notes"],
                 "description": "creating notes",
@@ -188,7 +188,7 @@
                 }]
             }
         },
-        "/notes/": {
+        "/notes/{notes}": {
             "get": {
                 "tags": ["Notes"],
                 "description": "get notes",
@@ -212,7 +212,7 @@
                 }]
             }
         },
-        "/notes/{:noteId}": {
+        "/note/{notesId}": {
             "put": {
                 "tags": ["Notes"],
                 "description": "update note using ID",
@@ -296,18 +296,23 @@
             }
         },
 
-        "/label": {
+        "/createLabel/{notesId}": {
             "post": {
                 "tags": ["Labels"],
-                "description": "create notes",
+                "description": "creating label",
                 "parameters": [
+                    {
+                        "name": "notesId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
                     {
                     "name": "create label",
                     "in": "body",
                     "required": true,
-                    "type": "string",
                     "schema": {
-                        "$ref": "#/definitions/Label"
+                        "$ref": "#/definitions/Notes"
                     }
                 }],
                 "responses": {
@@ -327,7 +332,7 @@
             }
         },
 
-        "/label/{labelId}": {
+        "/label/{labels}": {
             "get": {
                 "tags": ["Labels"],
                 "description": "get label by ID",
@@ -359,6 +364,47 @@
                 }]
             }
         },
+        "/label/{labelId}": {
+            "put": {
+                "tags": ["Labels"],
+                "description": "get label by ID",
+                "parameters": [{
+                    "name": "labelId",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "new LabelDetails",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Label"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                },
+                "security": [{
+                    "JWT": []
+                }]
+            }
+        },
+
         "/updateLabel/{labelId}": {
             "put": {
                 "tags": ["Labels"],
@@ -431,6 +477,67 @@
                 }]
             }
         },
+        "/addLabel": {
+            "put": {
+                "tags": ["Notes and Labels"],
+                "description": "Add Label To Note",
+                "parameters": [{
+                    "name": "User and Label Details",
+                    "in": "body",
+                    "schema": {
+                        "$ref": "#/definitions/LabelToNote"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "505": {
+                        "description": "Internal Error"
+                    }
+                },
+                "security": [{
+                    "JWT": []
+                }]
+            }
+        },
+        "/deleteLabel": {
+            "put": {
+                "tags": ["Notes and Labels"],
+                "description": "Delete Label From Note",
+                "parameters": [{
+                    "name": "User and Label Details",
+                    "in": "body",
+                    "schema": {
+                        "$ref": "#/definitions/LabelToNote"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "505": {
+                        "description": "Internal Error"
+                    }
+                },
+                "security": [{
+                    "JWT": []
+                }]
+            }
+        }
+    },
 
     "securityDefinitions": {
         "JWT": {
@@ -489,7 +596,7 @@
                     }
                 }
             },
-            "Notes": {
+            "createNote": {
                 "type": "object",
                 "properties": {
                     "title": {
@@ -505,6 +612,18 @@
                 "properties": {
                     "labelName": {
                         "type": "string"
+                    }
+                }
+            },
+
+            "LabelToNote": {
+                "type": "object",
+                "properties": {
+                    "notesId": {
+                        "type":"string"
+                    },
+                    "labelId": {
+                        "type":"string"
                     }
                 }
             }

@@ -59,7 +59,7 @@
 
         },
     
-        "userResetPasswordToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbkRhdGEiOnsiZW1haWwiOiJ0YW5pc2hrYW5pcm1hbEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IlRhbmlzaGthQDI4MTEifSwiaWF0IjoxNjI5NjUzNjkzLCJleHAiOjE2MzI2NTM2OTN9.1ouWpCZNnZ0NjTbgt_WJzJsC89scc4vqkY7ztImwjPs",
+        "userResetPasswordToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbkRhdGEiOnsiZW1haWwiOiJzaHdldGFuaXJtYWxAZ21haWwuY29tIiwicGFzc3dvcmQiOiJTaHdldGFAMTEifSwiaWF0IjoxNjI5NzEzNjY0LCJleHAiOjE2Mjk4MDAwNjR9.SWHJSW1OFnyqB8HMnVaevvDIFXTYviUNefrdcaE2EYY",
         "userResetWrongPasswordToken": "eyJhbGciOiJIUzI1NiIsInR5c.eyJlbWFpbCI6I"
     }
 }
