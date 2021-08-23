@@ -156,6 +156,49 @@ class NotesController {
             })
         }
     };
+
+
+/**
+     * @description function written to add label to note
+     * @param {*} a valid noteId is expected
+     * @param {*} a valid labelData is expected
+     * @returns 
+     */
+    a/**
+     * 
+     * @param {httpRequest} req 
+     * @param {http Response} res 
+     * @description :  addLabelToNote is used to add the label to the note.
+     */
+    addLabelToNote = (req, res) => {
+        try {
+            const data = {
+                labelId: req.body.labelId,
+                noteId: req.body.noteId,
+                userId: req.userId,
+            };
+            noteServices.addLabelToNote(data, (err, data) => {
+                if (err) {
+                    return res.status(400).send({
+                        success: false,
+                        message: 'Unable to add your label into note',
+                        err,
+                    });
+                }
+                return res.status(200).send({
+                    success: true,
+                    message: 'Your label is added to the note successfully',
+                    // data
+                });
+            });
+        } catch (err) {
+            res.status(500).send({
+                success: false,
+                message: 'There is some internal error from server'
+            });
+        }
+    }
+
 }
 
 

@@ -1,0 +1,25 @@
+{
+    "labels": {
+        "genratedToken": {
+            "wrongToken": "eyJhNiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZtYWxBnbWFpbC5jb2jYwYjc5NTM3NTUxM2Q2MzE3ODM4ODc3YiIsImlhdCI6MTYyMzIxMDAxMCwiZXhwIjoxNjIzMjk2NDEwfQ.ugcNVkm2rJdRj10RxIcgvxU"
+        },
+        "createLabel": {
+            "label": "This is create label"
+        },
+        "updateLabel": {
+            "label": "Here I'm updating the label"
+        },
+        "addLabelIntoNote": {
+            "labelId": "60c2cb2932aa660f54806250",
+            "noteId": "60bef3445bf3aa1bd0c03ce6"
+        },
+        "addCollaboratorintoNote":{
+        "collaboratorId": "609c2587a49fb934a446df67",
+             "noteId" : "60e1d9d459007a11a83ca673"
+        },
+        "login":{
+            "email": "tanishkanirmal@gmail.com",
+            "password" : "Sanyukt@2811"
+        }
+    }
+}

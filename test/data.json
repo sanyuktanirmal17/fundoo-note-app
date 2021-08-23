@@ -1,61 +1,65 @@
 {
+    "user": {
+            "registration": {
+                "firstName": "Ramya",
+                "lastName": "Abcde",
+                "email": "Ramyabk.01200@gmail.com",
+                "password": "Password@15"
+            },
+        "registrationWithNolastName": {
+            "firstName": "Riya",
+            "email": "Riya1597@gmail.com",
+            "password": "Riya@15#"
+        },
+        "registrationWithNoemailId": {
+            "firstName": "Nammu",
+            "lastName": "Shree",
+            "password": "NammuShree12$"
+        },
+        "registrationWithNoPassword": {
+            "firstName": "Nammu",
+            "lastName": "Shree",
+            "email": "Nammushree.12@gmail.com"
+        },
 
-"data":{
-    "login":{
-      "email": "rajrane@gmail.com",
-       "password": "Rane!2345678"
-     },
+        "userLoginPos": {
+            "email": "tanishkanirmal@gmail.com",
+            "password": "Tanishka@2811"
+        },
     
-      "loginWithImproperepassword": {
-        "email": "vashu1234@gmail.com",
-        "password": "vashuA@123456"
-      },
+        "userLoginNegEmail": {
+            "email": "rekhapat@gmail",
+            "password": "Password@12"
+        },
+    
+        "userLoginEmpPassword": {
+            "email": "patilrekha.1206@gmail.com",
+            "password": ""
+        },
+    
+        "userLoginNegPassword": {
+            "email": "sanketh.babbur11@gmail.com",
+            "password": "password"
+        },
 
-    "loginWithImpropereEmail": {
-      "email": "vashu12@gmail.com",
-      "password": "vashuA@123456"
-    },
+        "userForgotPasswordPos": {
+            "email": "tanishkanirmal@gmail.com"
+        },
+    
+        "userForgotPasswordNegNonRegistered": {
+            "email": "tanishkanirmal@gmail.com"
+        },
 
-    "register": {        
-      "firstName" : "tanishka",
-      "lastName": "nirmal",
-     "email": "tanishkanirmal@gmail.com",
-     "password": "Tanishka@2811",
-     "confirmPassword": "Tanishka@2811"
-},
+        "userResetPasswordPos": {
+            "password": "MyNewestPassword@11"
+        },
+    
+        "userResetPasswordNeg": {
+            "password": "MyNewestPassword@11"
 
-    "WithoutFirstName" : {
-        "lastName": "Kamble",
-        "email": "satish@gmail.com",
-        "password": "Satish@12345678",
-        "confirmPassword": "Satish@12345678"
-      },
-
-    "DataWithoutLastName" : {
-    "firstName": "Shweta ",
-    "email": "shweta1@gmail.com",
-    "password": "Shweta@12334",
-    "confirmPassword": "Shweta@12334"
-  }, 
-
- "forgotPasswordData": {
-  "email": "sanyuktan161@gmail.com"
-},
-"forgotPasswordWithImproperDetails": {
-  "email": "sanyu@gmail.com"
-
-},
-
-"userResetPasswordTrue": {
-  "password": "NEWPassword@123"
-},
-
-"userResetPasswordFalse": {
-  "password": "NEWPassword@123"
-
-},
-
-"ResetPasswordTokenTrue": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbnl1a3RhbmlybWFsMTdAZ21haWwuY29tIiwiaWQiOiI2MTE0OTA3OTc2MWE0MjIzMDRiYTg2NjciLCJpYXQiOjE2Mjg5NTYzNzEsImV4cCI6MTYzMTk1NjM3MX0._sSfisX6rNdkRAYMrBYyYAGYRBgeMMP88icLDzU8s74",
-"ResetPasswordTokenFalse": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbnl1a3RhbmlybWFsMTdAZ21haWwuY29tIiwiaWQiOiI2MTE0OTA3OTc2MWE0MjIzMDRiYTg2NjciLCJpYXQiOjE2Mjg5NTYzNzE"
-}
+        },
+    
+        "userResetPasswordToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbkRhdGEiOnsiZW1haWwiOiJ0YW5pc2hrYW5pcm1hbEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IlRhbmlzaGthQDI4MTEifSwiaWF0IjoxNjI5NjUzNjkzLCJleHAiOjE2MzI2NTM2OTN9.1ouWpCZNnZ0NjTbgt_WJzJsC89scc4vqkY7ztImwjPs",
+        "userResetWrongPasswordToken": "eyJhbGciOiJIUzI1NiIsInR5c.eyJlbWFpbCI6I"
+    }
 }

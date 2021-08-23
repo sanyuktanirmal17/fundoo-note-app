@@ -86,6 +86,22 @@ deleteNote(noteId)  {
     return err;
   }
  };
+
+ /**
+     * 
+     * @param {*} data : data comes from the body.
+     * @description : addLabelToNote is used to add labels into existing note,
+     *               its taking data from controller and passing it to models
+     */
+  addLabelToNote = (data, callback) => {
+    try {
+    notemodel.addLabelToNote(data, callback);
+}
+catch (error) {
+    return error;
+}
+  }
+
 }
 
     module.exports = new NotesService();

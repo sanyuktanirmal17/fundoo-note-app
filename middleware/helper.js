@@ -126,6 +126,24 @@ class Helper{
       }
     
     }
+
+    //  verifyToken = (req, res, next) => {
+    //   try {
+    //     const decode = jwt.verify(req.headers.token, process.env.JWT);
+    //     client.get('token', (err, token) => {
+    //       if (err) throw err;
+    //       if (req.headers.token === token) {
+    //         req.userData = decode;
+    //         const userId = decode.id;
+    //       }
+    //       next();
+    //     });
+    //   } catch (error) {
+    //     res.status(401).send({
+    //       error: 'Your token has expiered',
+    //     });
+    //   }
+    // };
          
 }
 

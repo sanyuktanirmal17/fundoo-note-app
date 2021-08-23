@@ -31,8 +31,18 @@ const forgotPasswordValidation = Joi.object({
       .required(),
   });
 
+  // const labelValidation = joi.object({
+    // labelName: joi.string().required()
+// });
+
+// const addRemoveLabelValidation = joi.object({
+//   noteId: joi.string().required(),
+//   labelId: joi.string().required()
+// }) 
 
   
-module.exports = { validateSchema, forgotPasswordValidation, resetPasswordValidation, notesValidation};
+module.exports = { validateSchema, forgotPasswordValidation, resetPasswordValidation, notesValidation
+  
+};
 
 

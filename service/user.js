@@ -65,9 +65,9 @@ class Service {
 
   forgotPassword = (userDetails, callback) => {
     try{
-        console.log("email found service", userDetails);
+        // console.log("email found service", userDetails);
        model.forgotPassword(userDetails, (error, data) => {
-         console.log("email service", userDetails);
+        //  console.log("email service", userDetails);
            if (data){
                const emailData = {
                 email: data.email,

@@ -127,6 +127,26 @@ deleteNote(noteId) {
       return error;
     };
   }
+
+  /**
+   * 
+   * @param {*} data 
+   * @returns {*} callback 
+   * @description : addLabelToNote will add the label to note in array.
+   */
+   addLabelToNote = async (data, callback) => {
+    try {
+    const result = await noteModel.findByIdAndUpdate(data.noteId, {
+      $push: {
+        labelId: data.labelId
+      }
+    });
+    callback(null, result);
+  }
+  catch (error) {
+    return error;
+}
+   }
   
 }
     module.exports = new NotesModel();

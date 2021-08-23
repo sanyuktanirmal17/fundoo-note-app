@@ -79,9 +79,9 @@ class Controller{
      const userData = {
          email: req.body.email,
      };
-     console.log("email found controller", userData)
+    //  console.log("email found controller", userData)
      service.forgotPassword(userData, (error, data) => {
-        console.log( "controller call back", userData)
+        // console.log( "controller call back", userData)
         if (error) {
             logger.error("Error on finding mailID",error);
          return res.status(400).send({

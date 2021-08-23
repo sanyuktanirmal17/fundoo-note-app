@@ -2,7 +2,6 @@
 const chai = require('chai')
 
 const chaiHttp = require('chai-http')
- require('superagent')
 const server = require('../server')
 const notesData = require('./notes.json')
 

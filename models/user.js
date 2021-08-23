@@ -96,7 +96,7 @@ class Model {
      */
  forgotPassword = (data, callback) => {
     user.findOne({email : data.email}, (error, data) => {
-        console.log("email model",data);
+        // console.log("email model",data);
         logger.error("email not found", error);
         return error ? callback(error, null):
         !data ? callback("email not found", null):
