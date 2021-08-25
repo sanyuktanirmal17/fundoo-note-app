@@ -12,6 +12,7 @@ const note= require('../controllers/notes');
 // const LabelController = require('../controllers/label');
 const noteController = require('../controllers/notes');
 const labelController = require('../controllers/label');
+const redisCache = require('../middleware/redis');
 module.exports = (app) => {
     
     //api for registration
@@ -30,7 +31,7 @@ module.exports = (app) => {
   //notes CRUD api
   app.post('/createNotes', helper.verifyingToken, noteController.createNotes);
 
-  app.get('/notes/:notes', helper.verifyingToken, noteController.getAllNotes);
+  app.get('/notes/:notes', helper.verifyingToken, redisCache.checkCache, noteController.getAllNotes);
 
   app.put('/note/:notesId',  helper.verifyingToken, noteController.updateNotesById);
 
@@ -39,7 +40,7 @@ module.exports = (app) => {
   //label CRUD api
   app.post('/createLabel/:userId',  helper.verifyingToken, labelController.createLabel);
 
-  app.get('/labels/:labels',  helper.verifyingToken, labelController.getAllLabels);
+  app.get('/labels/:labels',  helper.verifyingToken, redisCache.checkLabelCache, labelController.getAllLabels);
 
   app.get('/label/:labelId',  helper.verifyingToken, labelController.getLabelById);
 
@@ -50,29 +51,7 @@ module.exports = (app) => {
   //label to note api 
   app.put('/addLabel',  helper.verifyingToken, noteController.addLabelToNote);
 
-  app.delete('/deleteLabel',  helper.verifyingToken, noteController.deleteLabelFromNote);
-
- 
-
-    //  // CRUD  for Notes
-    //  app.post('/notes', helper.verifyingToken, note.createNote);
-
-    //  app.put('/notes/:noteId', helper.verifyingToken, note.updateNote);
- 
-    //  app.get('/notes', helper.verifyingToken,  note.retrieveNote);
- 
-    //  app.delete('/notes/:noteId', helper.verifyingToken, note.deleteNote);
-    
-    //  app.post('/addLabelToNote', helper.verifyingToken, note.addLabelToNote)
-    //  //  label CRUD operation
-
-    //  app.post('/label', helper.verifyToken, LabelController.createLabel);
-
-    // app.put('/label/:labelId', helper.verifyToken, LabelController.updateLabel);
-
-    // app.get('/label', helper.verifyToken, LabelController.retrieveLabels);
-
-    // app.delete('/label/:labelId', helper.verifyToken, LabelController.deleteLabel);
+  app.delete('/deleteLabel',  helper.verifyingToken, noteController.deleteLabelFromNote)
 
     }
 

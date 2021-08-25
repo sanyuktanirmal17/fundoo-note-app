@@ -8,7 +8,9 @@
 const notesService = require('../service/notes');
 const {notesCreationValidation, addingRemovingLabelValidation} = require('../middleware/user');
 logger = require('../logger/logger');
-
+const redisClass = require('../middleware/redis')
+const redis = require('redis');
+const client = redis.createClient(process.env.REDIS_PORT);
 
 class NotesController {
     /**
@@ -48,9 +50,11 @@ class NotesController {
             const getNotes = req.params;
             const getAllNotes = await notesService.getAllNotes();
             const data = await JSON.stringify(getAllNotes);
+            redisClass.setDataInCache(getNotes.notes, 3600, data)
             res.send({success: true, message: "Notes Retrieved!", data: getAllNotes});
+            console.log("controller found", data);
         } catch (error) {
-            console.log(error);
+            console.log("controller not found",error);
             res.status(500).send({success: false, message: "Some error occurred while retrieving notes"});
         }
     }

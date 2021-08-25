@@ -693,3 +693,96 @@
 {"level":"error","message":"email not found","timestamp":"2021-08-23T17:50:52.659Z"}
 {"level":"error","message":"email not found","timestamp":"2021-08-23T17:50:53.189Z"}
 {"level":"error","message":"Some error occured while updating password Cannot read property '_id' of null","stack":"TypeError: Cannot read property '_id' of null\n    at Model.updatePassword (E:\\Fundoo Note\\models\\user.js:117:35)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)","timestamp":"2021-08-23T17:50:54.227Z"}
+{"errors":{"confirmPassword":{"name":"ValidatorError","message":"Path `confirmPassword` is required.","properties":{"message":"Path `confirmPassword` is required.","type":"required","path":"confirmPassword"},"kind":"required","path":"confirmPassword"}},"_message":"user validation failed","level":"error","message":"Error while registering the new user user validation failed: confirmPassword: Path `confirmPassword` is required.","stack":"ValidationError: user validation failed: confirmPassword: Path `confirmPassword` is required.\n    at model.Document.invalidate (E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2760:32)\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2552:17\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\schematype.js:1273:9\n    at processTicksAndRejections (internal/process/task_queues.js:77:11)","timestamp":"2021-08-23T18:02:01.169Z"}
+{"errors":{"lastName":{"name":"ValidatorError","message":"Path `lastName` is required.","properties":{"message":"Path `lastName` is required.","type":"required","path":"lastName"},"kind":"required","path":"lastName"},"confirmPassword":{"name":"ValidatorError","message":"Path `confirmPassword` is required.","properties":{"message":"Path `confirmPassword` is required.","type":"required","path":"confirmPassword"},"kind":"required","path":"confirmPassword"}},"_message":"user validation failed","level":"error","message":"Error while registering the new user user validation failed: lastName: Path `lastName` is required., confirmPassword: Path `confirmPassword` is required.","stack":"ValidationError: user validation failed: lastName: Path `lastName` is required., confirmPassword: Path `confirmPassword` is required.\n    at model.Document.invalidate (E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2760:32)\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2552:17\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\schematype.js:1273:9\n    at processTicksAndRejections (internal/process/task_queues.js:77:11)","timestamp":"2021-08-23T18:02:01.605Z"}
+{"errors":{"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email"},"kind":"required","path":"email"},"confirmPassword":{"name":"ValidatorError","message":"Path `confirmPassword` is required.","properties":{"message":"Path `confirmPassword` is required.","type":"required","path":"confirmPassword"},"kind":"required","path":"confirmPassword"}},"_message":"user validation failed","level":"error","message":"Error while registering the new user user validation failed: email: Path `email` is required., confirmPassword: Path `confirmPassword` is required.","stack":"ValidationError: user validation failed: email: Path `email` is required., confirmPassword: Path `confirmPassword` is required.\n    at model.Document.invalidate (E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2760:32)\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2552:17\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\schematype.js:1273:9\n    at processTicksAndRejections (internal/process/task_queues.js:77:11)","timestamp":"2021-08-23T18:02:02.007Z"}
+{"errors":{"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password"},"kind":"required","path":"password"},"confirmPassword":{"name":"ValidatorError","message":"Path `confirmPassword` is required.","properties":{"message":"Path `confirmPassword` is required.","type":"required","path":"confirmPassword"},"kind":"required","path":"confirmPassword"}},"_message":"user validation failed","level":"error","message":"Error while registering the new user user validation failed: password: Path `password` is required., confirmPassword: Path `confirmPassword` is required.","stack":"ValidationError: user validation failed: password: Path `password` is required., confirmPassword: Path `confirmPassword` is required.\n    at model.Document.invalidate (E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2760:32)\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2552:17\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\schematype.js:1273:9\n    at processTicksAndRejections (internal/process/task_queues.js:77:11)","timestamp":"2021-08-23T18:02:02.415Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-23T18:02:03.366Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-23T18:02:03.764Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-23T18:02:04.163Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-23T18:02:04.562Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-23T18:02:05.109Z"}
+{"level":"error","message":"Some error occured while updating password Cannot read property '_id' of null","stack":"TypeError: Cannot read property '_id' of null\n    at Model.updatePassword (E:\\Fundoo Note\\models\\user.js:117:35)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)","timestamp":"2021-08-23T18:02:06.046Z"}
+{"errors":{"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password"},"kind":"required","path":"password"},"confirmPassword":{"name":"ValidatorError","message":"Path `confirmPassword` is required.","properties":{"message":"Path `confirmPassword` is required.","type":"required","path":"confirmPassword"},"kind":"required","path":"confirmPassword"}},"_message":"user validation failed","level":"error","message":"Error while registering the new user user validation failed: password: Path `password` is required., confirmPassword: Path `confirmPassword` is required.","stack":"ValidationError: user validation failed: password: Path `password` is required., confirmPassword: Path `confirmPassword` is required.\n    at model.Document.invalidate (E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2760:32)\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2552:17\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\schematype.js:1273:9\n    at processTicksAndRejections (internal/process/task_queues.js:77:11)","timestamp":"2021-08-23T18:48:45.017Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-23T18:48:54.601Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-23T18:48:54.904Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-23T18:48:55.259Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-23T18:48:55.580Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-23T18:48:56.031Z"}
+{"level":"error","message":"Some error occured while updating password Cannot read property '_id' of null","stack":"TypeError: Cannot read property '_id' of null\n    at Model.updatePassword (E:\\Fundoo Note\\models\\user.js:117:35)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)","timestamp":"2021-08-23T18:48:56.953Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-23T18:55:27.605Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-23T18:55:27.912Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-23T18:55:28.234Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-23T18:55:28.573Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-23T18:55:29.014Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-23T18:56:22.399Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-23T18:56:22.723Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-23T18:56:23.097Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-23T18:56:23.411Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-23T18:56:23.903Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-23T19:41:55.880Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-23T19:41:56.196Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-23T19:41:56.512Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-23T19:41:56.871Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-23T19:41:57.325Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:26:40.109Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:26:40.476Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:26:40.767Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T02:26:40.958Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T02:26:42.126Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:35:55.214Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:35:55.349Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:35:55.463Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T02:35:55.643Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T02:35:56.159Z"}
+{"level":"error","message":"Some error occured while updating password Cannot read property '_id' of null","stack":"TypeError: Cannot read property '_id' of null\n    at Model.updatePassword (E:\\Fundoo Note\\models\\user.js:117:35)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)","timestamp":"2021-08-24T02:35:56.831Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:36:37.723Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:36:37.892Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:36:38.055Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T02:36:38.222Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T02:36:38.470Z"}
+{"level":"error","message":"Some error occured while updating password Cannot read property '_id' of null","stack":"TypeError: Cannot read property '_id' of null\n    at Model.updatePassword (E:\\Fundoo Note\\models\\user.js:117:35)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)","timestamp":"2021-08-24T02:36:38.932Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:37:02.082Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:37:02.247Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:37:02.414Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T02:37:02.580Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T02:37:02.827Z"}
+{"level":"error","message":"Some error occured while updating password Cannot read property '_id' of null","stack":"TypeError: Cannot read property '_id' of null\n    at Model.updatePassword (E:\\Fundoo Note\\models\\user.js:117:35)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)","timestamp":"2021-08-24T02:37:03.303Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:37:28.398Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:37:28.652Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:37:28.899Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T02:37:29.165Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T02:37:29.444Z"}
+{"level":"error","message":"Some error occured while updating password Cannot read property '_id' of null","stack":"TypeError: Cannot read property '_id' of null\n    at Model.updatePassword (E:\\Fundoo Note\\models\\user.js:117:35)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)","timestamp":"2021-08-24T02:37:29.790Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:38:18.260Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:38:18.423Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:38:18.566Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T02:38:18.727Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T02:38:18.975Z"}
+{"level":"error","message":"Some error occured while updating password Cannot read property '_id' of null","stack":"TypeError: Cannot read property '_id' of null\n    at Model.updatePassword (E:\\Fundoo Note\\models\\user.js:117:35)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)","timestamp":"2021-08-24T02:38:19.387Z"}
+{"errors":{"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password"},"kind":"required","path":"password"},"confirmPassword":{"name":"ValidatorError","message":"Path `confirmPassword` is required.","properties":{"message":"Path `confirmPassword` is required.","type":"required","path":"confirmPassword"},"kind":"required","path":"confirmPassword"}},"_message":"user validation failed","level":"error","message":"Error while registering the new user user validation failed: password: Path `password` is required., confirmPassword: Path `confirmPassword` is required.","stack":"ValidationError: user validation failed: password: Path `password` is required., confirmPassword: Path `confirmPassword` is required.\n    at model.Document.invalidate (E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2760:32)\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\document.js:2552:17\n    at E:\\Fundoo Note\\node_modules\\mongoose\\lib\\schematype.js:1273:9\n    at processTicksAndRejections (internal/process/task_queues.js:77:11)","timestamp":"2021-08-24T02:39:10.689Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:39:15.208Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:39:15.339Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:39:15.476Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T02:39:15.617Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T02:39:15.808Z"}
+{"level":"error","message":"Some error occured while updating password Cannot read property '_id' of null","stack":"TypeError: Cannot read property '_id' of null\n    at Model.updatePassword (E:\\Fundoo Note\\models\\user.js:117:35)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)","timestamp":"2021-08-24T02:39:16.177Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:40:06.471Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:40:06.624Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T02:40:06.764Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T02:40:06.898Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T02:40:07.089Z"}
+{"level":"error","message":"Some error occured while updating password Cannot read property '_id' of null","stack":"TypeError: Cannot read property '_id' of null\n    at Model.updatePassword (E:\\Fundoo Note\\models\\user.js:117:35)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)","timestamp":"2021-08-24T02:40:07.433Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T03:12:50.347Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T03:12:50.625Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T03:12:50.880Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T03:12:51.194Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T03:12:51.595Z"}
+{"level":"error","message":"Some error occured while updating password Cannot read property '_id' of null","stack":"TypeError: Cannot read property '_id' of null\n    at Model.updatePassword (E:\\Fundoo Note\\models\\user.js:117:35)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)","timestamp":"2021-08-24T03:12:52.166Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T03:38:08.584Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T03:38:08.729Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-24T03:38:08.903Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T03:38:09.058Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-24T03:38:09.230Z"}
+{"level":"error","message":"Some error occured while updating password Cannot read property '_id' of null","stack":"TypeError: Cannot read property '_id' of null\n    at Model.updatePassword (E:\\Fundoo Note\\models\\user.js:117:35)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)","timestamp":"2021-08-24T03:38:10.629Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-25T13:49:15.963Z"}

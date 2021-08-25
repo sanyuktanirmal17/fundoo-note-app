@@ -1,12 +1,12 @@
 {
     "notesCreatePos": {
-    "title": "Test Notes",
-    "description": "testing notes app"
+    "title": "Notes testing",
+    "description": "generate notes "
 },
 
 "notesCreateNegTitle": {
     "title": "",
-    "description": "this is my second notes"
+    "description": "sample note create"
 },
 
 "notesCreateNegDescription": {
@@ -15,8 +15,8 @@
 },
 
 "notesPutPos": {
-    "title": "Test Notes",
-    "description": "testing notes app"
+    "title": "Notes testing",
+    "description": "generate notes"
 },
 
 "notesPutNegTitle": {

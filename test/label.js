@@ -1,14 +1,10 @@
 const mocha = require('mocha')
 const chai = require('chai')
-// chai-http is an addon plugin for  Chai Assertion Library
  const chaiHttp = require('chai-http')
 const server = require('../server')
-const userInputs = require('../test/label.json')
-const userInput = require('../test/notes.json')
+const result = require('../test/label.json')
+const notesResult = require('../test/notes.json')
 const userData = require('../test/data.json');
-
-
-//assertion style
 const should = chai.should();
 chai.use(chaiHttp);
 let token = '';
@@ -28,20 +24,17 @@ beforeEach((done) => {
 
     /**
      * /POST request test
-     * Positive and Negative - Creation of Labels
      */
      describe('POST labels /create', () => {
         it('givenCreteLabelDetails_whenProper_shouldmakePOSTRequestAndCreateLabel', (done) => {
             chai.request(server)
                 .post('/createLabel/611dc8d14652ea03d066b38e')
-                .send(userInputs.labelCreatePos)
+                .send(result.labelCreatePos)
                 .set('token', token)
                 .end((error, res) => {
                     res.should.have.status(200);
-                   // res.body.should.be.a('object');
                     res.body.should.have.property("success").eql(true);
                     res.body.should.have.property("message").eql("Label Created!");
-                    // res.body.should.have.property("data").should.be.a('object');
                     if (error) {
                         return done(error);
                     }
@@ -52,7 +45,7 @@ beforeEach((done) => {
         it('givenDetails_WhenNotPassingToken_shouldNotCreateLable', (done) => {
             chai.request(server)
                 .post('/createLabel/611dc8d14652ea03d066b38e')
-                .send(userInputs.labelCreatePos)
+                .send(result.labelCreatePos)
                 .end((error, res) => {
                     if (error) {
                         return done(error);
@@ -67,7 +60,7 @@ beforeEach((done) => {
         it('givenLabelId_whenNoNotesId_shouldNotAbleToDeletTheLabel', (done) => {
             chai.request(server)
             .post('/createLabel')
-            .send(userInputs.labelCreateNegWithNoNotesId)
+            .send(result.labelCreateNegWithNoNotesId)
             .set('token', token)
             .end((error, res) => {
                 if (error) {
@@ -82,7 +75,7 @@ beforeEach((done) => {
         it('givenLabelDetails_WhenEmptyLabel_shouldNotCreateLable', (done) => {
             chai.request(server)
             .post('/createLabel/611dc8d14652ea03d066b38e')
-            .send(userInputs.labelCreateNeg)
+            .send(result.labelCreateNeg)
             .set('token', token)
             .end((error, res) => {
                 if (error) {
@@ -97,8 +90,7 @@ beforeEach((done) => {
 
         /**
      * /GET request test
-     * Positive and Negative - Get all Labels from database
-     */
+    */
     describe('GET all /Labels', () => {
         it('givenValidDetails__whenProper_shouldGETRequestToGetAllLabels', (done) => {
             chai.request(server)
@@ -134,13 +126,12 @@ beforeEach((done) => {
 
     /**
       * /PUT request test
-      * Positive and Negative - Updating a single contact using ID into database 
       */
      describe('PUT /updateLabel/:Labeld', () => {
         it('givenUpdateLabelDetails_whenProper_shouldMakePUTRequestToUpdateLable', (done) => {
             chai.request(server)
                 .put('/updateLabel/611dc8d14652ea03d066b38e')
-                .send(userInputs.lablePutPos)
+                .send(result.lablePutPos)
                 .set('token', token)
                 .end((error, res) => {
                     if (error) {
@@ -157,7 +148,7 @@ beforeEach((done) => {
         it('givenWrongLabelId_whenImProper_shouldNotAbleToUpdateTheLabel', (done) => {
             chai.request(server)
                 .put('/updateLabel/611dc8d14652ea03d066b38e')
-                .send(userInputs.lablePutEmptyNeg)
+                .send(result.lablePutEmptyNeg)
                 .set('token', token)
                 .end((error, res) => {
                     if (error) {
@@ -175,7 +166,7 @@ beforeEach((done) => {
         it('givenLabelId_whenNoNotesId_shouldNotAbleToDeletTheLabel', (done) => {
             chai.request(server)
             .put('/updateLabel')
-                .send(userInputs.lablePutPos)
+                .send(result.lablePutPos)
                 .set('token', token)
                 .end((error, res) => {
                     if (error) {
@@ -204,7 +195,7 @@ beforeEach((done) => {
 
     /**
      * /DELETE request test
-     * Positive and Negative - Deleting a single contact using ID into database 
+     * 
      */
      describe('delete/:labelId', () => {
         it('givenValidDatat_whenProper_shouldDeleteInDB', (done) => {

@@ -81,27 +81,42 @@ class Helper{
         return (loginPassword && databasePassword) ? result : false;
     }
 
-    // authenticateToken(req, res, next) {
-    //   const token = req.headers.authorization;
-    //   if (token) {
-    //       jwt.verify(token.split(" ")[1], process.env.SECRET_TOKEN, (err) => {
-    //           if (err) {
-    //               return res.status(500).send({
-    //                   success: false,
-    //                   message: err.message || 'Failed To Authenticate Token!',
-    //               });
-    //           } else {
-    //               next();
-    //           }
-    //       });
-    //   } else {
-    //       return res.status(401).send({
-    //           success: false,
-    //           message: 'Unauthorized User!',
-    //       });
-    //   }
-    // }
+    /**
+ *
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ * @description : redisMiddleWare is the middle ware of the redis.
+ */
+ redisMiddleWare = (req, res, next) => {
+  client.get('note', (err, note) => {
+    if (err) {
+      throw err;
+    } else if (note) {
+      res.send(JSON.parse(note));
+    } else {
+      next();
+    }
+  });
+};
 
+/**
+ *
+ * @param {*} KEY
+ * @param {*} value
+ * @description : here we have set the key and value in redis function
+ */
+ redisFunction = (KEY, value) => {
+  client.setex(KEY, 1200, JSON.stringify(value));
+};
+
+/**
+ * token verification for crud operation 
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ * @returns 
+ */
     verifyingToken = (req, res, next) => {
       let token = req.get('token')
       try {
@@ -120,24 +135,7 @@ class Helper{
         return res.status(500).send({ success: false, message: 'Something went wrong!' })
       }
     }
-    
-    //  verifyToken = (req, res, next) => {
-    //   try {
-    //     const decode = jwt.verify(req.headers.token, process.env.JWT);
-    //     client.get('token', (err, token) => {
-    //       if (err) throw err;
-    //       if (req.headers.token === token) {
-    //         req.userData = decode;
-    //         const userId = decode.id;
-    //       }
-    //       next();
-    //     });
-    //   } catch (error) {
-    //     res.status(401).send({
-    //       error: 'Your token has expiered',
-    //     });
-    //   }
-    // };
+
          
 }
 

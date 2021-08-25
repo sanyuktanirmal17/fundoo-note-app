@@ -6,7 +6,7 @@ dbconnection();
 const bodyParser = require("body-parser")
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger/swagger.json');
-
+const redis = require('redis');
 const app = express();
 
 // parse requests of content-type - application/x-www-form-urlencoded

@@ -1,7 +1,4 @@
 /*************************************************************************
- * Execution        : 1. default node       cmd> npm start
- *
- * Purpose          : To create schema for labels.
  *
  * @file            : label.js
  * @author          : sanyukta
@@ -55,14 +52,16 @@
          try {
              return await LabelModel.find({});
          } catch (error) {
+            console.log("model err",error);
              return error;
+             
          }
      }
  
      /**
-      * @description function written to get label by ID
-      * @param {*} labelId 
-      * @returns data else if returns error
+      * 
+      * @param {*} labelId
+      * @description retrieve all the label created
       */
      async getLabelById(labelId) {
          try {
@@ -73,7 +72,7 @@
      }
  
      /**
-      * @description function written to update label name
+      * @description : updating the label
       * @param {*} labelId 
       * @param {*} labelData 
       * @returns data else if returns error
@@ -102,8 +101,99 @@
      }
  }
  
- //exporting the class to utilize or call function created in this class
+ 
  module.exports = new LabelsModel()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //  const mongoose = require('mongoose');
 //  logger = require('../logger/logger');
