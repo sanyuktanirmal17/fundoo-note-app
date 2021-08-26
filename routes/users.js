@@ -33,6 +33,8 @@ module.exports = (app) => {
 
   app.get('/notes/:notes', helper.verifyingToken, redisCache.checkCache, noteController.getAllNotes);
 
+  app.get('/note/:notesId',  helper.verifyingToken, noteController.getNoteById);
+
   app.put('/note/:notesId',  helper.verifyingToken, noteController.updateNotesById);
 
   app.delete('/delete/:notesId', helper.verifyingToken, noteController.deleteNotesById);
@@ -42,7 +44,7 @@ module.exports = (app) => {
 
   app.get('/labels/:labels',  helper.verifyingToken, redisCache.checkLabelCache, labelController.getAllLabels);
 
-  app.get('/label/:labelId',  helper.verifyingToken, labelController.getLabelById);
+ app.get('/label/:labelId',  helper.verifyingToken, labelController.getLabelById);
 
   app.put('/updateLabel/:labelId',  helper.verifyingToken, labelController.updateLabelById);
 

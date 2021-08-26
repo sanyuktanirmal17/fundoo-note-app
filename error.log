@@ -786,3 +786,8 @@
 {"level":"error","message":"email not found","timestamp":"2021-08-24T03:38:09.230Z"}
 {"level":"error","message":"Some error occured while updating password Cannot read property '_id' of null","stack":"TypeError: Cannot read property '_id' of null\n    at Model.updatePassword (E:\\Fundoo Note\\models\\user.js:117:35)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)","timestamp":"2021-08-24T03:38:10.629Z"}
 {"level":"error","message":"Error while registering the new user","timestamp":"2021-08-25T13:49:15.963Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-26T03:28:19.539Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-26T03:28:19.852Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-26T03:28:20.204Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-26T03:28:20.461Z"}
+{"level":"error","message":"email not found","timestamp":"2021-08-26T03:28:21.649Z"}

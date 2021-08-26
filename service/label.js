@@ -9,7 +9,7 @@
  **************************************************************************/
 
 
- const { redisFunction } = require('../middleware/helper');
+//  const { redisFunction } = require('../middleware/helper');
  const labelsModel = require('../models/label');
 
  class LabelService {
@@ -35,7 +35,6 @@
          try {
              return await labelsModel.getAllLabels();
          } catch (error) {
-             console.log("service error", error)
              return error;
          }
      }

@@ -35,6 +35,16 @@ class NotesService {
         }
     }
 
+
+
+    async getNoteById(notesId) {
+        try {
+            return await notesModel.getNoteById(notesId);
+        } catch (error) {
+            return error;
+        }
+    }
+
     /**
      * @description this function is written to trigger or call the models function
      * @param {*} notesId 

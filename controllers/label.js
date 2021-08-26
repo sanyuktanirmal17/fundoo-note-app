@@ -12,12 +12,13 @@ const labelService = require('../service/label');
  const redisClass = require('../middleware/redis')
 
  class LabelController {
-     /**
-      * @param {httprequest} req
-      * @param {httpresponse} res
-      * @description : createLabel is used to create a new label.
-      */
-      async createLabel(req, res) {
+    /**
+     * @description function writt
+     * en to create label into database
+     * @param {*} a valid req body is expected
+     * @param {*} res
+     */
+    async createLabel(req, res) {
         try {
            let dataValidation = labelValidation.validate(req.body);
            if (dataValidation.error) {
@@ -37,87 +38,89 @@ const labelService = require('../service/label');
            res.status(500).send({success: false, message: "Some error occurred while creating label"});
         }
     }
-     /**
-    * @param {httprequest} req
-    * @param {httpresponse} res
-    * @description : retrieveLabels is used to retrive the labels.
-      */
-      async getAllLabels(req, res) {
+
+    /**
+     * @description function written to get all labels
+     * @param {*} req 
+     * @param {*} res 
+     */
+    async getAllLabels(req, res) {
         try {
             const getLabels = req.params;
             const getAllLabels = await labelService.getAllLabels();
             const data = await JSON.stringify(getAllLabels);
             redisClass.setDataInCache(getLabels.labels, 3600, data)
             res.send({success: true, message: "Labels Retrieved!", data: getAllLabels});
+            console.log("data", getAllLabels)
         } catch (error) {
-            console.log(error);
+            console.log("error controleer",error);
             res.status(500).send({success: false, message: "Some error occurred while retrieving labels"});
         }
     }
- 
-     /**
-      * @description function written to get label by ID
-      * @param {*} req 
-      * @param {*} res 
-      */
-     async getLabelById(req, res) {
-         try {
-             let labelId = req.params;
-             const getLabel = await labelService.getLabelById(labelId);
-             res.send({success: true, message: "Label Retrieved!", data: getLabel});
-         } catch (error) {
-             console.log(error);
-             res.status(500).send({success: false, message: "Some error occurred while retrieving label"});
-         }
-     }
- 
-     /**
-      * @param {httprequest} req
-     * @param {httpresponse} res
-     * @description : updateLabel is used to update the already created label.
-      */
-     async updateLabelById(req, res) {
-         try {
-             let dataValidation = labelValidation.validate(req.body);
-             if (dataValidation.error) {
-                 return res.status(400).send({
-                     message: dataValidation.error.details[0].message
-                 });
-             }
- 
-             let labelId = req.params;
-             const labelData = {
-                 labelName: req.body.labelName
-             }
-             const updatedLabel = await labelService.updateLabelById(labelId, labelData);
-             res.send({success: true, message: "Label Name Updated!", data: updatedLabel});
-         } catch (error) {
-             console.log(error);
-             res.status(500).send({success: false, message: "Some error occurred while updating label name"});
-         }
-     }
- 
-     /**
-    //  * @param {httprequest} req
-    //  * @param {httpresponse} res
-    //  * @description : deleteLabel is used to delete the already created label using its id.
-    //  */
-     async deleteLabelById(req, res) {
-         try {
-             let labelId = req.params;
-             await labelService.deleteLabelById(labelId);
-             res.send({success: true, message: "Label Deleted!"});
-         } catch (error) {
-             console.log(error);
-             res.status(500).send({success: false, message: "Some error occurred while deleting label"});
-         }
+
+    /**
+     * @description function written to get label by ID
+     * @param {*} req 
+     * @param {*} res 
+     */
+    async getLabelById(req, res) {
+        try {
+            let labelId = req.params;
+            const getLabel = await labelService.getLabelById(labelId);
+            const data =  JSON.stringify(labelId);
+            redisClass.setDataInCache(  "labelId", 3600, data)
+            res.send({success: true, message: "Label Retrieved!", data: getLabel});
+        } catch (error) {
+            console.log(error);
+            res.status(500).send({success: false, message: "Some error occurred while retrieving label"});
+        }
     }
- }
- 
- module.exports = new LabelController();
 
+    /**
+     * @description function written to update label
+     * @param {*} a valid req body is expected
+     * @param {*} res 
+     */
+    async updateLabelById(req, res) {
+        try {
+            let dataValidation = labelValidation.validate(req.body);
+            if (dataValidation.error) {
+                return res.status(400).send({
+                    message: dataValidation.error.details[0].message
+                });
+            }
 
+            let labelId = req.params;
+            const labelData = {
+               labelName: req.body.labelName
+            }
+            const updatedLabel = await labelService.updateLabelById(labelId, labelData);
+            res.send({success: true, message: "Label Name Updated!", data: updatedLabel});
+        } catch (error) {
+            console.log(error);
+            res.status(500).send({success: false, message: "Some error occurred while updating label name"});
+        }
+    }
 
+    /**
+     * @description function written to delete label by ID
+     * @param {*} req 
+     * @param {*} res 
+     */
+    async deleteLabelById(req, res) {
+        try {
+            let labelId = req.params;
+            await labelService.deleteLabelById(labelId);
+            res.send({success: true, message: "Label Deleted!"});
+        } catch (error) {
+            console.log(error);
+            res.status(500).send({success: false, message: "Some error occurred while deleting label"});
+        }
+   }
+}
+
+//exporting class to utilize or call function created in this class
+module.exports = new LabelController();
 
 
 

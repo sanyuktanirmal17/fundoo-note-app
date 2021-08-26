@@ -79,6 +79,14 @@ class NotesModel {
       }
   }
 
+// async getLabelById(labelId) {
+//          try {
+//              return await LabelModel.findById(labelId.labelId);
+//          } catch (error) {
+//              return error;
+//          }
+//      }
+
   /**
    * @description function written to update notes by Id into database 
    * @param {*} a valid notesId is expected

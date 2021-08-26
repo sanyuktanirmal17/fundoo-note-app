@@ -336,12 +336,7 @@
             "get": {
                 "tags": ["Labels"],
                 "description": "get label by ID",
-                "parameters": [{
-                    "name": "labelId",
-                    "in": "path",
-                    "required": true,
-                    "type": "string"
-                }],
+                "parameters": [{}],
                 "responses": {
                     "200": {
                         "description": "Successful"
@@ -365,7 +360,7 @@
             }
         },
         "/label/{labelId}": {
-            "put": {
+            "get": {
                 "tags": ["Labels"],
                 "description": "get label by ID",
                 "parameters": [{

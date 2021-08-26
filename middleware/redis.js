@@ -38,7 +38,8 @@ class RedisClass {
      checkLabelCache(req, res, next) {
         const  getLabels  = req.params;
         client.get(getLabels.labels, (error, data) => {
-            if(error) console.log('I am error', error);
+            if(error) 
+            console.log('error occured', error);
             if(data !== null) {
                 data = JSON.parse(data);
                 res.send({success: true, message: "Labels Retrieved!", data: data});
