@@ -36,13 +36,13 @@ class RedisClass {
      * @param {*} if there is no data function calls for next function
      */
      checkLabelCache(req, res, next) {
-        const  getLabels  = req.params;
-        client.get(getLabels.labels, (error, data) => {
+        // const  lableId  = req.params;
+        client.get(lableId, (error, data) => {
             if(error) 
             console.log('error occured', error);
             if(data !== null) {
                 data = JSON.parse(data);
-                res.send({success: true, message: "Labels Retrieved!", data: data});
+                res.send({success: true, message: "Labels Retrieved!", data: lableId});
             }else {
                 next();
             }
