@@ -42,7 +42,7 @@ module.exports = (app) => {
 
   
   //label CRUD api
-  app.post('/createLabel/:userId',  helper.verifyingToken, labelController.createLabel);
+  app.post('/createLabel/:notesId',  helper.verifyingToken, labelController.createLabel);
 
   app.get('/labels/:labels',  helper.verifyingToken,  labelController.getAllLabels);
 

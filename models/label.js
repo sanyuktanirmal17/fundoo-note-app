@@ -13,9 +13,13 @@
          type: String,
          required: true
      },
-     notesId: {
-         type: String
-     },
+
+     userId:{ type: mongoose.Schema.Types.ObjectId, ref: 'user'},
+    //  userId: {
+    //      type: String
+    //  },
+
+
      labels : {
         type: [String]
     }
@@ -36,7 +40,9 @@
          try {
              const label = new LabelModel({
                  labelName: labelData.labelName,
-                 notesId: labelData.notesId
+                 notesId: labelData.notesId,
+                 userId: labelData.userId
+                
              });
              return await label.save({});
          } catch (error) {

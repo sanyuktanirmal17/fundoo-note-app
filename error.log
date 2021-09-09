@@ -791,3 +791,6 @@
 {"level":"error","message":"Error while registering the new user","timestamp":"2021-08-26T03:28:20.204Z"}
 {"level":"error","message":"email not found","timestamp":"2021-08-26T03:28:20.461Z"}
 {"level":"error","message":"email not found","timestamp":"2021-08-26T03:28:21.649Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-27T14:51:16.335Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-27T14:51:30.263Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-08-27T14:51:49.583Z"}

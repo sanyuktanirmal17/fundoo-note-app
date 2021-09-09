@@ -11,6 +11,7 @@ logger = require('../logger/logger');
 const redisClass = require('../middleware/redis')
 const redis = require('redis');
 const client = redis.createClient(process.env.REDIS_PORT);
+const {verifyTokenUser} = require('../middleware/helper');
 
 class NotesController {
     /**
@@ -27,7 +28,9 @@ class NotesController {
                     message: dataValidation.error.details[0].message
                 });
             }
+            const tokenData = verifyTokenUser(req.headers.token);
             const notesData = {
+                // userId: tokenData.tokenUser.userId,
                 title: req.body.title,
                 description: req.body.description
             }
@@ -126,8 +129,7 @@ class NotesController {
   /**
      * @description function written to add label to note
      * @param {*} a valid noteId is expected
-     * @param {*} a valid labelData is expected
-     * @returns 
+     * @param {*} a valid labelData is expecte
      */
    async addLabelToNote(req, res) {
     try {
@@ -166,7 +168,7 @@ class NotesController {
         }
         const notesId = req.body.notesId;
         const labelData = {
-            labelId: [req.body.labelId]
+         labelId: [req.body.labelId]
         }
 
         const addLabelName = await notesService.deleteLabelFromNote(notesId, labelData);
@@ -178,11 +180,11 @@ class NotesController {
  }
 }
 
-//exporting th whole class to utilize or call function created in this class
+
 module.exports = new NotesController();
 
 
 
 
 
-    module.exports = new NotesController();
+    

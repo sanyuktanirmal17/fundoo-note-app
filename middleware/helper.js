@@ -11,6 +11,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const logger = require('../logger/logger');
 const { required } = require('joi');
+const { data } = require('../logger/logger');
 
 class Helper{
 
@@ -26,12 +27,22 @@ class Helper{
       }
      
     generatToken = (data) => {
-        const token =  jwt.sign({ email: data.email, id: data._id }, process.env.SECRET_TOKEN, { expiresIn: "3000000s" });
+        const token =  jwt.sign({ 
+          email: data.email,
+           id: data._id },
+           process.env.SECRET_TOKEN, { expiresIn: "24h" });
         console.log(data);
         return token
         }
 
-        /**
+        generateTokenForUser = (data) =>{
+          const tokenUser = {
+            email: data.email,
+             id: data._id }
+           return  jwt.sign({tokenUser}, process.env.SECRET_TOKEN, { expiresIn: "24h" });
+    
+        }
+               /**
          * verify token for CRUD Operation
          * @param {*} req 
          * @param {*} res 
@@ -41,7 +52,7 @@ class Helper{
         verifyToken = (req, res, next) => {
           try {
             const decode = jwt.verify(req.headers.token, process.env.JWT);
-            client.get('token', (err, token) => {
+            get('token', (err, token) => {
               if (err) throw err;
               if (req.headers.token === token) {
                 req.userData = decode;
@@ -136,6 +147,46 @@ class Helper{
       }
     }
 
+    verifyTokenUser = (token)=>{
+      const data = jwt.verify(token,process.env.SECRET_TOKEN);
+      if(data){
+          return data;
+      }
+      else{
+         return "couldnt verify" ;
+      }
+ }
+
+//  validateToken = (req,res,next)=>{
+//   try{
+//       const header = req.headers.token;
+//       // const myArr = header.split(" ");
+//       // const token = myArr[1];
+//       const decode = jwt.verify(req.headers.token, process.env.JWT);
+//             get('token', (err, token) => {
+//               if (err) throw err;
+//               if (req.headers.token === token) {
+//                 req.userData = decode;
+//                 const userId = decode.id;
+//               }
+//       const verify = jwt.verify({header}token,process.env.ACCESS_TOKEN_KEY);
+//       if(verify){
+//           next();
+//       }
+//       else{
+//           return  res.status(400).send({
+//               message:"Invalid Token",
+//               success:false
+//           })
+//       }
+//   }catch{
+//       return  res.status(400).send({
+//           message:"Invalid Token",
+//           success:false
+//       })
+//   }
+
+// }
          
 }
 

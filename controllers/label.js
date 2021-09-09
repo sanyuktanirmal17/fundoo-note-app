@@ -10,6 +10,7 @@
 const labelService = require('../service/label');
  const {labelValidation} = require('../middleware/user');
  const redisClass = require('../middleware/redis')
+ const {verifyTokenUser} = require('../middleware/helper')
 
  class LabelController {
     /**
@@ -18,6 +19,7 @@ const labelService = require('../service/label');
      * @param {*} a valid req body is expected
      * @param {*} res
      */
+    //  noteId:{type:mongoose.Schema.Types.ObjectId, ref :'noteRegister'},
     async createLabel(req, res) {
         try {
            let dataValidation = labelValidation.validate(req.body);
@@ -26,9 +28,13 @@ const labelService = require('../service/label');
                    message: dataValidation.error.details[0].message
                });
            }
+           const tokenData = verifyTokenUser(req.headers.token);
            const labelData = {
                labelName: req.body.labelName,
-               notesId: req.params.notesId
+               notesId: req.params.notesId,
+               userId: tokenData.tokenUser.userId
+            //  userId: req.params.userId
+            // userId:req.token._id
            }
            const labelCreated = await labelService.createLabel(labelData);
            res.send({success: true, message: "Label Created!", data: labelCreated});
@@ -46,29 +52,28 @@ const labelService = require('../service/label');
      */
     async getAllLabels(req, res) {
         try {
-            const getLabels = req.params;
+
             const getAllLabels = await labelService.getAllLabels();
-            const data = await JSON.stringify(getAllLabels);
-            redisClass.setDataInCache("labels", 3600, data)
             res.send({success: true, message: "Labels Retrieved!", data: getAllLabels});
             console.log("data", getAllLabels)
         } catch (error) {
             console.log("error controleer",error);
-            res.status(500).send({success: false, message: "Some error occurred while retrieving labels"});
+            res.status(500).send({success: false, message: "error occurred while retrieving labels"});
         }
     }
 
     /**
-     * @description function written to get label by ID
-     * @param {*} req 
+     * @description function written with redis to get label by ID
+     * @param {*} req
+     * 
      * @param {*} res 
      */
     async getLabelById(req, res) {
         try {
-            // let labelId = req.params;
+            let labelId = req.params;
             const getLabel = await labelService.getLabelById(labelId);
-            const data =  JSON.stringify(getAllLabels);
-            redisClass.setDataInCache(  "labelId", 3600, data)
+            const data =  JSON.stringify(getLabel);
+            redisClass.setDataInCache( "labelId", 50, data)
             res.send({success: true, message: "Label Retrieved!", data: getLabel});
         } catch (error) {
             console.log(error);
@@ -119,7 +124,6 @@ const labelService = require('../service/label');
    }
 }
 
-//exporting class to utilize or call function created in this class
 module.exports = new LabelController();
 
 

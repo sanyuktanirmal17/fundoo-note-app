@@ -9,6 +9,7 @@ const logger = require("../logger/logger");
 const model = require('../models/user');
 const { constants } = require('fs');
 
+
 class Controller{
     /**
      * @description Create and save user and sending response to service
