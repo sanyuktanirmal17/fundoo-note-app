@@ -24,7 +24,9 @@ class Helper{
         return jwt.sign(loginData, process.env.SECRET_TOKEN, {
             expiresIn: "24h"});
     
+
       }
+
      
     generatToken = (data) => {
         const token =  jwt.sign({ 
@@ -35,7 +37,7 @@ class Helper{
         return token
         }
 
-        generateTokenForUser = (data) =>{
+         generateTokenForUser = (data) =>{
           const tokenUser = {
             email: data.email,
              id: data._id }
@@ -52,11 +54,11 @@ class Helper{
         verifyToken = (req, res, next) => {
           try {
             const decode = jwt.verify(req.headers.token, process.env.JWT);
-            get('token', (err, token) => {
+            client.get('token', (err, token) => {
               if (err) throw err;
               if (req.headers.token === token) {
                 req.userData = decode;
-                const userId = decode.id;
+                 const userId = decode.id;
               }
               next();
             });
@@ -156,37 +158,6 @@ class Helper{
          return "couldnt verify" ;
       }
  }
-
-//  validateToken = (req,res,next)=>{
-//   try{
-//       const header = req.headers.token;
-//       // const myArr = header.split(" ");
-//       // const token = myArr[1];
-//       const decode = jwt.verify(req.headers.token, process.env.JWT);
-//             get('token', (err, token) => {
-//               if (err) throw err;
-//               if (req.headers.token === token) {
-//                 req.userData = decode;
-//                 const userId = decode.id;
-//               }
-//       const verify = jwt.verify({header}token,process.env.ACCESS_TOKEN_KEY);
-//       if(verify){
-//           next();
-//       }
-//       else{
-//           return  res.status(400).send({
-//               message:"Invalid Token",
-//               success:false
-//           })
-//       }
-//   }catch{
-//       return  res.status(400).send({
-//           message:"Invalid Token",
-//           success:false
-//       })
-//   }
-
-// }
          
 }
 

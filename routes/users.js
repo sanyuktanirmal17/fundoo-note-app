@@ -57,7 +57,7 @@ module.exports = (app) => {
 
   app.delete('/deleteLabel',  helper.verifyingToken, noteController.deleteLabelFromNote)
 
-    }
+}
 
 
 

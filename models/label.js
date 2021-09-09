@@ -15,9 +15,9 @@
      },
 
      userId:{ type: mongoose.Schema.Types.ObjectId, ref: 'user'},
-    //  userId: {
-    //      type: String
-    //  },
+     userId: {
+         type: String
+     },
 
 
      labels : {
@@ -41,7 +41,7 @@
              const label = new LabelModel({
                  labelName: labelData.labelName,
                  notesId: labelData.notesId,
-                 userId: labelData.userId
+                  userId: labelData.userId
                 
              });
              return await label.save({});

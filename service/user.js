@@ -45,7 +45,8 @@ class Service {
             }
             if(helper.bcryptAuthentication(loginData.password, data.password)){
                 //  logger.data("Token is generated", helper.createToken({loginData});
-                const token = helper.createToken({loginData})
+                const token = helper.generatToken(data)
+                console.log(token)
                 if(token)
                 {
                     logger.info("Token generated",token)

@@ -28,11 +28,14 @@ class NotesController {
                     message: dataValidation.error.details[0].message
                 });
             }
-            const tokenData = verifyTokenUser(req.headers.token);
+            let token = req.get('token')
+            const tokenData = verifyTokenUser(token);
+            console.log(tokenData)
             const notesData = {
-                // userId: tokenData.tokenUser.userId,
+               
                 title: req.body.title,
-                description: req.body.description
+                description: req.body.description,
+                userId:tokenData.id
             }
             const notesCreated = await notesService.createNotes(notesData);
             res.send({success: true, message: "Notes Created!", data: notesCreated});

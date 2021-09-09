@@ -19,7 +19,6 @@ const labelService = require('../service/label');
      * @param {*} a valid req body is expected
      * @param {*} res
      */
-    //  noteId:{type:mongoose.Schema.Types.ObjectId, ref :'noteRegister'},
     async createLabel(req, res) {
         try {
            let dataValidation = labelValidation.validate(req.body);
@@ -28,13 +27,13 @@ const labelService = require('../service/label');
                    message: dataValidation.error.details[0].message
                });
            }
-           const tokenData = verifyTokenUser(req.headers.token);
+           let token = req.get('token')
+           console.log(token)
+           const tokenData = verifyTokenUser(token);
            const labelData = {
                labelName: req.body.labelName,
                notesId: req.params.notesId,
-               userId: tokenData.tokenUser.userId
-            //  userId: req.params.userId
-            // userId:req.token._id
+               userId:tokenData.id
            }
            const labelCreated = await labelService.createLabel(labelData);
            res.send({success: true, message: "Label Created!", data: labelCreated});
