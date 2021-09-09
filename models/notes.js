@@ -14,7 +14,7 @@ mongoose.set('useUnifiedTopology', true);
 logger = require('../logger/logger');
 
 const NotesSchema = new mongoose.Schema({
-    userId:{ type: mongoose.Schema.Types.ObjectId, ref: 'user'},
+    // userId:{ type: mongoose.Schema.Types.ObjectId, ref: 'user'},
   title: {
       type: String
   },
@@ -46,7 +46,7 @@ class NotesModel {
   async createInfo(notesData) {
       try {
           const notes = new NoteModel({
-              userId:notesData.userId,
+            //   userId:notesData.userId,
               title: notesData.title,
               description: notesData.description
           });
@@ -60,7 +60,7 @@ class NotesModel {
    * @description function written to get all notes from database 
    * @returns retrieved notes or if error returns error
    */
-  async getAllNotes() {
+  async getAllNotes(callback) {
       try {
           return await NoteModel.find({});
       } catch (error) {
