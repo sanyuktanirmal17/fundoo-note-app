@@ -142,11 +142,15 @@ class NotesController {
                 message: dataValidation.error.details[0].message
             });
         }
+
+        let token = req.get('token')
+        console.log(token)
+        const tokenData = verifyTokenUser(token);
         const notesId = req.body.notesId;
         const labelData = {
             labelId: [req.body.labelId]
         }
-
+        const userId = {userId: [tokenData.id] }
         const addLabelName = await notesService.addLabelToNote(notesId, labelData);
         res.send({success: true, message: "Label Added!", data: addLabelName});
     } catch (error) {

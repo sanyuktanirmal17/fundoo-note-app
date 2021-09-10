@@ -794,3 +794,34 @@
 {"level":"error","message":"Error while registering the new user","timestamp":"2021-08-27T14:51:16.335Z"}
 {"level":"error","message":"Error while registering the new user","timestamp":"2021-08-27T14:51:30.263Z"}
 {"level":"error","message":"Error while registering the new user","timestamp":"2021-08-27T14:51:49.583Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-09-09T18:46:06.795Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-09-09T18:46:06.991Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-09-09T18:46:07.230Z"}
+{"level":"error","message":"email not found","timestamp":"2021-09-09T18:46:07.503Z"}
+{"level":"error","message":"email not found","timestamp":"2021-09-09T18:46:07.799Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-09-09T18:51:13.413Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-09-09T18:51:13.564Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-09-09T18:51:13.712Z"}
+{"level":"error","message":"email not found","timestamp":"2021-09-09T18:51:13.848Z"}
+{"level":"error","message":"email not found","timestamp":"2021-09-09T18:51:14.030Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-09-10T13:59:38.965Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-09-10T13:59:39.396Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-09-10T13:59:39.775Z"}
+{"level":"error","message":"email not found","timestamp":"2021-09-10T13:59:40.152Z"}
+{"errno":-3008,"code":"EDNS","syscall":"getaddrinfo","hostname":"smtp.gmail.com","command":"CONN","level":"error","timestamp":"2021-09-10T13:59:40.539Z"}
+{"level":"error","message":"email not found","timestamp":"2021-09-10T13:59:40.716Z"}
+{"errno":-3008,"code":"EDNS","syscall":"getaddrinfo","hostname":"smtp.gmail.com","command":"CONN","level":"error","timestamp":"2021-09-10T13:59:40.829Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-09-10T14:15:28.826Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-09-10T14:15:29.222Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-09-10T14:15:29.590Z"}
+{"level":"error","message":"email not found","timestamp":"2021-09-10T14:15:29.988Z"}
+{"errno":-3008,"code":"EDNS","syscall":"getaddrinfo","hostname":"smtp.gmail.com","command":"CONN","level":"error","timestamp":"2021-09-10T14:15:30.322Z"}
+{"level":"error","message":"email not found","timestamp":"2021-09-10T14:15:30.517Z"}
+{"errno":-3008,"code":"EDNS","syscall":"getaddrinfo","hostname":"smtp.gmail.com","command":"CONN","level":"error","timestamp":"2021-09-10T14:15:30.754Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-09-10T14:21:22.433Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-09-10T14:21:22.855Z"}
+{"level":"error","message":"Error while registering the new user","timestamp":"2021-09-10T14:21:23.247Z"}
+{"level":"error","message":"email not found","timestamp":"2021-09-10T14:21:23.609Z"}
+{"errno":-3008,"code":"EDNS","syscall":"getaddrinfo","hostname":"smtp.gmail.com","command":"CONN","level":"error","timestamp":"2021-09-10T14:21:23.888Z"}
+{"level":"error","message":"email not found","timestamp":"2021-09-10T14:21:24.112Z"}
+{"errno":-3008,"code":"EDNS","syscall":"getaddrinfo","hostname":"smtp.gmail.com","command":"CONN","level":"error","timestamp":"2021-09-10T14:21:24.220Z"}

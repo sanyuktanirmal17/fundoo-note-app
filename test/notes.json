@@ -35,7 +35,38 @@
 
 "notesDelNeg": {
     "isDeleted": ""
-}
+},
+
+"addLabelToNote": {
+    "notesId":"613a4c597835522f34de1e07",
+    "labelId":"613a365b86adcd27b8814ea6"
+  },
+
+  "addLabelToNoteId": {
+    "notesId": "",
+    "labelId":"613a365b86adcd27b8814ea6"
+  },
+
+  "addLabelLabelId": {
+    "notesId":"613a4c597835522f34de1e07",
+    "labelId": ""
+  },
+
+  "delLabelFromNote": {
+        "notesId": "613b6291119ac924541d2e3a",
+        "labelId": "613b63af61e50f35b87efd99"
+      
+  },
+
+  "DelLabelWrongNoteId": {
+    "notesId": "613b6291119ac9",
+    "labelId": "613b63af61e50f35b87efd99"
+  },
+
+  "DelLabelWrongNote": {
+    "notesId": "613b6291119ac924541d2e3a",
+    "labelId": "613b63af61e50"
+  }
 }
 
 

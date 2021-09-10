@@ -144,7 +144,7 @@ class NotesModel {
    async addLabelToNote(notesId, labelData) {
     try {
         return await NoteModel.findByIdAndUpdate(notesId,
-            {$push : { "labels": {$each: labelData.labelId}} },
+            {$push : { "labels": {$each: labelData.labelId, userId:id}} },
             {new: true});
     } catch (error) {
         return error;

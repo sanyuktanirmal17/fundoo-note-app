@@ -248,7 +248,173 @@ beforeEach((done) => {
                     return done();
                 });
         });
+
+
+
+        /**
+      * / Add Label  
+      */
+      describe('PUT /addLabel/', () => {
+        it('givenValidDataItShould_addLabelToNoteSuccessfully_andReturnsStatusCodeAs200', (done) => {
+            chai.request(server)
+                .put('/addLabel')
+                .send(notesResult.addLabelToNotePos)
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property("success").eql(true);
+                    res.body.should.have.property("message").eql("Label Added!");
+                    res.body.should.have.property("data").should.be.a('object');
+                    return done();
+                });
+        });
+
+        it('givenInValidNoteIdItShould_failToAddLabelToNote_andReturnsStatusCodeAs400', (done) => {
+            chai.request(server)
+                .put('/addLabel')
+                .send(notesResult.addLabelToNoteNegNoteId)
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(400);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property("message").eql('"notesId" is not allowed to be empty');
+                    return done();
+                });
+        });
+
+        it('givenInValidLabelIdItShould_failToAddLabelToNote_andReturnsStatusCodeAs400', (done) => {
+            chai.request(server)
+                .put('/addLabel')
+                .send(notesResult.addLabelToNoteNegLabelId)
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(400);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property("message").eql("\"labelId\" is not allowed to be empty");
+                    return done();
+                });
+        });
     });
+
+
+     /**
+      * /PUT request test
+      */
+      describe('PUT /addLabel/', () => {
+        it('givenValidDataItShould_addLabelToNoteSuccessfully_andReturnsStatusCodeAs200', (done) => {
+            chai.request(server)
+                .put('/addLabel')
+                .send(notesResult.addLabelToNote)
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property("success").eql(true);
+                    res.body.should.have.property("message").eql("Label Added!");
+                    res.body.should.have.property("data").should.be.a('object');
+                    return done();
+                });
+        });
+
+        it('givenInValidNoteIdItShould_failToAddLabelToNote_andReturnsStatusCodeAs400', (done) => {
+            chai.request(server)
+                .put('/addLabel')
+                .send(notesResult.addLabelToNoteId)
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(400);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property("message").eql('"notesId" is not allowed to be empty');
+                    return done();
+                });
+        });
+
+        it('givenInValidLabelIdItShould_failToAddLabelToNote_andReturnsStatusCodeAs400', (done) => {
+            chai.request(server)
+                .put('/addLabel')
+                .send(notesResult.addLabelLabelId)
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(400);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property("message").eql("\"labelId\" is not allowed to be empty");
+                    return done();
+                });
+        });
+    });
+
+    /*
+     *Delete Note  from  DB
+     */
+     describe('delete /deleteLabel/', () => {
+        it('givenValidDataItShould_addLabelToNoteSuccessfully_andReturnsStatus200', (done) => {
+            chai.request(server)
+                .put('/deleteLabel')
+                .send(notesResult.delLabelFromNote)
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(200);
+                    // res.body.should.be.a('object');
+                    // res.body.should.have.property("success").eql(true);
+                    // res.body.should.have.property("message").eql("Label Deleted!");
+                    return done();
+                });
+        });
+
+        it('givenInValidNoteId_failTodeleteLabelfromNote_andReturnsStatus400', (done) => {
+            chai.request(server)
+                .put('/deleteLabel')
+                .send(notesResult.DelLabelWrongNoteId)
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(404);
+                    res.body.should.be.a('object');
+                    return done();
+                });
+        });
+
+        it('givenValidLabelId_failTodeleteLabelFromNote_andReturnsStatus400', (done) => {
+            chai.request(server)
+                .put('/deleteLabel')
+                .send(notesResult.DelLabelWrongNote)
+                .set('token', token)
+                .end((error, res) => {
+                    if (error) {
+                        return done(error);
+                    }
+                    res.should.have.status(404);
+                    res.body.should.be.a('object');
+                    return done();
+                });
+        });
+   });
+
+ });
 
   
 
