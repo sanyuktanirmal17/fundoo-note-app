@@ -53,12 +53,9 @@ class NotesController {
      */
     async getAllNotes(req, res) {
         try {
-            let token = req.get('token')
-            const tokenData = verifyTokenUser(token);
-            const id = {id:tokenData.id}
-            console.log(tokenData)
+            
             const getNotes = req.params;
-            const getAllNotes = await notesService.getAllNotes(id);
+            const getAllNotes = await notesService.getAllNotes();
             
             // const data = await JSON.stringify(getAllNotes);
             // redisClass.setDataInCache(getNotes.notes, 3600, data)

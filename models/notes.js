@@ -64,7 +64,7 @@ class NotesModel {
    */
   async getAllNotes() {
       try {
-          return await NoteModel.find({userId:id.id});
+          return await NoteModel.find({});
       } catch (error) {
           return error;
       }

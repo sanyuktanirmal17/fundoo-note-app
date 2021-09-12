@@ -340,7 +340,7 @@
                 "description": "creating label",
                 "parameters": [
                     {
-                        "name": "notesId",
+                        "name": "usergitId",
                         "in": "path",
                         "required": true,
                         "type": "string"
