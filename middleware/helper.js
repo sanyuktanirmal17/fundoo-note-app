@@ -148,7 +148,7 @@ class Helper{
         return res.status(500).send({ success: false, message: 'Something went wrong!' })
       }
     }
-
+ 
     verifyTokenUser = (token)=>{
       const data = jwt.verify(token,process.env.SECRET_TOKEN);
       if(data){

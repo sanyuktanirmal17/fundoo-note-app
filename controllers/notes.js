@@ -53,10 +53,15 @@ class NotesController {
      */
     async getAllNotes(req, res) {
         try {
+            let token = req.get('token')
+            const tokenData = verifyTokenUser(token);
+            const id = {id:tokenData.id}
+            console.log(tokenData)
             const getNotes = req.params;
-            const getAllNotes = await notesService.getAllNotes();
-            const data = await JSON.stringify(getAllNotes);
-            redisClass.setDataInCache(getNotes.notes, 3600, data)
+            const getAllNotes = await notesService.getAllNotes(id);
+            
+            // const data = await JSON.stringify(getAllNotes);
+            // redisClass.setDataInCache(getNotes.notes, 3600, data)
             res.send({success: true, message: "Notes Retrieved!", data: getAllNotes});
             // console.log("controller found", data);
         } catch (error) {
@@ -143,19 +148,22 @@ class NotesController {
             });
         }
 
-        let token = req.get('token')
-        console.log(token)
-        const tokenData = verifyTokenUser(token);
-        const notesId = req.body.notesId;
+        
+       const notesId = req.body.notesId;
         const labelData = {
-            labelId: [req.body.labelId]
+           labelId: [req.body.labelId]
         }
-        const userId = {userId: [tokenData.id] }
+        
         const addLabelName = await notesService.addLabelToNote(notesId, labelData);
-        res.send({success: true, message: "Label Added!", data: addLabelName});
+        res.send({
+            success: true, 
+            message: "Label Added!", 
+            data: addLabelName});
     } catch (error) {
         console.log(error);
-        res.status(500).send({success: false, message: "Some error occurred while adding label to notes"});
+        res.status(500).send({
+            success: false, 
+            message: "Some error occurred while adding label to notes"});
     }
 }
 
@@ -173,18 +181,24 @@ class NotesController {
                 message: dataValidation.error.details[0].message
             });
         }
+        
         const notesId = req.body.notesId;
         const labelData = {
-         labelId: [req.body.labelId]
-        }
-
+         labelId: [req.body.labelId]}
         const addLabelName = await notesService.deleteLabelFromNote(notesId, labelData);
-        res.send({success: true, message: "Label Deleted!", data: addLabelName});
+        res.send({
+            success: true,
+             message: "Label Deleted!",
+              data: addLabelName});
     } catch (error) {
         console.log(error);
-        res.status(500).send({success: false, message: "Some error occurred while deleting label from notes"});
+        res.status(500).send({
+            success: false, 
+            message: "Some error occurred while deleting label from notes"});
     }
  }
+
+
 }
 
 

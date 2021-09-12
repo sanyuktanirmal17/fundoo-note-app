@@ -6,6 +6,7 @@
  * @version         :1.0.0
 ***********************************************************************/
 
+
 const mongoose = require("mongoose");
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
@@ -63,7 +64,7 @@ class NotesModel {
    */
   async getAllNotes() {
       try {
-          return await NoteModel.find({userId:id});
+          return await NoteModel.find({userId:id.id});
       } catch (error) {
           return error;
       }
@@ -144,7 +145,7 @@ class NotesModel {
    async addLabelToNote(notesId, labelData) {
     try {
         return await NoteModel.findByIdAndUpdate(notesId,
-            {$push : { "labels": {$each: labelData.labelId, userId:id}} },
+            {$push : { "labels": {$each: labelData.labelId}} },
             {new: true});
     } catch (error) {
         return error;
@@ -166,6 +167,7 @@ async deleteLabelFromNote(notesId, labelData) {
         return error;
     }
   }
+
 }
 
 

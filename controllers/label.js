@@ -32,9 +32,10 @@ const labelService = require('../service/label');
            const tokenData = verifyTokenUser(token);
            const labelData = {
                labelName: req.body.labelName,
-               notesId: req.params.notesId,
+            //    notesId: req.params.notesId,
                userId:tokenData.id
            }
+           
            const labelCreated = await labelService.createLabel(labelData);
            res.send({success: true, message: "Label Created!", data: labelCreated});
         } catch (error) {
@@ -51,13 +52,20 @@ const labelService = require('../service/label');
      */
     async getAllLabels(req, res) {
         try {
-
+            let token = req.get('token')
+           console.log(token)
+           const tokenData = verifyTokenUser(token);
             const getAllLabels = await labelService.getAllLabels();
-            res.send({success: true, message: "Labels Retrieved!", data: getAllLabels});
+            res.send({
+                success: true,
+                 message: "Labels Retrieved!",
+                  data: getAllLabels});
             console.log("data", getAllLabels)
         } catch (error) {
             console.log("error controleer",error);
-            res.status(500).send({success: false, message: "error occurred while retrieving labels"});
+            res.status(500).send({
+                success: false, 
+                message: "error occurred while retrieving labels"});
         }
     }
 
@@ -92,6 +100,7 @@ const labelService = require('../service/label');
                 return res.status(400).send({
                     message: dataValidation.error.details[0].message
                 });
+
             }
 
             let labelId = req.params;
